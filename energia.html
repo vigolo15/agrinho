@@ -104,23 +104,39 @@
             </table>
         </div>
 
-        <!-- Seções explicativas -->
+        <!-- Seções explicativas em quadros -->
         <div class="row text-center mt-5">
             <div class="col-md-3">
-                <h5>Energia no dia a dia</h5>
-                <p>Uso de energia elétrica para conservar alimentos, iluminação e comunicação no campo.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Energia no dia a dia</h5>
+                        <p class="card-text" style="font-style: italic;">Uso de energia elétrica para conservar alimentos, iluminação e comunicação no campo.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-                <h5>Tecnologia agrícola</h5>
-                <p>Tratores, irrigação e colheitadeiras elétricas aumentam a produtividade e economia.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tecnologia agrícola</h5>
+                        <p class="card-text" style="font-style: italic;">Tratores, irrigação e colheitadeiras elétricas aumentam a produtividade e economia.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-                <h5>Educação e saúde</h5>
-                <p>Escolas e postos de saúde em áreas rurais dependem de energia para funcionar com qualidade.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Educação e saúde</h5>
+                        <p class="card-text" style="font-style: italic;">Escolas e postos de saúde em áreas rurais dependem de energia para funcionar com qualidade.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-                <h5>Renda e Sustentabilidade</h5>
-                <p>Com energia, famílias podem diversificar a renda e preservar o meio ambiente.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Renda e Sustentabilidade</h5>
+                        <p class="card-text" style="font-style: italic;">Com energia, famílias podem diversificar a renda e preservar o meio ambiente.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -134,7 +150,8 @@
                             Por que a energia renovável é importante para o campo?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">\                        <div class="accordion-body"> 
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"> 
                             Porque ela é sustentável, reduz gastos e não agride o meio ambiente.
                         </div>
                     </div>
@@ -183,10 +200,44 @@
 
     </div>
 
-    <!-- Rodapé -->
-    <footer class="footer text-center bg-light py-3 mt-5">
-        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo e cidade.</p>
-    </footer>
+    <!-- Carrossel -->
+    <div id="energyCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/image/solar.jpg" class="d-block w-100" alt="Energia Solar">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Energia Solar</h5>
+                    <p>Uma fonte renovável e sustentável que transforma a luz do sol em eletricidade.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/image/eolica.jpg" class="d-block w-100" alt="Energia Eólica">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Energia Eólica</h5>
+                    <p>Utiliza a força do vento para gerar eletricidade limpa e renovável.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/image/biomassa.jpg" class="d-block w-100" alt="Biomassa">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Biomassa</h5>
+                    <p>Transforma resíduos orgânicos em energia, contribuindo para a sustentabilidade.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#energyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#energyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <div class="footer bg-success text-white text-center py-3">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

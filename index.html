@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agrinho 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1; /* Permite que o contêiner ocupe o espaço disponível */
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #198754; /* Cor do rodapé igual à da barra de navegação */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto */
+            padding: 15px; /* Padding vertical do rodapé */
+        }
+    </style>
 </head>
 
 <body>
-    <section class="cabecalho">
+    <section class="cabecalho text-center">
         <h1>AGRINHO 2025</h1>
         <h3>Festejando Conexão Campo Cidade</h3>
     </section>
@@ -44,7 +63,7 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-6 text-center">
-                <img class="img-agro br-3" src="./assets/image/agro.png" alt="Imagem representativa de plantação.">
+                <img class="img-agro br-3" src="./assets/image/.png" alt="Imagem representativa de plantação.">
             </div>
             <div class="col-md-6">
                 <h2>O que podemos falar sobre a zona rural?</h2>
@@ -62,6 +81,8 @@
 
         <div class="row pt-5">
             <h3 class="text-center pb-3">Campo e Cidade: Comparativo</h3>
+            <p class="text-center">Nesta tabela, exploramos as diferenças e semelhanças entre a vida no campo e na cidade,
+                considerando aspectos fundamentais que impactam a qualidade de vida e o desenvolvimento sustentável.</p>
             <table class="table table-bordered text-center">
                 <thead class="table-success">
                     <tr>
@@ -91,6 +112,26 @@
                         <td>Crescentes com avanço da internet rural</td>
                         <td>Ampla conectividade</td>
                     </tr>
+                    <tr>
+                        <td>Educação</td>
+                        <td>Escolas rurais com menos recursos</td>
+                        <td>Mais opções educacionais e recursos</td>
+                    </tr>
+                    <tr>
+                        <td>Saúde</td>
+                        <td>Menos acesso a serviços de saúde</td>
+                        <td>Maior acesso a hospitais e clínicas</td>
+                    </tr>
+                    <tr>
+                        <td>Transporte</td>
+                        <td>Estradas menos desenvolvidas</td>
+                        <td>Rede de transporte público eficiente</td>
+                    </tr>
+                    <tr>
+                        <td>Comunidade</td>
+                        <td>Laços mais fortes e pessoais</td>
+                        <td>Mais anônimos, mas diversas interações</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -98,41 +139,124 @@
         <div class="row pt-5">
             <h3 class="text-center pb-3">Temas em Destaque</h3>
             <div class="col-md-4">
-                <div class="card">
-                    <img src="./assets/image/energia sus (1).png" class="img-card card-img-top" alt="Água potável">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#modalAgua">
+                    <img src="./assets/image/.png" class="img-card card-img-top" alt="Água potável">
                     <div class="card-body">
                         <h5 class="card-title">Acessibilidade à Água</h5>
-                        <p class="card-text">O acesso à água potável é um direito essencial. No campo, soluções como cisternas,
-                            poços e captação de água da chuva estão promovendo dignidade e saúde para milhares de famílias rurais.</p>
-                        <a href="agua.html" class="btn btn-primary">Saiba mais</a>
+                        <p class="card-text">Soluções como cisternas e poços promovem dignidade e saúde para famílias rurais.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img src="./assets/image/energia sus.png" class="img-card card-img-top" alt="Energia sustentável">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#modalEnergia">
+                    <img src="./assets/image/.png" class="img-card card-img-top" alt="Energia sustentável">
                     <div class="card-body">
                         <h5 class="card-title">Energia Rural Sustentável</h5>
-                        <p class="card-text">A energia solar e eólica têm transformado comunidades do campo, reduzindo custos e
-                            respeitando o meio ambiente. Conectividade com sustentabilidade é o futuro da zona rural.</p>
-                        <a href="energia.html" class="btn btn-primary">Saiba mais</a>
+                        <p class="card-text">Energia solar e eólica transformam comunidades do campo, respeitando o meio ambiente.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img src="./assets/image/agro.png" class="img-card card-img-top" alt="Produção agrícola">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#modalProducao">
+                    <img src="./assets/image/.png" class="img-card card-img-top" alt="Produção agrícola">
                     <div class="card-body">
                         <h5 class="card-title">Produção e Industrialização</h5>
-                        <p class="card-text">Do campo à cidade, o processo produtivo conecta agricultores, indústrias e consumidores.
-                            A valorização da produção local fortalece a economia e gera empregos.</p>
-                        <a href="producao.html" class="btn btn-primary">Saiba mais</a>
+                        <p class="card-text">O processo produtivo conecta agricultores, indústrias e consumidores.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        
+        <!-- Modais -->
+        <div class="modal fade" id="modalAgua" tabindex="-1" aria-labelledby="modalAguaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAguaLabel">Acessibilidade à Água</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>O acesso à água potável é um direito essencial. No campo, soluções como cisternas, poços e captação de água da chuva estão promovendo dignidade e saúde para milhares de famílias rurais. É fundamental garantir que essas soluções sejam sustentáveis e acessíveis para todos.</p>
+                        <p>Além disso, programas de educação sobre o uso eficiente da água e a preservação de fontes hídricas são cruciais para o desenvolvimento sustentável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalEnergia" tabindex="-1" aria-labelledby="modalEnergiaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalEnergiaLabel">Energia Rural Sustentável</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>A energia solar e eólica têm transformado comunidades do campo, reduzindo custos e respeitando o meio ambiente. Projetos de energia renovável não apenas ajudam a diminuir a dependência de combustíveis fósseis, mas também promovem a autonomia energética das comunidades rurais.</p>
+                        <p>Iniciativas de capacitação e financiamento para a instalação de painéis solares e turbinas eólicas são essenciais para o sucesso dessa transição energética.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalProducao" tabindex="-1" aria-labelledby="modalProducaoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalProducaoLabel">Produção e Industrialização</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do campo à cidade, o processo produtivo conecta agricultores, indústrias e consumidores. A valorização da produção local fortalece a economia e gera empregos, promovendo um ciclo de desenvolvimento que beneficia toda a sociedade.</p>
+                        <p>É vital que as políticas públicas apoiem essa integração, garantindo que os agricultores tenham acesso a mercados e que os consumidores possam adquirir produtos frescos e de qualidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-5">
+            <h3 class="text-center pb-3">Perguntas Frequentes</h3>
+            <div class="col-md-12">
+                <div class="accordion" id="accordionFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                O que é a agricultura familiar?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                A agricultura familiar é um modelo de produção agrícola que se baseia na gestão familiar da propriedade, onde a família é responsável pelo trabalho e pela tomada de decisões. Esse modelo é fundamental para a segurança alimentar e para a preservação da cultura local.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Como a tecnologia está mudando a vida no campo?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                A tecnologia tem proporcionado avanços significativos na agricultura, como o uso de drones para monitoramento de culturas, sistemas de irrigação automatizados e aplicativos para gestão de propriedades. Esses avanços aumentam a eficiência e a produtividade, além de facilitar o acesso à informação.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Quais são os principais desafios enfrentados pela zona rural?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Os principais desafios incluem o acesso limitado a serviços de saúde, educação, infraestrutura e tecnologia. Além disso, a migração para as cidades e as mudanças climáticas também impactam negativamente a vida no campo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="footer">
         <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>

@@ -34,9 +34,16 @@ p .alinha{
     max-height: 400px;
 }
 
-.footer{
-    background-color: rgb(53, 4, 53);
-    color: white;
-    text-align: center;
-    padding: 5px;
+.footer {
+    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+    background-color: rgb(53, 4, 53); /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 15px; /* Padding vertical */
+    margin-top: auto; /* Faz o rodapé empurrar para o final */
 }
+
+.container {
+    flex: 1 0 auto; /* Permite que o contêiner cresça e ocupe espaço */
+}
+
