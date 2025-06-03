@@ -11,15 +11,13 @@
 </head>
 
 <body>
-    <!--Apresentação do tema-->
     <section class="cabecalho">
         <h1>AGRINHO 2025</h1>
         <h3>Festejando Conexão Campo Cidade</h3>
     </section>
 
-    <!--cabeçalho do site-->
     <nav class="navbar navbar-expand-lg bg-success">
-        <div class="container-fluid ">
+        <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +25,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="index.html">Página Inicial |</a>
+                        <a class="nav-link active text-white" href="index.html">Página Inicial |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="energia.html">Energia Rural |</a>
@@ -43,82 +41,101 @@
         </div>
     </nav>
 
-    <!-- Primeira seção a ser dividida-->
     <div class="container">
         <div class="row pt-5">
-            <div class="col ">
-                <div>
-                    <h2>O que podemos falar sobre a zona rural?</h2>
-                    <p></p>
-                    <p class="alinha">A zona rural é uma área essencial para a economia e a cultura de um país, caracterizada principalmente por atividades agrícolas e pecuárias. Nela, a população vive em pequenas comunidades, onde as relações sociais são mais próximas e solidificadas por laços familiares. A agricultura, com o cultivo de grãos, frutas e hortaliças, é a principal fonte de sustento, enquanto a pecuária fornece carne, leite e ovos. Culturalmente, a zona rural é rica em tradições, como festas e danças folclóricas, que refletem a identidade local. No entanto, enfrenta desafios significativos, como o acesso limitado a serviços básicos, infraestrutura precária e a migração de jovens para as cidades, o que pode levar ao envelhecimento da população. Além disso, as mudanças climáticas impactam diretamente a produção agrícola, tornando o desenvolvimento sustentável uma prioridade. Assim, a valorização da zona rural é crucial para garantir a segurança alimentar e a preservação cultural, promovendo um futuro equilibrado e sustentável.
-
-                    </p>
-                </div>
+            <div class="col-md-6 text-center">
+                <img class="img-agro br-3" src="./assets/image/agro.png" alt="Imagem representativa de plantação.">
             </div>
-            <div class="col text-center">
-                <div>
-                    <img class="img-agro br-3" src="./assets/image/agro.png" alt="Imagem representativa de plantação.">
-                </div>
+            <div class="col-md-6">
+                <h2>O que podemos falar sobre a zona rural?</h2>
+                <p class="alinha">
+                    A zona rural desempenha um papel fundamental no equilíbrio da sociedade. Além de ser o berço da produção
+                    de alimentos que abastecem as cidades, ela também preserva tradições, modos de vida e saberes que
+                    contribuem para a cultura nacional. Apesar da distância física, campo e cidade estão cada vez mais
+                    conectados por meio da tecnologia, do comércio e da troca de conhecimentos. Essa integração é essencial
+                    para promover desenvolvimento sustentável, garantindo que o progresso urbano não aconteça à custa da
+                    degradação rural. A valorização da agricultura familiar, o incentivo ao uso de energias renováveis e a
+                    ampliação do acesso à água potável são exemplos de ações que unem os dois mundos em benefício de todos.
+                </p>
             </div>
         </div>
+
         <div class="row pt-5">
-            <h3 class="text-center pb-3">Explore detalhes sobre cada segmento.</h3>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="./assets/image/energia sus (1).png" class="img-card card-img-top" alt="...">
+            <h3 class="text-center pb-3">Campo e Cidade: Comparativo</h3>
+            <table class="table table-bordered text-center">
+                <thead class="table-success">
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Campo</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fonte de Renda</td>
+                        <td>Agricultura e Pecuária</td>
+                        <td>Comércio, Serviços e Indústria</td>
+                    </tr>
+                    <tr>
+                        <td>Qualidade do Ar</td>
+                        <td>Alta, menos poluição</td>
+                        <td>Média/baixa devido à poluição</td>
+                    </tr>
+                    <tr>
+                        <td>Estilo de Vida</td>
+                        <td>Calmo, tradicional</td>
+                        <td>Agitado, moderno</td>
+                    </tr>
+                    <tr>
+                        <td>Conexões Tecnológicas</td>
+                        <td>Crescentes com avanço da internet rural</td>
+                        <td>Ampla conectividade</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row pt-5">
+            <h3 class="text-center pb-3">Temas em Destaque</h3>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./assets/image/energia sus (1).png" class="img-card card-img-top" alt="Água potável">
                     <div class="card-body">
-                        <h5 class="card-title">Acessibilidade a água</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais sobre:</a>
+                        <h5 class="card-title">Acessibilidade à Água</h5>
+                        <p class="card-text">O acesso à água potável é um direito essencial. No campo, soluções como cisternas,
+                            poços e captação de água da chuva estão promovendo dignidade e saúde para milhares de famílias rurais.</p>
+                        <a href="agua.html" class="btn btn-primary">Saiba mais</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="./assets/image/energia sus.png" class="img-card card-img-top" alt="...">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./assets/image/energia sus.png" class="img-card card-img-top" alt="Energia sustentável">
                     <div class="card-body">
-                        <h5 class="card-title">Energia rural</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais sobre:</a>
+                        <h5 class="card-title">Energia Rural Sustentável</h5>
+                        <p class="card-text">A energia solar e eólica têm transformado comunidades do campo, reduzindo custos e
+                            respeitando o meio ambiente. Conectividade com sustentabilidade é o futuro da zona rural.</p>
+                        <a href="energia.html" class="btn btn-primary">Saiba mais</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="./assets/image/agro.png" class="img-card card-img-top" alt="...">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./assets/image/agro.png" class="img-card card-img-top" alt="Produção agrícola">
                     <div class="card-body">
-                        <h5 class="card-title">Produção e industrialização</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais sobre:</a>
+                        <h5 class="card-title">Produção e Industrialização</h5>
+                        <p class="card-text">Do campo à cidade, o processo produtivo conecta agricultores, indústrias e consumidores.
+                            A valorização da produção local fortalece a economia e gera empregos.</p>
+                        <a href="producao.html" class="btn btn-primary">Saiba mais</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="carouselExample" class="carousel slide pt-4 pb-3">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/image/Energy (1).gif" class="img-slide d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/image/Energy.gif" class=" img-slide d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    <div class="footer ">
-        <p>Todos os direitos reservados para agrinho 2025 - Festejando a conexão campo cidade.</p>
+        
+
+    <div class="footer">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
