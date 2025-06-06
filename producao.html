@@ -1,6 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+<style>
+    .bio-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .bio-image {
+        width: 300px;
+        margin-right: 20px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .bio-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .bio-text {
+        flex: 1;
+        padding: 20px;
+        margin-right: 0; /* Garantindo que o lado direito tenha o espaçamento correto */
+    }
+
+    .bio-text h2 {
+        color: #008080;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .bio-text p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
+
+    .bio-text p em {
+        font-style: italic;
+        color: #555;
+    }
+
+    .image-caption {
+        text-align: center;
+        margin-top: 10px;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    
+    /* Borda arredondada para as imagens */
+    .carousel-inner img {
+        border-radius: 10px; /* Ajuste o valor conforme necessário */
+    }
+
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,50 +112,48 @@
         <div class="row pt-5">
             <div class="col-md-6">
                 <h2 class="text-center">Como Funciona a Produção Agrícola?</h2>
-<p>
-  A produção agrícola é uma atividade essencial que conecta o campo à cidade. Tudo começa com o preparo da terra, onde se analisam as condições do solo e se aplicam insumos para garantir sua fertilidade. A escolha das sementes depende do clima, do mercado e das tradições locais. O plantio pode ser feito manualmente ou com máquinas, variando conforme o tamanho da propriedade.
-</p>
 
-<p>
-  Durante o cultivo, os agricultores cuidam da lavoura com irrigação adequada, controle de pragas, adubação equilibrada e rotação de culturas. Essas práticas são fundamentais para manter a saúde do solo e garantir boa produtividade. A colheita, momento mais esperado, exige precisão para evitar perdas e manter a qualidade dos produtos.
-</p>
+<p>A produção agrícola é uma atividade essencial que conecta o campo à cidade. Tudo começa com o preparo da terra, onde se analisam as condições do solo e se aplicam insumos para garantir sua fertilidade. A escolha das sementes depende do clima, do mercado e das tradições locais. O plantio pode ser feito manualmente ou com máquinas, variando conforme o tamanho da propriedade.</p>
 
-<p>
-  Após a colheita, os alimentos passam por triagem, armazenagem e transporte até chegarem aos centros urbanos. Com o avanço da tecnologia no campo, como o uso de drones e aplicativos de gestão, a produção se tornou mais eficiente e sustentável. Esse processo garante segurança alimentar e valoriza o trabalho de quem vive no campo.
-</p>
+<p>Durante o cultivo, os agricultores cuidam da lavoura com irrigação adequada, controle de pragas, adubação equilibrada e rotação de culturas. Essas práticas são fundamentais para manter a saúde do solo e garantir boa produtividade. A colheita, momento mais esperado, exige precisão para evitar perdas e manter a qualidade dos produtos.</p>
+
+<p>Após a colheita, os alimentos passam por triagem, armazenagem e transporte até chegarem aos centros urbanos. Com o avanço da tecnologia no campo, como o uso de drones e aplicativos de gestão, a produção se tornou mais eficiente e sustentável. Esse processo garante segurança alimentar e valoriza o trabalho de quem vive no campo.</p>
+
+<p>A sustentabilidade é uma preocupação crescente no setor agrícola. Técnicas como a agricultura de precisão e o uso responsável dos recursos naturais ajudam a reduzir o impacto ambiental, preservando a biodiversidade e evitando o esgotamento dos solos. Além disso, iniciativas de agricultura orgânica ganham força, atendendo a demanda crescente por produtos livres de agrotóxicos.</p>
+
+<p>O futuro da agricultura passa pela inovação constante. O uso de tecnologias como biotecnologia, inteligência artificial e big data está transformando a maneira como os agricultores monitoram suas lavouras, melhorando a produtividade e reduzindo os custos. Essas inovações abrem caminho para uma agricultura mais inteligente, conectada e preparada para enfrentar os desafios do século XXI.</p>
+
 
             </div>
             <div class="col-md-6 text-center">
-                <img class="img-fluid rounded" src="./assets/image/.png" alt="Imagem representativa de plantação.">
+                <img class="img-fluid rounded" src="./assets/image/araucaria.png.jpeg" alt="Imagem representativa de plantação.">
             </div>
         </div>
 
         <!-- Linha do tempo -->
-        <div class="pt-5">
-            
-            <div class="d-flex flex-column flex-md-row justify-content-around align-items-start text-center">
-                <div class="p-3">
-                    <img src="./assets/image/semeadura.jpg" class="rounded-circle mb-2" width="100" alt="Semeadura">
-                    <h6>Semeadura</h6>
-                    <p>O início do ciclo agrícola, com escolha de sementes adaptadas ao solo e clima.</p>
-                </div>
-                <div class="p-3">
-                    <img src="./assets/image/cultivo.jpg" class="rounded-circle mb-2" width="100" alt="Cultivo">
-                    <h6>Cultivo</h6>
-                    <p>Etapa de irrigação, adubação e proteção contra pragas, garantindo o crescimento saudável.</p>
-                </div>
-                <div class="p-3">
-                    <img src="./assets/image/colheita.jpg" class="rounded-circle mb-2" width="100" alt="Colheita">
-                    <h6>Colheita</h6>
-                    <p>Realizada no momento certo para preservar sabor, qualidade e valor nutricional.</p>
-                </div>
-                <div class="p-3">
-                    <img src="./assets/image/distribuicao.jpg" class="rounded-circle mb-2" width="100" alt="Distribuição">
-                    <h6>Distribuição</h6>
-                    <p>Transportes levam os alimentos até mercados, escolas e centros urbanos.</p>
-                </div>
+<div class="pt-5">
+    <div class="d-flex flex-column flex-md-row justify-content-around align-items-center text-center">
+        <div class="p-3 d-flex flex-column align-items-center">
+            <!-- Ajustei o tamanho da imagem e borda arredondada -->
+            <div class="image-container" style="width: 150px; height: 150px; border-radius: 15px; overflow: hidden; margin-bottom: 10px;">
+                <img src="./assets/image/eucalipto.png.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="Semeadura">
             </div>
+            <h6>Plantio e Manejo</h6>
+            <p>O plantio de eucalipto exige cuidados específicos no manejo para garantir uma produção de alta qualidade e baixo impacto ambiental.</p>
         </div>
+        <div class="p-3 d-flex flex-column align-items-center">
+            <!-- Ajustei o tamanho da imagem e borda arredondada -->
+            <div class="image-container" style="width: 150px; height: 150px; border-radius: 15px; overflow: hidden; margin-bottom: 10px;">
+                <img src="./assets/image/colheita.png.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="Colheita">
+            </div>
+            <h6>Colheita</h6>
+            <p>Realizada no momento certo para preservar sabor, qualidade e valor nutricional.</p>
+        </div>
+    </div>
+</div>
+
+
+
 
         <p></p>
         <p></p>
@@ -165,27 +227,89 @@
   </li>
 </ul>
 
+<div class="empty-space"></div>
+
+<style>
+    .empty-space {
+        height: 50px; /* Ajuste a altura conforme necessário */
+    }
+</style>
+
+
+<section>
+    <div class="bio-container">
+        <!-- Início da parte da imagem e texto -->
+        <div class="bio-text">
+            <h2>João Vitor Angieski de Bona: O Jovem Produtor Rural que Faz a Diferença no Campo Brasileiro</h2>
+
+            <!-- Imagem somente no primeiro parágrafo -->
+            <div class="bio-image">
+                <img src="assets/image/bona.png.jpeg" alt="João Vitor Angieski de Bona">
+                <div class="image-caption">João Vitor Angieski de Bona - Produtor Rural</div>
+            </div>
+
+            <p><strong>João Vitor Angieski de Bona</strong>, um jovem agricultor de 25 anos natural de Palotina, no Paraná, é um exemplo claro de como a nova geração está moldando o futuro da agricultura no Brasil. Nascido e criado em uma fazenda, ele sempre esteve imerso no ambiente rural, mas foi aos 19 anos que a vida o colocou à frente da propriedade familiar. Seu pai, com sérios problemas de saúde, precisou transferir-lhe a responsabilidade pela fazenda, e desde então João tem enfrentado os desafios do campo com um espírito inovador e sustentável.</p>
+
+            <p><em>"A terra precisa ser respeitada, e é nosso dever cuidar dela para que as futuras gerações possam continuar a usufruir de suas riquezas",</em> afirma com convicção.</p>
+
+            <h3>A Transição para a Gestão da Fazenda: O Desafio de Assumir a Responsabilidade</h3>
+            <p>Assumir a fazenda aos 19 anos não foi uma tarefa fácil, especialmente sem a experiência necessária para administrar uma propriedade rural. <em>“Quando meu pai ficou doente, eu me vi diante de uma responsabilidade que eu não estava preparado para assumir, mas sabia que não podia deixar a propriedade à deriva. Eu estava no ensino médio, ainda tentando entender como as coisas funcionavam no campo, e, de repente, tive que me tornar o principal responsável pela fazenda”</em>, relembra.</p>
+
+            <p>Apesar da juventude, João não hesitou em buscar conhecimento. Ele começou a estudar sobre gestão rural, tecnologia agrícola e sustentabilidade. <em>“Foi um período difícil, mas também de muita aprendizagem. Eu comecei a frequentar cursos de gestão rural e buscar ajuda de técnicos especializados. Percebi que, para fazer a diferença, eu precisava me atualizar e aplicar o que existia de mais novo no setor.”</em></p>
+
+            <h3>A Diversificação e o Caminho para a Estabilidade Econômica</h3>
+            <p>Logo após assumir a fazenda, João notou que a dependência de uma única cultura, como a soja, era um risco muito grande. O Brasil vive uma oscilação constante nos preços das commodities agrícolas, o que pode impactar diretamente a viabilidade econômica de muitos produtores. <em>“A diversificação foi uma decisão estratégica. Eu vi que, ao investir em diferentes tipos de cultura, como milho e gado de corte, além de manter a soja, a fazenda se tornava mais resiliente às variações do mercado. O risco diminui, e a estabilidade aumenta”</em>, conta ele, com a experiência de quem já passou por diferentes cenários econômicos no campo.</p>
+
+            <h3>Tecnologia no Campo: A Aposta no Futuro</h3>
+            <p>Quando o assunto é inovação, João Vitor não perde tempo. Ele acredita que o uso da tecnologia é um dos caminhos para garantir a competitividade do agronegócio brasileiro. <em>“A tecnologia não é mais uma opção, é uma necessidade. Hoje, usamos sistemas de monitoramento de clima e solo, irrigação eficiente e até drones para verificar as condições das lavouras. Isso nos permite agir de forma mais precisa e reduzir custos, além de aumentar a produtividade”</em>, explica ele.</p>
+
+            <h3>Sustentabilidade: Um Compromisso com o Futuro</h3>
+            <p>João tem uma visão clara sobre sustentabilidade. Para ele, é impossível falar de crescimento no setor rural sem considerar os impactos ambientais. <em>“Eu sou um grande defensor de práticas sustentáveis. A terra nos oferece muito, mas precisamos devolvê-la em boas condições para as próximas gerações. Hoje, além da adoção de técnicas de manejo de solo, estamos focados na recuperação de áreas degradadas e no uso de sistemas agroflorestais”</em>, compartilha com entusiasmo.</p>
+
+            <h3>O Papel da Nova Geração na Agricultura Brasileira</h3>
+            <p>João acredita firmemente que a juventude tem um papel fundamental na revolução que o agronegócio brasileiro está vivendo. Para ele, os jovens produtores têm a mentalidade mais aberta para adotar tecnologias e implementar novas práticas agrícolas. <em>“Os jovens têm uma visão mais inovadora e estão mais conectados com o que está acontecendo no mundo. Estamos mais preocupados com o impacto ambiental da nossa produção e com as novas demandas do mercado, como o consumo consciente de alimentos”</em>, destaca João.</p>
+
+            <h3>O Futuro de João Vitor Angieski de Bona: Planos e Sonhos</h3>
+            <p>Olhar para o futuro é uma das características que mais define João. Seus planos para os próximos anos são ambiciosos, mas sempre com um foco em sustentabilidade e inovação. Ele deseja expandir a fazenda, mas sem perder a essência do que é mais importante para ele: a preservação do meio ambiente e o bem-estar das pessoas. <em>“Daqui a 10 anos, vejo minha fazenda como um modelo de integração entre a produção agrícola e a conservação ambiental. Quero continuar crescendo, mas de forma responsável e com o apoio das novas tecnologias”</em>, conclui.</p>
+
+        </div>
+    </div>
+</section>
+
+<div class="empty-space"></div>
+
+<style>
+    .empty-space {
+        height: 50px; /* Ajuste a altura conforme necessário */
+    }
+</style>
+
+
+
         </div>
 
         <!-- Carrossel visual -->
-        <div id="carouselExample" class="carousel slide pt-4 pb-3">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/image/.gif" class="d-block w-100" alt="Imagem 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/image/.gif" class="d-block w-100" alt="Imagem 2">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Próximo</span>
-            </button>
+        <div id="carouselExample" class="carousel slide pt-4 pb-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./assets/image/carrossel1.png.jpeg" class="d-block w-100 rounded" alt="Imagem 1">
         </div>
+        <div class="carousel-item">
+            <img src="./assets/image/carrossel2.png.jpeg" class="d-block w-100 rounded" alt="Imagem 2">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/image/carrossel3.png.jpeg" class="d-block w-100 rounded" alt="Imagem 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+    </button>
+</div>
     </div>
 
    <div class="footer bg-success text-white text-center py-3">
