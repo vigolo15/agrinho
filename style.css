@@ -1,86 +1,50 @@
-.img-custom {
-    max-width: 300px; /* Ajuste este valor conforme necessário */
-    height: auto;     /* Mantém a proporção da imagem */
-    display: block;   /* Garante que a imagem seja exibida como bloco */
-    margin: 0 auto;  /* Centraliza a imagem se necessário */
-}
-
-/* estilos.css */
-
-/* Estilos Globais */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
+body{
     padding: 0;
-    background-color: #f4f4f4; /* Cor de fundo geral */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Estilo do Cabeçalho */
-.cabecalho {
-    padding: 20px 0;
+.cabecalho{
+    color: white;
+    background-color: rgb(53, 4, 53);
+    text-align: center;
+    padding: 30px;
+}
+
+.cabecalho h3{
+    color: rgb(8, 206, 114);
+}
+
+p .alinha{
+    text-align: right;
+}
+.img-agro{
+    width: 300px;
+}
+
+.br-3{
+    border-radius: 15px;
+}
+
+.img-card{
+    max-height: 250px;
+}
+
+.img-slide{
+    max-height: 400px;
+}
+
+.footer {
+    background-color: #198754;
+    color: white;
+    padding: 10px;
     text-align: center;
 }
 
-/* Estilos da Navbar */
-.navbar {
-    margin-bottom: 20px; /* Espaçamento abaixo da navbar */
+.container {
+    flex: 1 0 auto; /* Permite que o contêiner cresça e ocupe espaço */
 }
 
-.nav-link {
-    color: #ffffff; /* Cor do texto dos links */
-    transition: color 0.3s; /* Transição suave na cor */
-}
-
-.nav-link:hover {
-    color: #ffd700; /* Cor ao passar o mouse */
-}
-
-/* Estilos dos Cards */
-.card {
-    margin-bottom: 20px; /* Espaçamento entre os cards */
-    transition: transform 0.2s; /* Transição suave no hover */
-}
-
-.card:hover {
-    transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
-}
-
-/* Estilo do Rodapé */
-footer {
-    padding: 15px 0;
-    background-color: #5a2d91; /* Cor do rodapé */
-    color: #ffffff; /* Cor do texto do rodapé */
-}
-
-/* Estilos do Modal */
-.modal-content {
-    border-radius: 8px; /* Bordas arredondadas */
-}
-
-.modal-header {
-    background-color: #5a2d91; /* Cor do cabeçalho do modal */
-    color: #ffffff; /* Cor do texto do cabeçalho */
-}
-
-.modal-footer {
-    background-color: #f1f1f1; /* Cor do rodapé do modal */
-}
-
-/* Estilos de Títulos */
-h2, h3 {
-    color: #333; /* Cor dos títulos */
-    margin-bottom: 15px; /* Espaçamento abaixo dos títulos */
-}
-
-/* Estilos de Parágrafos */
-p {
-    margin-bottom: 15px; /* Espaçamento abaixo dos parágrafos */
-}
-
-/* Estilos de Imagens */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Bordas arredondadas nas imagens */
+.centralizado {
+    text-align: center;
 }

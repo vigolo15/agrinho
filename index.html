@@ -4,187 +4,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Rural - Página Inicial</title>
+    <title>Agrinho 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        .navbar {
-            background-color: #5a2d91; /* Roxo mais escuro */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        .cabecalho {
-            background-color: #333333; /* Cinza Escuro */
-        }
-        .cabecalho h1 {
-            color: white; /* Cor do texto do cabeçalho */
-        }
-        .cabecalho h3 {
-            color: yellow; /* Cor Amarela para o subtítulo */
-        }
-        .card {
-            cursor: pointer;
+        .container {
+            flex: 1; /* Permite que o contêiner ocupe o espaço disponível */
         }
         .modal-content {
-            background-color: #f8f9fa; /* Cor de fundo do modal */
+            border-radius: 10px;
         }
-        footer {
-            background-color: #5a2d91; /* Rodapé na mesma cor da navbar */
+        .footer {
+            background-color: #198754; /* Cor do rodapé igual à da barra de navegação */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto */
+            padding: 15px; /* Padding vertical do rodapé */
         }
     </style>
 </head>
 
 <body>
-    <section class="cabecalho text-center" style="padding: 20px 0;">
+    <section class="cabecalho text-center">
         <h1>AGRINHO 2025</h1>
         <h3>Festejando Conexão Campo Cidade</h3>
     </section>
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto"> <!-- Alinha os botões à direita -->
-                    <a class="nav-link" href="index.html">Campo Aconchegante</a> <!-- Sinônimo de zona rural -->
-                    <a class="nav-link" href="energia.html">Energia do Campo</a>
-                    <a class="nav-link" href="agua.html">Água Vital</a>
-                    <a class="nav-link" href="producao.html">Produção Sustentável</a>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="index.html">Página Inicial |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="energia.html">Energia Rural |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="agua.html">Acessibilidade a Água |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="producao.html">Produção</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <div class="row mb-4">
-            <div class="col-md-8">
-                <h2>Bem-vindo à Zona Rural</h2>
-<p>A zona rural é um espaço rico em cultura, tradição e recursos naturais. Aqui, exploramos a importância da energia, da água e da produção agrícola para o desenvolvimento sustentável das comunidades rurais. As atividades agrícolas não apenas garantem a segurança alimentar, mas também preservam práticas ancestrais que conectam as gerações passadas às futuras. A vida no campo é marcada por um profundo respeito à natureza e à biodiversidade, refletindo a interdependência entre os seres humanos e o meio ambiente.</p>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-6 text-center">
+                <img class="img-agro br-3" src="./assets/image/.png" alt="Imagem representativa de plantação.">
+            </div>
+            <div class="col-md-6">
+               <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Zona Rural</title>
+</head>
+<body>
 
-<p>Além disso, a zona rural desempenha um papel crucial na produção de alimentos de qualidade e na promoção de uma economia local robusta. Os agricultores, muitas vezes, utilizam técnicas tradicionais e sustentáveis que minimizam o impacto ambiental, como a rotação de culturas e a agroecologia. Essa abordagem não apenas assegura a saúde do solo, mas também contribui para a preservação dos ecossistemas locais. A valorização dos produtos regionais fortalece a identidade cultural e econômica das comunidades rurais, promovendo feiras e mercados que celebram a riqueza da agricultura local.</p>
+    <h1>O que podemos falar sobre a zona rural?</h1>
 
-<p>Por fim, a conexão entre a zona rural e as áreas urbanas é fundamental para o desenvolvimento equilibrado da sociedade. As trocas culturais e econômicas entre esses dois mundos enriquecem a vida de todos, permitindo que as cidades se beneficiem dos recursos e saberes do campo. A educação ambiental e a conscientização sobre a importância da agricultura são essenciais para construir um futuro mais sustentável. Portanto, ao explorar a zona rural, não apenas conhecemos um espaço físico, mas também um universo de histórias, tradições e saberes que moldam a nossa identidade coletiva.</p>
+    <p>
+        A zona rural desempenha um papel essencial na sustentação da sociedade, sendo o principal berço da produção de alimentos que abastece as áreas urbanas. Além disso, guarda um vasto patrimônio cultural, preservando tradições, modos de vida e saberes transmitidos entre gerações, que enriquecem a identidade nacional. Esse espaço, muitas vezes idealizado pela simplicidade, é também um lugar de resistência e inovação.
+    </p>
 
+    <p>
+        Apesar da distância física entre campo e cidade, os dois ambientes estão cada vez mais interligados por meio da tecnologia, do comércio e da circulação de informações. Essa conexão tem se mostrado indispensável para promover um desenvolvimento equilibrado, que respeite as particularidades de cada território. A presença da internet no campo, por exemplo, vem transformando práticas agrícolas e ampliando horizontes educacionais e profissionais para os moradores rurais.
+    </p>
+
+    <p>
+        Investir na zona rural significa investir no futuro. Valorizar a agricultura familiar, incentivar o uso de energias renováveis e garantir o acesso à água potável são medidas fundamentais para fortalecer essa integração entre campo e cidade. Mais do que nunca, é preciso enxergar o meio rural não apenas como espaço de produção, mas como um território dinâmico, estratégico e vital para a sustentabilidade do país.
+    </p>
+
+</body>
+</html>
 
             </div>
-            <div class="col-md-4">
-                <img src="./assets/image/zona.rural.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
         </div>
-  </div>
-  </div>
-            
+
+        <div class="row pt-5">
+           
+     <h1 style="text-align: center;">Campo e Cidade: Um Comparativo</h1>
+
+    <p>
+        Nesta tabela, apresentamos um comparativo entre a vida no campo e na cidade, destacando suas principais diferenças e semelhanças. 
+        A análise considera aspectos essenciais como qualidade de vida, acesso a serviços, meio ambiente e dinâmicas sociais. 
+        Entender essas características é fundamental para promover políticas públicas equilibradas e incentivar o desenvolvimento sustentável em ambos os contextos.
+    </p>
+            <table class="table table-bordered text-center">
+                <thead class="table-success">
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Campo</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fonte de Renda</td>
+                        <td>Agricultura e Pecuária</td>
+                        <td>Comércio, Serviços e Indústria</td>
+                    </tr>
+                    <tr>
+                        <td>Qualidade do Ar</td>
+                        <td>Alta, menos poluição</td>
+                        <td>Média/baixa devido à poluição</td>
+                    </tr>
+                    <tr>
+                        <td>Estilo de Vida</td>
+                        <td>Calmo, tradicional</td>
+                        <td>Agitado, moderno</td>
+                    </tr>
+                    <tr>
+                        <td>Conexões Tecnológicas</td>
+                        <td>Crescentes com avanço da internet rural</td>
+                        <td>Ampla conectividade</td>
+                    </tr>
+                    <tr>
+                        <td>Educação</td>
+                        <td>Escolas rurais com menos recursos</td>
+                        <td>Mais opções educacionais e recursos</td>
+                    </tr>
+                    <tr>
+                        <td>Saúde</td>
+                        <td>Menos acesso a serviços de saúde</td>
+                        <td>Maior acesso a hospitais e clínicas</td>
+                    </tr>
+                    <tr>
+                        <td>Transporte</td>
+                        <td>Estradas menos desenvolvidas</td>
+                        <td>Rede de transporte público eficiente</td>
+                    </tr>
+                    <tr>
+                        <td>Comunidade</td>
+                        <td>Laços mais fortes e pessoais</td>
+                        <td>Mais anônimos, mas diversas interações</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row pt-5">
+            <h3 class="text-center pb-3">Temas em Destaque</h3>
+            <div class="col-md-4">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#modalAgua">
+                    <img src="./assets/image/.png" class="img-card card-img-top" alt="Água potável">
+                    <div class="card-body">
+                        <h5 class="card-title">Acessibilidade à Água</h5>
+                        <p class="card-text">Soluções como cisternas e poços são essenciais para garantir dignidade e promover a saúde das famílias rurais, assegurando o acesso à água potável e melhores condições de vida.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#modalEnergia">
+                    <img src="./assets/image/.png" class="img-card card-img-top" alt="Energia sustentável">
+                    <div class="card-body">
+                        <h5 class="card-title">Energia Rural Sustentável</h5>
+                        <p class="card-text">Energia solar e eólica têm o poder de transformar comunidades rurais, impulsionando o desenvolvimento sustentável, gerando emprego e respeitando o meio ambiente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#modalProducao">
+                    <img src="./assets/image/.png" class="img-card card-img-top" alt="Produção agrícola">
+                    <div class="card-body">
+                        <h5 class="card-title">Produção e Industrialização</h5>
+                        <p class="card-text">O processo produtivo conecta agricultores, indústrias e consumidores, criando uma rede estratégica e eficiente que impulsiona o crescimento econômico e a oferta de produtos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modais -->
+        <div class="modal fade" id="modalAgua" tabindex="-1" aria-labelledby="modalAguaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAguaLabel">Acessibilidade à Água</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>O acesso à água potável é um direito essencial. No campo, soluções como cisternas, poços e captação de água da chuva estão promovendo dignidade e saúde para milhares de famílias rurais. É fundamental garantir que essas soluções sejam sustentáveis e acessíveis para todos.</p>
+                        <p>Além disso, programas de educação sobre o uso eficiente da água e a preservação de fontes hídricas são cruciais para o desenvolvimento sustentável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalEnergia" tabindex="-1" aria-labelledby="modalEnergiaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalEnergiaLabel">Energia Rural Sustentável</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>A energia solar e eólica têm transformado comunidades do campo, reduzindo custos e respeitando o meio ambiente. Projetos de energia renovável não apenas ajudam a diminuir a dependência de combustíveis fósseis, mas também promovem a autonomia energética das comunidades rurais.</p>
+                        <p>Iniciativas de capacitação e financiamento para a instalação de painéis solares e turbinas eólicas são essenciais para o sucesso dessa transição energética.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="modalProducao" tabindex="-1" aria-labelledby="modalProducaoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalProducaoLabel">Produção e Industrialização</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do campo à cidade, o processo produtivo conecta agricultores, indústrias e consumidores. A valorização da produção local fortalece a economia e gera empregos, promovendo um ciclo de desenvolvimento que beneficia toda a sociedade.</p>
+                        <p>É vital que as políticas públicas apoiem essa integração, garantindo que os agricultores tenham acesso a mercados e que os consumidores possam adquirir produtos frescos e de qualidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 40px;"></div>
+<div style="height: 40px;"></div>
+
+
+
 <div class="row mb-4">
-    <div class="col-md-4">
-        <img src="./assets/image/zona.rural2.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
+    <!-- Imagem à esquerda (col-md-6) -->
+    <div class="col-md-6">
+        <img src="./assets/image/zona.rural.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
     </div>
-    <div class="col-md-8">
-       <h2>A Riqueza Cultural do Campo</h2>
-<p>A zona rural é um verdadeiro celeiro de diversidade cultural, onde tradições e costumes são preservados e transmitidos de geração para geração. As festas populares, as danças folclóricas e as práticas artesanais são expressões da identidade das comunidades rurais, refletindo a história e a vivência do povo. Essas manifestações culturais não apenas fortalecem os laços comunitários, mas também atraem visitantes e turistas, que buscam experiências autênticas e enriquecedoras. A valorização dessas tradições é essencial para manter viva a herança cultural e promover o turismo sustentável nas áreas rurais.</p>
+    
+    <!-- Texto à direita (col-md-6) -->
+    <div class="col-md-6">
+        <h2>A Zona Rural: Tradição e Sustentabilidade</h2>
+        <p>A zona rural é um espaço onde a vida segue o ritmo das estações e da natureza, preservando tradições e saberes transmitidos de geração em geração. A produção agrícola, muitas vezes feita por pequenas propriedades familiares, é essencial para a segurança alimentar e para o fortalecimento da economia local. Além disso, a agricultura sustentável e as práticas como a agroecologia ajudam a manter o equilíbrio ambiental, promovendo uma convivência mais harmônica com a terra.</p>
+        
+        <p>Além do trabalho no campo, a zona rural é rica em cultura. Festas tradicionais, danças e a culinária local são expressões vivas da identidade das comunidades. A comida típica, feita com ingredientes frescos e sazonais, carrega histórias e saberes antigos, refletindo o ciclo natural e a conexão com a terra. Essas manifestações culturais são um ponto de encontro entre o passado e o presente, mantendo vivas as raízes das comunidades rurais.</p>
+        
+        <p>No entanto, a zona rural enfrenta desafios como a falta de infraestrutura e a dificuldade de acesso a serviços essenciais, como saúde e educação. A urbanização tem pressionado o campo, e muitas comunidades ainda carecem de recursos para se desenvolver de forma equilibrada. É fundamental que políticas públicas promovam a integração entre o campo e a cidade, garantindo que o crescimento urbano não prejudique a vida no campo, mas a fortaleça, respeitando suas características e necessidades.</p>
+    </div>
+</div>
 
-<p>Além disso, a gastronomia local desempenha um papel central na cultura rural, com pratos típicos que utilizam ingredientes frescos e sazonais. A culinária rural é um reflexo da biodiversidade da região e das práticas agrícolas tradicionais, que respeitam o ciclo da natureza. Ao promover a gastronomia local, as comunidades rurais não apenas preservam suas receitas e modos de preparo, mas também incentivam a valorização dos produtos regionais. Essa conexão entre a comida e a cultura reforça a importância de apoiar a produção local e de consumir de forma consciente.</p>
-
-<p>Por último, a educação e a troca de saberes entre as gerações são fundamentais para a continuidade da cultura rural. Projetos que incentivam a participação dos jovens na preservação das tradições e na prática de atividades culturais são essenciais para manter viva a identidade das comunidades. Workshops de artesanato, aulas de dança e eventos culturais são algumas das iniciativas que podem engajar os mais jovens e garantir que as tradições não se percam com o tempo. Dessa forma, a zona rural se torna não apenas um espaço de produção, mas também um centro vibrante de cultura e aprendizado.</p>
-
-
+<!-- Segunda linha: Novo texto -->
+<div class="row mb-4">
+    <!-- Texto à esquerda (col-md-6) -->
+    <div class="col-md-6">
+        <h2>A Importância da Conexão Campo-Cidade</h2>
+        <p>Apesar das diferenças evidentes, a conexão entre a zona rural e as áreas urbanas é essencial para um desenvolvimento equilibrado e sustentável. O campo fornece os recursos naturais e alimentos que sustentam as cidades, enquanto as cidades oferecem inovações tecnológicas e oportunidades de mercado. Essa troca constante fortalece tanto o meio rural quanto o urbano, criando uma rede que beneficia ambos os lados.</p>
+        
+        <p>As políticas públicas que incentivam a cooperação entre esses dois mundos são fundamentais. O desenvolvimento de infraestrutura no campo, como estradas e internet, facilita o acesso das comunidades rurais a serviços e mercados urbanos. Ao mesmo tempo, o respeito à cultura local e à produção artesanal fortalece a identidade rural, proporcionando um espaço para o crescimento da economia local e o empoderamento das pessoas.</p>
+        
+        <p>Em resumo, a integração entre a zona rural e a cidade é vital para a prosperidade mútua. A educação e o compartilhamento de saberes entre as gerações rurais e urbanas podem criar um futuro mais sustentável e justo para todos, onde as tradições são respeitadas e a inovação é incentivada.</p>
+    </div>
+    
+    <!-- Imagem à direita (col-md-6) -->
+    <div class="col-md-6">
+        <img src="./assets/image/zona.rural2.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
     </div>
 </div>
 
 
-        <div class="row mt-4">
+
+
+
+        <div class="row pt-5">
+            <h3 class="text-center pb-3">Perguntas Frequentes</h3>
             <div class="col-md-12">
-                <h3>Gráfico de Linhas</h3>
-                <canvas id="graficoLinhas" width="400" height="200"></canvas>
-            </div>
-        </div>
-
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card" onclick="abrirQuadro('Cultura Local', 'A cultura rural é rica em tradições e festividades que refletem a vida no campo. Celebrações como festas juninas e colheitas são momentos de união e confraternização. Aqui estão algumas informações adicionais sobre a cultura local: 1. Festivais importantes: Festa de São João, Festa da Colheita. 2. Tradições: Danças folclóricas, culinária típica.')">
-                    <img src="./assets/image/cultura_local.jpg" class="card-img-top" alt="Cultura Local">
-                    <div class="card-body">
-                        <h5 class="card-title">Momentos de Conexão</h5>
-                        <p class="card-text">As celebrações na zona rural, como festas juninas e colheitas, são momentos de união e fortalecimento de laços comunitários. Elas reúnem famílias e amigos, promovendo a troca de experiências e valorizando a cultura local por meio de danças, músicas e comidas típicas.</p>
+                <div class="accordion" id="accordionFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                O que é a agricultura familiar?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                A agricultura familiar é um modelo de produção agrícola que se baseia na gestão familiar da propriedade, onde a família é responsável pelo trabalho e pela tomada de decisões. Esse modelo é fundamental para a segurança alimentar e para a preservação da cultura local.
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" onclick="abrirQuadro('Sustentabilidade', 'Práticas agrícolas sustentáveis são essenciais para preservar o meio ambiente e garantir a produção de alimentos de qualidade. Exemplos incluem: 1. Agricultura orgânica. 2. Uso de energia renovável. 3. Conservação da água.')">
-                    <img src="./assets/image/sustentabilidade.jpg" class="card-img-top" alt="Sustentabilidade">
-                    <div class="card-body">
-                        <h5 class="card-title">Fundamentos da Produção</h5>
-                        <p class="card-text">A agricultura na zona rural é essencial para garantir alimentos de qualidade. O cultivo diversificado enriquece a dieta e promove a segurança alimentar. Técnicas tradicionais e modernas preservam o solo e a biodiversidade, tornando a agricultura mais sustentável e resiliente.</p>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Como a tecnologia está mudando a vida no campo?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                A tecnologia tem proporcionado avanços significativos na agricultura, como o uso de drones para monitoramento de culturas, sistemas de irrigação automatizados e aplicativos para gestão de propriedades. Esses avanços aumentam a eficiência e a produtividade, além de facilitar o acesso à informação.
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" onclick="abrirQuadro('Inovação', 'A tecnologia tem transformado a agricultura com inovações que aumentam a eficiência e reduzem o impacto ambiental. Exemplos incluem: 1. Sistemas de irrigação de precisão. 2. Uso de drones para monitoramento de culturas. 3. Cultivo vertical.')">
-                    <img src="./assets/image/inovacao.jpg" class="card-img-top" alt="Inovação">
-                    <div class="card-body">
-                        <h5 class="card-title">Caminhos para o Futuro</h5>
-                        <p class="card-text">A inovação na zona rural aumenta a eficiência e reduz o impacto ambiental. Tecnologias como a agricultura de precisão e insumos biológicos ajudam os produtores a se adaptarem às novas demandas, melhorando a produtividade e promovendo uma relação harmoniosa com a natureza.</p>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Quais são os principais desafios enfrentados pela zona rural?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Os principais desafios incluem o acesso limitado a serviços de saúde, educação, infraestrutura e tecnologia. Além disso, a migração para as cidades e as mudanças climáticas também impactam negativamente a vida no campo.
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="text-light text-center py-3 mt-5">
-        <small>&copy; 2025 Agrinho | Site desenvolvido por estudante do Ensino Fundamental com orgulho rural 🌱</small>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Função para abrir o quadro com informações adicionais
-        function abrirQuadro(titulo, conteudo) {
-            const modal = new bootstrap.Modal(document.getElementById('modalInformacoes'));
-            document.getElementById('modalTitulo').innerText = titulo;
-            document.getElementById('modalConteudo').innerText = conteudo;
-            modal.show();
-        }
-
-        // Gráfico de Linhas
-        const ctx = document.getElementById('graficoLinhas').getContext('2d');
-        const graficoLinhas = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
-                datasets: [{
-                    label: 'Produção Agrícola',
-                    data: [10, 15, 13, 20, 25, 30, 28, 35, 40, 38, 45, 50, 55, 60, 70],
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 2,
-                    fill: false,
-                    tension: 0.4 // Adiciona ondulação ao gráfico
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-
-    <!-- Modal para informações adicionais -->
-    <div class="modal fade" id="modalInformacoes" tabindex="-1" aria-labelledby="modalInformacoesLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitulo">Título</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="modalConteudo">
-                    Conteúdo aqui.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="footer">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

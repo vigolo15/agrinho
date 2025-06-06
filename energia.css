@@ -1,79 +1,44 @@
-/* estilos.css */
-
-/* Estilos Globais */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
+body{
     padding: 0;
-    background-color: #f4f4f4; /* Cor de fundo geral */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Estilo do Cabeçalho */
-.cabecalho {
-    padding: 20px 0;
+.cabecalho{
+    color: white;
+    background-color: rgb(53, 4, 53);
     text-align: center;
+    padding: 30px;
 }
 
-/* Estilos da Navbar */
-.navbar {
-    margin-bottom: 20px; /* Espaçamento abaixo da navbar */
+.cabecalho h3{
+    color: rgb(8, 206, 114);
 }
 
-.nav-link {
-    color: #ffffff; /* Cor do texto dos links */
-    transition: color 0.3s; /* Transição suave na cor */
+p .alinha{
+    text-align: right;
+}
+.img-agro{
+    width: 300px;
 }
 
-.nav-link:hover {
-    color: #ffd700; /* Cor ao passar o mouse */
+.br-3{
+    border-radius: 15px;
 }
 
-/* Estilos dos Cards */
-.card {
-    margin-bottom: 20px; /* Espaçamento entre os cards */
-    transition: transform 0.2s; /* Transição suave no hover */
+.img-card{
+    max-height: 250px;
 }
 
-.card:hover {
-    transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+.img-slide{
+    max-height: 400px;
 }
 
-/* Estilo do Rodapé */
-footer {
-    padding: 15px 0;
-    background-color: #5a2d91; /* Cor do rodapé */
-    color: #ffffff; /* Cor do texto do rodapé */
-}
-
-/* Estilos do Modal */
-.modal-content {
-    border-radius: 8px; /* Bordas arredondadas */
-}
-
-.modal-header {
-    background-color: #5a2d91; /* Cor do cabeçalho do modal */
-    color: #ffffff; /* Cor do texto do cabeçalho */
-}
-
-.modal-footer {
-    background-color: #f1f1f1; /* Cor do rodapé do modal */
-}
-
-/* Estilos de Títulos */
-h2, h3 {
-    color: #333; /* Cor dos títulos */
-    margin-bottom: 15px; /* Espaçamento abaixo dos títulos */
-}
-
-/* Estilos de Parágrafos */
-p {
-    margin-bottom: 15px; /* Espaçamento abaixo dos parágrafos */
-}
-
-/* Estilos de Imagens */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Bordas arredondadas nas imagens */
+.footer {
+    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+    background-color: rgb(53, 4, 53); /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 15px; /* Padding vertical */
+    margin-top: 20px; /* Espaçamento superior para separar do conteúdo acima */
 }

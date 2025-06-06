@@ -1,150 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Rural - Página Inicial</title>
+    <title>Produção Agrícola - Agrinho 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css">
-    <style>
-        .navbar {
-            background-color: #5a2d91; /* Roxo mais escuro */
-        }
-        .cabecalho {
-            background-color: #333333; /* Cinza Escuro */
-        }
-        .cabecalho h1 {
-            color: white; /* Cor do texto do cabeçalho */
-        }
-        .cabecalho h3 {
-            color: yellow; /* Cor Amarela para o subtítulo */
-        }
-        .card {
-            cursor: pointer;
-        }
-        .modal-content {
-            background-color: #f8f9fa; /* Cor de fundo do modal */
-        }
-        footer {
-            background-color: #5a2d91; /* Rodapé na mesma cor da navbar */
-        }
-    </style>
+    <link rel="stylesheet" href="producao.css">
 </head>
 
 <body>
-    <section class="cabecalho text-center" style="padding: 20px 0;">
+    <!-- Cabeçalho -->
+    <section class="cabecalho text-center py-4">
         <h1>AGRINHO 2025</h1>
         <h3>Festejando Conexão Campo Cidade</h3>
     </section>
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto"> <!-- Alinha os botões à direita -->
-                    <a class="nav-link" href="index.html">Campo Aconchegante</a> <!-- Sinônimo de zona rural -->
-                    <a class="nav-link" href="energia.html">Energia do Campo</a>
-                    <a class="nav-link" href="agua.html">Água Vital</a>
-                    <a class="nav-link" href="producao.html">Produção Sustentável</a>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="index.html">Página Inicial |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="energia.html">Energia Rural |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="agua.html">Acessibilidade a Água |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="producao.html">Produção</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <h2>Produção Rural</h2>
-        <div class="row mb-4">
-            <div class="col-md-8">
-                <p>A produção rural desempenha um papel crucial no desenvolvimento das cidades, servindo como a base para a segurança alimentar e o abastecimento urbano. Os produtos cultivados nas áreas rurais, como frutas, vegetais e grãos, são essenciais para a dieta da população urbana. Essa interdependência entre o campo e a cidade evidencia a importância da agricultura na manutenção da saúde e do bem-estar das comunidades urbanas, que dependem dos recursos do campo para sua subsistência.</p>
+    <!-- Introdução à produção agrícola -->
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="text-center">Como Funciona a Produção Agrícola?</h2>
+<p>
+  A produção agrícola é uma atividade essencial que conecta o campo à cidade. Tudo começa com o preparo da terra, onde se analisam as condições do solo e se aplicam insumos para garantir sua fertilidade. A escolha das sementes depende do clima, do mercado e das tradições locais. O plantio pode ser feito manualmente ou com máquinas, variando conforme o tamanho da propriedade.
+</p>
 
-<p>Além disso, a dinâmica econômica entre a zona rural e as cidades é significativa. As áreas rurais fornecem não apenas alimentos, mas também matérias-primas para diversas indústrias urbanas, como a de alimentos processados e a de biocombustíveis. Essa relação econômica é vital, pois permite que as cidades se desenvolvam e prosperem, enquanto as zonas rurais continuam a ser o coração da produção agrícola e da biodiversidade, contribuindo para a estabilidade econômica regional.</p>
+<p>
+  Durante o cultivo, os agricultores cuidam da lavoura com irrigação adequada, controle de pragas, adubação equilibrada e rotação de culturas. Essas práticas são fundamentais para manter a saúde do solo e garantir boa produtividade. A colheita, momento mais esperado, exige precisão para evitar perdas e manter a qualidade dos produtos.
+</p>
 
-<p>Por fim, a conexão entre o campo e a cidade também se reflete nas questões culturais e sociais. A cultura rural, com suas tradições e modos de vida, influencia a identidade urbana, trazendo diversidade e riqueza cultural. Eventos e feiras que celebram a produção rural ajudam a estreitar os laços entre esses dois mundos, promovendo um entendimento mútuo sobre a importância de cada um. Assim, a relação entre a zona rural e a cidade é complexa e multifacetada, essencial para o desenvolvimento equilibrado da sociedade.</p>
+<p>
+  Após a colheita, os alimentos passam por triagem, armazenagem e transporte até chegarem aos centros urbanos. Com o avanço da tecnologia no campo, como o uso de drones e aplicativos de gestão, a produção se tornou mais eficiente e sustentável. Esse processo garante segurança alimentar e valoriza o trabalho de quem vive no campo.
+</p>
 
             </div>
-            <div class="col-md-4">
-                <img src="./assets/image/producao.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
+            <div class="col-md-6 text-center">
+                <img class="img-fluid rounded" src="./assets/image/.png" alt="Imagem representativa de plantação.">
             </div>
         </div>
 
+        <!-- Linha do tempo -->
+        <div class="pt-5">
+            
+            <div class="d-flex flex-column flex-md-row justify-content-around align-items-start text-center">
+                <div class="p-3">
+                    <img src="./assets/image/semeadura.jpg" class="rounded-circle mb-2" width="100" alt="Semeadura">
+                    <h6>Semeadura</h6>
+                    <p>O início do ciclo agrícola, com escolha de sementes adaptadas ao solo e clima.</p>
+                </div>
+                <div class="p-3">
+                    <img src="./assets/image/cultivo.jpg" class="rounded-circle mb-2" width="100" alt="Cultivo">
+                    <h6>Cultivo</h6>
+                    <p>Etapa de irrigação, adubação e proteção contra pragas, garantindo o crescimento saudável.</p>
+                </div>
+                <div class="p-3">
+                    <img src="./assets/image/colheita.jpg" class="rounded-circle mb-2" width="100" alt="Colheita">
+                    <h6>Colheita</h6>
+                    <p>Realizada no momento certo para preservar sabor, qualidade e valor nutricional.</p>
+                </div>
+                <div class="p-3">
+                    <img src="./assets/image/distribuicao.jpg" class="rounded-circle mb-2" width="100" alt="Distribuição">
+                    <h6>Distribuição</h6>
+                    <p>Transportes levam os alimentos até mercados, escolas e centros urbanos.</p>
+                </div>
+            </div>
+        </div>
 
-        <h3 class="mt-5">Aspectos da Produção Rural e sua Conexão com as Cidades</h3>
+        <p></p>
+        <p></p>
+        <div>
+            <h2 class="text-center">A Importância da Produção Agrícola na Sociedade</h2>
 
-<p>A produção rural não se limita apenas à agricultura, mas também abrange a pecuária, a aquicultura e a agroindústria. Cada um desses setores possui suas particularidades e desafios, mas todos são interdependentes e essenciais para o funcionamento do sistema alimentar. A agricultura fornece os alimentos básicos, enquanto a pecuária contribui com proteínas e produtos lácteos. A aquicultura, por sua vez, oferece uma fonte alternativa de proteína, especialmente em regiões costeiras, e a agroindústria transforma esses produtos em bens consumíveis, criando valor agregado e gerando empregos.</p>
+<p>
+  A produção agrícola vai muito além do cultivo de alimentos — ela é a base da segurança alimentar, da geração de empregos e do equilíbrio ambiental. Nas zonas rurais, a agricultura movimenta a economia local, gera renda para milhares de famílias e mantém vivas tradições culturais ligadas ao modo de vida no campo. Ao mesmo tempo, sua eficiência impacta diretamente a oferta de alimentos nas cidades, influenciando preços e a qualidade dos produtos consumidos diariamente.
+</p>
 
-<p>A produção rural é vital para o desenvolvimento econômico e social das comunidades, pois sustenta não apenas a população rural, mas também a urbana. As cidades dependem da produção rural para garantir a segurança alimentar e o acesso a alimentos frescos e nutritivos. Além disso, a produção rural impulsiona a economia local, criando empregos e oportunidades de negócios nas áreas urbanas, como supermercados, restaurantes e mercados de alimentos. Essa interconexão entre o campo e a cidade é fundamental para a estabilidade econômica e o bem-estar social.</p>
+<p>
+  Com o avanço da tecnologia e o aumento da demanda global, a agricultura moderna tem buscado maneiras mais sustentáveis de produzir. Métodos como o plantio direto, o uso de energias renováveis e a agricultura de precisão ajudam a reduzir impactos ambientais e melhorar a produtividade. Ao unir inovação com práticas responsáveis, a produção agrícola contribui para um futuro mais equilibrado entre natureza, economia e bem-estar social.
+</p>
 
-<p>Ademais, a valorização do trabalho dos agricultores e a promoção de produtos locais são essenciais para fortalecer a economia rural e garantir a segurança alimentar nas cidades. A conscientização sobre a importância da produção rural deve ser uma prioridade para todos, uma vez que a saúde das comunidades urbanas está diretamente ligada à vitalidade do setor rural. O reconhecimento do papel dos agricultores e das práticas sustentáveis é crucial para a construção de um sistema alimentar que beneficie tanto o campo quanto a cidade.</p>
+        </div>
 
+        <!-- Depoimentos -->
+        <div class="pt-5">
+            <h4 class="text-center">Depoimentos sobre a Conexão Campo-Cidade</h4>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"Hoje, graças aos produtores locais, consigo comprar alimentos frescos toda semana na feira da cidade. É uma conexão que traz saúde para minha família e valoriza quem planta."</p>
+                        <footer class="blockquote-footer">Carla Mendes, consumidora urbana</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"Antes, eu vendia para atravessadores. Hoje, com tecnologia e organização, entrego direto para mercados e escolas da cidade. O campo está mais perto do urbano do que nunca."</p>
+                        <footer class="blockquote-footer">João Silva, agricultor familiar</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
 
-       <div style="width: 100%; height: 400px;">
-    <canvas id="graficoProducao"></canvas>
+        <!-- Curiosidades -->
+        <div class="pt-5">
+            <h2 class="text-center">Você sabia?</h2>
+
+<ul>
+  <li><strong>🍅 Cerca de 70% dos alimentos consumidos no Brasil vêm da agricultura familiar.</strong><br>
+    Esses pequenos produtores são responsáveis por boa parte do feijão, arroz, frutas e hortaliças que chegam à mesa dos brasileiros.
+  </li>
+
+  <li><strong>🚛 A logística rural envolve muito mais que caminhões.</strong><br>
+    Ela inclui tratores, colheitadeiras, silos de armazenagem e caminhões refrigerados que mantêm a qualidade dos produtos até os centros urbanos.
+  </li>
+
+  <li><strong>🌽 A produção agrícola brasileira é uma das mais diversas do mundo.</strong><br>
+    Do Norte ao Sul, são cultivados grãos, frutas tropicais, hortaliças e oleaginosas, atendendo o mercado interno e externo.
+  </li>
+
+  <li><strong>💧 A irrigação moderna permite colheitas mesmo em tempos de estiagem.</strong><br>
+    Sistemas automatizados ajudam a distribuir a água de forma eficiente, preservando o recurso e aumentando a produtividade.
+  </li>
+
+  <li><strong>🔋 Muitas propriedades rurais já usam energia solar e eólica.</strong><br>
+    Essas fontes limpas garantem economia e independência energética para famílias no campo.
+  </li>
+
+  <li><strong>📱 Tecnologias digitais já estão presentes no dia a dia do agricultor.</strong><br>
+    Aplicativos, sensores e drones auxiliam no controle de pragas, na previsão do clima e no monitoramento das lavouras.
+  </li>
+
+  <li><strong>👩‍🌾 A presença feminina na agricultura tem crescido cada vez mais.</strong><br>
+    Mulheres rurais lideram propriedades, inovam em técnicas de cultivo e fortalecem a economia local com empreendedorismo.
+  </li>
+
+  <li><strong>🌿 Boas práticas agrícolas ajudam a preservar o solo e os recursos naturais.</strong><br>
+    Com técnicas como rotação de culturas e adubação orgânica, o campo produz mais sem agredir o meio ambiente.
+  </li>
+</ul>
+
+        </div>
+
+        <!-- Carrossel visual -->
+        <div id="carouselExample" class="carousel slide pt-4 pb-3">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/image/.gif" class="d-block w-100" alt="Imagem 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/image/.gif" class="d-block w-100" alt="Imagem 2">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+   <div class="footer bg-success text-white text-center py-3">
+    <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctx = document.getElementById('graficoProducao').getContext('2d');
-    const graficoProducao = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
-            datasets: [{
-                label: 'Produção de Grãos (toneladas)',
-                data: [30000000, 32000000, 34000000, 36000000, 38000000, 42000000, 45000000],
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.4 // Adiciona ondulação ao gráfico
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Produção (toneladas)'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Ano'
-                    }
-                }
-            }
-        }
-    });
-</script>
-
-
-        <!-- Falas de Pessoas Importantes -->
-        <h3 class="mt-5">Falas de Pessoas Importantes</h3>
-        <div class="row mt-3">
-            <div class="col-md-6">
-                <div class="blockquote border rounded p-3" style="background-color: #f8f9fa;">
-                    <p class="mb-0" style="font-style: italic;">“A produção rural é a base da nossa sociedade. Sem ela, não teríamos o alimento que precisamos.”</p>
-                    <p class="mb-0" style="font-weight: bold;">Carlos, agricultor</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="blockquote border rounded p-3" style="background-color: #f8f9fa;">
-                    <p class="mb-0" style="font-style: italic;">“Precisamos apoiar os agricultores locais e valorizar o que vem do campo.”</p>
-                    <p class="mb-0" style="font-weight: bold;">Ana, moradora urbana</p>
-                </div>
-            </div>
-        </div>
-
-        
-    </main>
-
-    <footer class="text-light text-center py-3 mt-5">
-        <small>&copy; 2025 Agrinho | Site desenvolvido por estudante do Ensino Fundamental com orgulho rural 🌱</small>
-    </footer>
-
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

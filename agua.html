@@ -1,136 +1,287 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Rural - Página Inicial</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="agua.css">
     <style>
-        .navbar {
-            background-color: #5a2d91; /* Roxo mais escuro */
+        #lineChart {
+            transition: transform 0.3s ease;
         }
-        .cabecalho {
-            background-color: #333333; /* Cinza Escuro */
-        }
-        .cabecalho h1 {
-            color: white; /* Cor do texto do cabeçalho */
-        }
-        .cabecalho h3 {
-            color: yellow; /* Cor Amarela para o subtítulo */
-        }
-        .card {
-            cursor: pointer;
-        }
-        .modal-content {
-            background-color: #f8f9fa; /* Cor de fundo do modal */
-        }
-        footer {
-            background-color: #5a2d91; /* Rodapé na mesma cor da navbar */
+
+        #lineChart:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
-    <section class="cabecalho text-center" style="padding: 20px 0;">
+
+    <!-- Cabeçalho -->
+    <section class="cabecalho text-center pt-4">
         <h1>AGRINHO 2025</h1>
         <h3>Festejando Conexão Campo Cidade</h3>
     </section>
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto"> <!-- Alinha os botões à direita -->
-                    <a class="nav-link" href="index.html">Campo Aconchegante</a> <!-- Sinônimo de zona rural -->
-                    <a class="nav-link" href="energia.html">Energia do Campo</a>
-                    <a class="nav-link" href="agua.html">Água Vital</a>
-                    <a class="nav-link" href="producao.html">Produção Sustentável</a>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="index.html">Página Inicial |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="energia.html">Energia Rural |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="agua.html">Acessibilidade a Água |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="producao.html">Produção</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <h1>A Água e sua Relevância para o Campo e a Cidade</h1>
+    <div class="container">
+        <!-- Texto Centralizado -->
+        <div class="text-center pt-5">
+            <h2>Acessibilidade à Água</h2>
 
-<p>A água é um bem precioso que desempenha um papel fundamental tanto na zona rural quanto nas áreas urbanas. Nas comunidades rurais, a água é essencial para a agricultura, pois é necessária para irrigação, criação de animais e manutenção de ecossistemas saudáveis. A disponibilidade de água de qualidade influencia diretamente a produtividade agrícola e, consequentemente, a segurança alimentar nas cidades, que dependem dos produtos cultivados no campo.</p>
+<p>O acesso à água limpa e segura é essencial para o desenvolvimento sustentável e a melhoria da qualidade de vida. Com o aumento da população e os impactos das mudanças climáticas, a gestão eficiente dos recursos hídricos torna-se cada vez mais urgente e necessária. Garantir que todas as comunidades tenham acesso a fontes confiáveis de água não é apenas uma questão de sobrevivência, mas também um pilar fundamental para a agricultura e o bem-estar social.</p>
 
-<p>Além de ser vital para a produção de alimentos, a água também é crucial para a sustentabilidade das práticas agrícolas. O uso consciente e eficiente da água ajuda a preservar os recursos hídricos, garantindo que estejam disponíveis para as futuras gerações. Na interseção entre o campo e a cidade, a gestão adequada da água é vital para minimizar os impactos ambientais e promover um desenvolvimento equilibrado. Quando as práticas de conservação da água são implementadas nas áreas rurais, isso não apenas beneficia os agricultores, mas também assegura que as cidades tenham acesso a um suprimento estável e seguro de água.</p>
+<p>A captação e o armazenamento da água da chuva são estratégias eficazes que muitas comunidades têm adotado com sucesso. Essa técnica possibilita o aproveitamento dos períodos chuvosos para garantir o suprimento durante os meses de seca. Além disso, a educação ambiental desempenha um papel crucial ao promover a conscientização sobre o uso racional e a preservação dos recursos hídricos.</p>
 
-<p>Adicionalmente, a conscientização sobre a importância da água deve ser uma prioridade compartilhada entre as comunidades rurais e urbanas. A colaboração entre esses dois mundos é essencial para enfrentar os desafios relacionados à escassez de água e à poluição. O reconhecimento da interdependência entre o campo e a cidade em relação à gestão da água pode levar a soluções mais eficazes e sustentáveis, promovendo um futuro onde tanto as áreas rurais quanto urbanas prosperem.</p>
+<p>Outro ponto fundamental é a infraestrutura para o abastecimento de água. Muitas comunidades ainda enfrentam a ausência de sistemas eficientes de distribuição, o que contribui para desperdícios e riscos de contaminação. Investimentos em tecnologias e melhorias estruturais são indispensáveis para assegurar o acesso à água potável e de qualidade.</p>
+
+<p>Por fim, o engajamento comunitário é vital para o sucesso de qualquer projeto relacionado à água. Quando as pessoas se sentem envolvidas e responsáveis, tendem a cuidar melhor dos recursos hídricos, participando ativamente de ações de conservação e manutenção, o que fortalece a sustentabilidade dos sistemas implantados.</p>
+
+        </div>
+
+        <!-- Duas Imagens Abaixo do Texto -->
+        <div class="row text-center pt-5">
+            <div class="col-md-6">
+                <img src="./assets/image/agua1.jpg" class="img-fluid" alt="Imagem 1">
+            </div>
+            <div class="col-md-6">
+                <img src="./assets/image/agua2.jpg" class="img-fluid" alt="Imagem 2">
+            </div>
+        </div>
+
+        <canvas id="aguaChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('aguaChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
+    datasets: [{ 
+      label: 'Acessibilidade à Água (%)',
+      data: [55,57,56,59,60,62,63,65],
+      borderColor: '#198754',
+      tension: 0.4,
+      fill: false
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { min: 50, max: 70, ticks: { stepSize: 5, callback: v => v + '%' } },
+      x: { title: { display: true, text: 'Ano' } }
+    }
+  }
+});
+</script>
 
 
-       <div class="row mb-4 justify-content-center">
-    <div class="col-md-4">
-        <img src="./assets/image/agua1.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
-    </div>
-    <div class="col-md-4">
-        <img src="./assets/image/agua2.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
-    </div>
-</div>
+        <!-- Tabela com informações -->
+        <div class="pt-5">
+            <h4 class="text-center">Comparativo de Acessibilidade à Água</h4>
+            <table class="table table-bordered table-striped mt-3">
+                <thead class="table-success">
+                    <tr>
+                        <th>Região</th>
+                        <th>Fonte Principal</th>
+                        <th>Soluções Implementadas</th>
+                        <th>Desafios Enfrentados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nordeste</td>
+                        <td>Poços artesianos</td>
+                        <td>Sistemas de captação de chuva</td>
+                        <td>Secas prolongadas</td>
+                    </tr>
+                    <tr>
+                        <td>Centro-Oeste</td>
+                        <td>Rios e nascentes</td>
+                        <td>Filtros comunitários</td>
+                        <td>Contaminação por agrotóxicos</td>
+                    </tr>
+                    <tr>
+                        <td>Sul</td>
+                        <td>Redes públicas</td>
+                        <td>Reservatórios familiares</td>
+                        <td>Distribuição irregular</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-
-
-        <!-- Três Quadros de Informação -->
-        <h3 class="mt-5"></h3>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="quadro-informativo">
-                    <h5>Uso Eficiente da Água</h5>
-                    <p>O uso eficiente da água na agricultura envolve práticas que garantem a irrigação adequada, evitando desperdícios e promovendo a sustentabilidade.</p>
+        <!-- Quatro blocos explicativos -->
+        <div class="row pt-5">
+            <h4 class="text-center pb-3">Aplicações Práticas</h4>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Educação Ambiental</h5>
+                    <p>Programas e campanhas educativas em escolas e comunidades promovem o uso da água, formando cidadãos responsáveis. Essas ações ajudam a preservar os recursos hídricos para o futuro.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="quadro-informativo">
-                    <h5>Captação de Água da Chuva</h5>
-                    <p>A captação de água da chuva é uma técnica que permite armazenar água para uso posterior, especialmente em períodos de seca.</p>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Captação de Chuva</h5>
+                    <p>Instalação de sistemas eficientes, como calhas e cisternas, para coletar e armazenar água da chuva, garantindo o abastecimento em regiões com baixa pluviosidade.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="quadro-informativo">
-                    <h5>Tratamento de Águas Residuais</h5>
-                    <p>O tratamento de águas residuais é fundamental para reutilizar a água na agricultura, reduzindo a pressão sobre as fontes naturais.</p>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Purificação Doméstica</h5>
+                    <p>Programas e campanhas educativas em escolas e comunidades promovem o uso consciente da água, formando cidadãos responsáveis e incentivando a preservação dos recursos hídricos.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Engajamento Comunitário</h5>
+                    <p>Iniciativas colaborativas que envolvem moradores na gestão e preservação dos recursos hídricos, fortalecendo o senso de responsabilidade coletiva e cuidado ambiental.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Fatos Interessantes -->
         
 
-        <!-- Carrossel -->
-        <h3 class="mt-5">Carrossel de Imagens</h3>
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/image/irrigacao.jpg" class="d-block w-100" alt="Irrigação">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/image/cultivo.jpg" class="d-block w-100" alt="Cultivo">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/image/agricultura_sustentavel.jpg" class="d-block w-100" alt="Agricultura Sustentável">
+</p>
+
+
+        <!-- Linha do tempo -->
+        <div class="pt-5">
+            <h4 class="text-center">Linha do Tempo: Evolução da Acessibilidade à Água</h4>
+            <ul>
+  <li><strong>2000:</strong> Início dos programas de instalação de cisternas no semiárido, garantindo armazenamento de água para milhares de famílias.</li>
+  <li><strong>2005:</strong> Implementação de tecnologias simples para captação e armazenamento de água da chuva em comunidades rurais.</li>
+  <li><strong>2010:</strong> Expansão dos poços artesianos e implantação de sistemas de filtragem para melhorar a qualidade da água consumida.</li>
+  <li><strong>2013:</strong> Parcerias entre governo e ONGs para fortalecer a infraestrutura hídrica em áreas remotas.</li>
+  <li><strong>2015:</strong> Lançamento de campanhas nacionais para promover o uso consciente e sustentável dos recursos hídricos.</li>
+  <li><strong>2017:</strong> Desenvolvimento de programas educacionais sobre conservação da água em escolas rurais.</li>
+  <li><strong>2020:</strong> Implantação de projetos sustentáveis com tecnologias locais para otimizar o acesso e a preservação da água.</li>
+  <li><strong>2023:</strong> Início da digitalização do monitoramento dos recursos hídricos para melhor gestão e prevenção de crises.</li>
+  <li><strong>2025:</strong> Expansão dos sistemas de reúso e tratamento de água para garantir sustentabilidade a longo prazo nas comunidades rurais.</li>
+</ul>
+
+<div>
+    <h2 class="text-center">Acessibilidade à Água: Um Pilar para o Desenvolvimento Sustentável</h2>
+
+<p>
+    O acesso à água potável é essencial para a saúde e o bem-estar das comunidades, especialmente nas áreas rurais. 
+    Garantir essa acessibilidade exige investimentos em infraestrutura, tecnologias adequadas e práticas sustentáveis 
+    que assegurem o uso consciente e a preservação dos recursos hídricos. Com os desafios das mudanças climáticas e 
+    o aumento da população, é fundamental implementar soluções eficientes, como captação de água da chuva e sistemas 
+    de filtragem, além de promover a educação ambiental para o uso responsável da água.
+</p>
+
+<p>
+    Além de melhorar a qualidade de vida, a acessibilidade à água fortalece a autonomia das comunidades rurais, que 
+    dependem dela para a agricultura e outras atividades essenciais. Projetos que incentivam a participação local 
+    e a colaboração entre governo e sociedade são fundamentais para garantir um futuro mais justo e sustentável. 
+    Com água disponível, é possível avançar em saúde, segurança alimentar e desenvolvimento econômico, conectando 
+    campo e cidade em prol do progresso coletivo.
+</p>
+
+</div>
+
+        </div>
+
+        <!-- Infográficos estáticos -->
+        <div class="row text-center pt-5">
+            <h4 class="pb-3">Fatos Rápidos</h4>
+            <div class="col">
+                <div class="p-3 bg-light rounded">
+                    💧 <strong>70%</strong> da água é usada na agricultura.
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="col">
+                <div class="p-3 bg-light rounded">
+                    🌍 <strong>1 em cada 3</strong> pessoas não tem acesso a água segura.
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-light rounded">
+                    🌾 <strong>69%</strong> da água doce é destinada ao campo.
+                </div>
+            </div>
         </div>
-    </main>
 
-    <footer class="text-light text-center py-3 mt-5">
-        <small>&copy; 2025 Agrinho | Site desenvolvido por estudante do Ensino Fundamental com orgulho rural 🌱</small>
-    </footer>
+        <!-- Frase inspiradora -->
+        <div class="text-center py-5">
+            <h5 class="fst-italic text-success">“Cada gota conta. Preservar a água é plantar o futuro.” 💧</h5>
+        </div>
+    </div>
+
+    <div class="footer bg-success text-white text-center py-3">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        const lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Acessibilidade à Água (%)',
+                    data: [70, 50, 80, 40, 90, 60, 100, 55], // Dados com variações bruscas
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 2,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Porcentagem de Acessibilidade'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Anos'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
