@@ -122,31 +122,81 @@
 </style>
 
 
-        <canvas id="aguaChart"></canvas>
+        <div style="max-width: 900px; margin: 40px auto;">
+  <div style="position: relative; height: 400px;">
+    <canvas id="aguaChart"></canvas>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
-const ctx = document.getElementById('aguaChart').getContext('2d');
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
-    datasets: [{ 
-      label: 'Acessibilidade à Água (%)',
-      data: [55,57,56,59,60,62,63,65],
-      borderColor: '#198754',
-      tension: 0.4,
-      fill: false
-    }]
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: { min: 50, max: 70, ticks: { stepSize: 5, callback: v => v + '%' } },
-      x: { title: { display: true, text: 'Ano' } }
+  const ctx = document.getElementById('aguaChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
+      datasets: [{
+        label: 'Acessibilidade à Água no Campo (%)',
+        data: [55, 57, 56, 59, 60, 62, 63, 65],
+        borderColor: '#198754',
+        backgroundColor: 'rgba(25,135,84,0.1)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        pointBackgroundColor: '#198754',
+        borderWidth: 3,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Evolução da Acessibilidade à Água no Campo (2018–2025)',
+          font: { size: 20, weight: 'bold' },
+          padding: { top: 20, bottom: 30 }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+          }
+        },
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          min: 50,
+          max: 70,
+          ticks: {
+            stepSize: 5,
+            callback: val => val + '%',
+            font: { size: 14 }
+          },
+          title: {
+            display: true,
+            text: 'Percentual (%)',
+            font: { size: 16, weight: 'bold' }
+          }
+        },
+        x: {
+          ticks: { font: { size: 14 } },
+          title: {
+            display: true,
+            text: 'Ano',
+            font: { size: 16, weight: 'bold' }
+          }
+        }
+      }
     }
-  }
-});
+  });
 </script>
+
 
 
         <!-- Tabela com informações -->
