@@ -26,6 +26,12 @@
             text-align: center; /* Centraliza o texto */
             padding: 15px; /* Padding vertical do rodapé */
         }
+
+        .img-card {
+    height: 300px;
+    object-fit: cover;
+}
+
     </style>
 </head>
 
@@ -98,10 +104,13 @@
 </body>
 </html>
 
-    <div class="container">
+    
+</head>
+
+<div class="container">
         <div class="row pt-5">
             <div class="col-md-6 text-center">
-                <img class="img-agro br-3" src="./assets/image/trator.png.jpeg" alt="Imagem representativa de plantação.">
+<img class="img-agro br-3" src="./assets/image/trator.png.jpeg" alt="Imagem representativa de plantação." style="width: 80%; height: auto;">
             </div>
             <div class="col-md-6">
                <!DOCTYPE html>
@@ -109,8 +118,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Zona Rural</title>
-</head>
-<body>
 
     <h1>O que podemos falar sobre a zona rural?</h1>
 
@@ -126,8 +133,7 @@
         Investir na zona rural significa investir no futuro. Valorizar a agricultura familiar, incentivar o uso de energias renováveis e garantir o acesso à água potável são medidas fundamentais para fortalecer essa integração entre campo e cidade. Mais do que nunca, é preciso enxergar o meio rural não apenas como espaço de produção, mas como um território dinâmico, estratégico e vital para a sustentabilidade do país.
     </p>
 
-</body>
-</html>
+
 
             </div>
         </div>
@@ -226,51 +232,112 @@
         </div>
 
         <!-- Modais -->
-        <div class="modal fade" id="modalAgua" tabindex="-1" aria-labelledby="modalAguaLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalAguaLabel">Acessibilidade à Água</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>O acesso à água potável é um direito essencial. No campo, soluções como cisternas, poços e captação de água da chuva estão promovendo dignidade e saúde para milhares de famílias rurais. É fundamental garantir que essas soluções sejam sustentáveis e acessíveis para todos.</p>
-                        <p>Além disso, programas de educação sobre o uso eficiente da água e a preservação de fontes hídricas são cruciais para o desenvolvimento sustentável.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Modal - Acessibilidade à Água -->
+<div class="modal fade" id="modalAgua" tabindex="-1" aria-labelledby="modalAguaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content rounded shadow-lg">
+      <div class="modal-header text-white bg-primary">
+        <h5 class="modal-title fw-bold fs-4" id="modalAguaLabel">Acessibilidade à Água</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>A água potável é um recurso vital para a vida e a dignidade humana. No meio rural, a escassez de água ainda é uma realidade para muitas comunidades.</p>
 
-        <div class="modal fade" id="modalEnergia" tabindex="-1" aria-labelledby="modalEnergiaLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalEnergiaLabel">Energia Rural Sustentável</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>A energia solar e eólica têm transformado comunidades do campo, reduzindo custos e respeitando o meio ambiente. Projetos de energia renovável não apenas ajudam a diminuir a dependência de combustíveis fósseis, mas também promovem a autonomia energética das comunidades rurais.</p>
-                        <p>Iniciativas de capacitação e financiamento para a instalação de painéis solares e turbinas eólicas são essenciais para o sucesso dessa transição energética.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h6 class="fw-bold mt-3">Soluções eficientes incluem:</h6>
+        <ul>
+          <li><strong>Cisternas:</strong> armazenam água da chuva para uso doméstico.</li>
+          <li><strong>Poços artesianos:</strong> fornecem água subterrânea de forma segura.</li>
+          <li><strong>Captação de água da chuva:</strong> alternativa sustentável e de baixo custo.</li>
+        </ul>
 
+        <h6 class="fw-bold mt-3">Exemplos de iniciativas:</h6>
+        <ul>
+          <li>Programa Cisternas do Governo Federal</li>
+          <li>Projetos comunitários em parcerias com ONGs</li>
+          <li>Educação ambiental sobre uso consciente da água</li>
+        </ul>
 
-        <div class="modal fade" id="modalProducao" tabindex="-1" aria-labelledby="modalProducaoLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalProducaoLabel">Produção e Industrialização</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Do campo à cidade, o processo produtivo conecta agricultores, indústrias e consumidores. A valorização da produção local fortalece a economia e gera empregos, promovendo um ciclo de desenvolvimento que beneficia toda a sociedade.</p>
-                        <p>É vital que as políticas públicas apoiem essa integração, garantindo que os agricultores tenham acesso a mercados e que os consumidores possam adquirir produtos frescos e de qualidade.</p>
-                    </div>
-                </div>
-            </div>
+        <p class="mt-3">Garantir o acesso à água potável é garantir saúde, higiene, qualidade de vida e segurança alimentar.</p>
+
+        <div class="alert alert-info mt-4" role="alert">
+          📌 <strong>Dica:</strong> você pode buscar mais detalhes acessando a página completa na barra de navegação.
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal - Energia Rural Sustentável -->
+<div class="modal fade" id="modalEnergia" tabindex="-1" aria-labelledby="modalEnergiaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content rounded shadow-lg">
+      <div class="modal-header text-white bg-primary">
+        <h5 class="modal-title fw-bold fs-4" id="modalEnergiaLabel">Energia Rural Sustentável</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>A energia renovável é uma aliada fundamental no desenvolvimento das zonas rurais, promovendo autonomia e sustentabilidade.</p>
+
+        <h6 class="fw-bold mt-3">Principais fontes utilizadas:</h6>
+        <ul>
+          <li><strong>Energia solar:</strong> painéis fotovoltaicos para geração própria.</li>
+          <li><strong>Energia eólica:</strong> turbinas adaptadas para pequenas propriedades.</li>
+          <li><strong>Biomassa:</strong> aproveitamento de resíduos agrícolas e orgânicos.</li>
+        </ul>
+
+        <h6 class="fw-bold mt-3">Vantagens:</h6>
+        <ul>
+          <li>Redução de custos com eletricidade</li>
+          <li>Menor impacto ambiental</li>
+          <li>Geração de emprego e renda local</li>
+        </ul>
+
+        <h6 class="fw-bold mt-3">Exemplo prático:</h6>
+        <p>Famílias do semiárido nordestino têm usado kits solares fornecidos por cooperativas e ONGs para bombear água, iluminar casas e conservar alimentos.</p>
+
+        <div class="alert alert-info mt-4" role="alert">
+          📌 <strong>Dica:</strong> mais informações estão disponíveis na página "Energia Sustentável" na barra de navegação.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal - Produção e Industrialização -->
+<div class="modal fade" id="modalProducao" tabindex="-1" aria-labelledby="modalProducaoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content rounded shadow-lg">
+      <div class="modal-header text-white bg-primary">
+        <h5 class="modal-title fw-bold fs-4" id="modalProducaoLabel">Produção e Industrialização</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>A produção agrícola é a base da economia rural, mas seu potencial se amplia com a industrialização e o acesso ao mercado.</p>
+
+        <h6 class="fw-bold mt-3">Etapas do processo produtivo:</h6>
+        <ul>
+          <li><strong>Produção:</strong> cultivo, colheita e manejo sustentável.</li>
+          <li><strong>Transformação:</strong> agroindústrias locais que processam alimentos.</li>
+          <li><strong>Distribuição:</strong> feiras, mercados e cooperativas que ligam campo e cidade.</li>
+        </ul>
+
+        <h6 class="fw-bold mt-3">Exemplos de boas práticas:</h6>
+        <ul>
+          <li>Cooperativas de produtores familiares</li>
+          <li>Parcerias entre agricultores e pequenas indústrias</li>
+          <li>Selos de certificação de produtos orgânicos e artesanais</li>
+        </ul>
+
+        <p class="mt-3">A industrialização rural agrega valor ao produto e fortalece a permanência das famílias no campo com renda digna.</p>
+
+        <div class="alert alert-info mt-4" role="alert">
+          📌 <strong>Dica:</strong> acesse a seção completa no menu principal para ver estudos de caso e mais exemplos.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <div style="height: 40px;"></div>
 <div style="height: 40px;"></div>
@@ -294,16 +361,31 @@
     </div>
 </div>
 
+<div class="my-5"></div>
+
+
 <!-- Segunda linha: Novo texto -->
 <div class="row mb-4">
     <!-- Texto à esquerda (col-md-6) -->
     <div class="col-md-6">
-        <h2>A Importância da Conexão Campo-Cidade</h2>
-        <p>Apesar das diferenças evidentes, a conexão entre a zona rural e as áreas urbanas é essencial para um desenvolvimento equilibrado e sustentável. O campo fornece os recursos naturais e alimentos que sustentam as cidades, enquanto as cidades oferecem inovações tecnológicas e oportunidades de mercado. Essa troca constante fortalece tanto o meio rural quanto o urbano, criando uma rede que beneficia ambos os lados.</p>
-        
-        <p>As políticas públicas que incentivam a cooperação entre esses dois mundos são fundamentais. O desenvolvimento de infraestrutura no campo, como estradas e internet, facilita o acesso das comunidades rurais a serviços e mercados urbanos. Ao mesmo tempo, o respeito à cultura local e à produção artesanal fortalece a identidade rural, proporcionando um espaço para o crescimento da economia local e o empoderamento das pessoas.</p>
-        
-        <p>Em resumo, a integração entre a zona rural e a cidade é vital para a prosperidade mútua. A educação e o compartilhamento de saberes entre as gerações rurais e urbanas podem criar um futuro mais sustentável e justo para todos, onde as tradições são respeitadas e a inovação é incentivada.</p>
+        <h1>A Importância da Conexão Campo-Cidade</h1>
+
+<p>
+Apesar das diferenças evidentes, a conexão entre a zona rural e as áreas urbanas é essencial para um desenvolvimento equilibrado e sustentável. O campo fornece os recursos naturais e alimentos que sustentam as cidades, enquanto as cidades oferecem inovações tecnológicas e oportunidades de mercado. Essa troca constante fortalece tanto o meio rural quanto o urbano, criando uma rede que beneficia ambos os lados.
+</p>
+
+<p>
+As políticas públicas que incentivam a cooperação entre esses dois mundos são fundamentais. O desenvolvimento de infraestrutura no campo, como estradas e internet, facilita o acesso das comunidades rurais a serviços e mercados urbanos. Ao mesmo tempo, o respeito à cultura local e à produção artesanal fortalece a identidade rural, proporcionando um espaço para o crescimento da economia local e o empoderamento das pessoas.
+</p>
+
+<p>
+Em resumo, a integração entre a zona rural e a cidade é vital para a prosperidade mútua. A educação e o compartilhamento de saberes entre as gerações rurais e urbanas podem criar um futuro mais sustentável e justo para todos, onde as tradições são respeitadas e a inovação é incentivada.
+</p>
+
+<p>
+Além disso, é fundamental promover iniciativas de educação e capacitação que alcancem tanto os jovens do campo quanto os da cidade. Projetos que aproximem escolas urbanas das realidades rurais — por meio de visitas, intercâmbios e conteúdos curriculares integrados — contribuem para quebrar estigmas e despertar o interesse pelas atividades do campo. Ao valorizar o conhecimento agroecológico, a sustentabilidade e o empreendedorismo rural, essas ações fortalecem o senso de pertencimento e incentivam novas gerações a enxergar o meio rural como um espaço de oportunidades, inovação e dignidade.
+</p>
+
     </div>
     
     <!-- Imagem à direita (col-md-6) -->
