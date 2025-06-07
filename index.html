@@ -85,6 +85,7 @@
     document.addEventListener("click", () => {
       som.pause();
       som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
       som.play().catch((e) => {
         console.log("Erro ao tocar o som:", e);
       });
