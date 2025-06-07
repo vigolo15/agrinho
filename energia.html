@@ -26,21 +26,22 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" href="index.html">Página Inicial |</a>
+                    <button class="btn btn-success text-white me-2" onclick="location.href='index.html'">Página Inicial</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="energia.html">Energia Rural |</a>
+                    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia Rural</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="agua.html">Acessibilidade a Água |</a>
+                    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="producao.html">Produção</a>
+                    <button class="btn btn-success text-white" onclick="location.href='producao.html'">Produção</button>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 
     <audio id="musica" autoplay loop playsinline>
@@ -74,6 +75,40 @@
       });
     });
   </script>
+
+  <button id="muteBtn" aria-label="Mutar som" 
+  style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    background-color: green;
+    transition: background-color 0.3s ease;
+  ">
+  🔊
+</button>
+
+<script>
+  const btn = document.getElementById('muteBtn');
+
+  btn.addEventListener('click', () => {
+    const medias = document.querySelectorAll('audio, video');
+    const isMuted = medias.length > 0 ? medias[0].muted : false;
+
+    medias.forEach(media => {
+      media.muted = !isMuted;
+    });
+
+    btn.textContent = !isMuted ? '🔇' : '🔊';
+    btn.style.backgroundColor = !isMuted ? 'red' : 'green';
+  });
+</script>
+
 
 <body>
     
