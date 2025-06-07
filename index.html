@@ -75,6 +75,22 @@
   });
 </script>
 
+
+
+  <audio id="somClick" src="estralo.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
 </body>
 </html>
 
