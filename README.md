@@ -9,8 +9,7 @@ CSS: Estilização visual da página.
 Fontes: Fontes personalizadas para melhorar a legibilidade e o design.  
 
 Arquivos:  
-index.html: Página inicial com introdução ao projeto.  
-zona-rural.html: Página sobre a vida na zona rural.  
+index.html: Página inicial sobre a vida na zona rural.  
 energia.html: Página sobre energia no campo.  
 agua.html: Página sobre acesso à água.  
 producao.html: Página sobre produção rural.  
