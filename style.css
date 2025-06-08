@@ -48,3 +48,92 @@ p .alinha{
 .centralizado {
     text-align: center;
 }
+
+body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1; /* Permite que o contêiner ocupe o espaço disponível */
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #198754; /* Cor do rodapé igual à da barra de navegação */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto */
+            padding: 15px; /* Padding vertical do rodapé */
+        }
+
+        .img-card {
+    height: 300px;
+    object-fit: cover;
+}
+
+.cabeca1jo {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbarr {
+    background-color: #198754;
+}
+
+.navbarr .nav-link {
+    color: white;
+}
+
+.containerr {
+    padding: 50px 15px;
+}
+
+.img-agroo {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tabelaa-comparativo {
+    margin-top: 30px;
+}
+
+.modal-contente {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-headeer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 15px;
+    border-bottom: none;
+}
+
+.modal-boddy {
+    padding: 30px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cardd {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cardd:hover {
+    transform: scale(1.05);
+}
+
+.img-cardd {
+    height: 300px;
+    object-fit: cover;
+}
+
+.footerr {
+    background-color: #198754;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}

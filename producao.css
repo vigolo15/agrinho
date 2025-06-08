@@ -42,3 +42,130 @@ p .alinha{
     padding: 15px; /* Padding vertical */
     margin-top: 20px; /* Espaçamento superior para separar do conteúdo acima */
 }
+
+.bio-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .bio-image {
+        width: 300px;
+        margin-right: 20px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .bio-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .bio-text {
+        flex: 1;
+        padding: 20px;
+        margin-right: 0; /* Garantindo que o lado direito tenha o espaçamento correto */
+    }
+
+    .bio-text h2 {
+        color: #008080;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .bio-text p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
+
+    .bio-text p em {
+        font-style: italic;
+        color: #555;
+    }
+
+    .image-caption {
+        text-align: center;
+        margin-top: 10px;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    
+    /* Borda arredondada para as imagens */
+    .carousel-inner img {
+        border-radius: 10px; /* Ajuste o valor conforme necessário */
+    }
+
+    .cabeca1jo {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbarr {
+    background-color: #198754;
+}
+
+.navbarr .nav-link {
+    color: white;
+}
+
+.containerr {
+    padding: 50px 15px;
+}
+
+.img-agroo {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tabelaa-comparativo {
+    margin-top: 30px;
+}
+
+.modal-contente {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-headeer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 15px;
+    border-bottom: none;
+}
+
+.modal-boddy {
+    padding: 30px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cardd {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cardd:hover {
+    transform: scale(1.05);
+}
+
+.img-cardd {
+    height: 300px;
+    object-fit: cover;
+}
+
+.footerr {
+    background-color: #198754;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
