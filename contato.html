@@ -237,6 +237,68 @@
   });
 </script>
 
+<div class="container my-5 p-4 bg-light rounded shadow">
+  <h2 class="text-success text-center mb-4">🌱 Fale Conosco – Conexão Campo-Cidade</h2>
+  <p class="text-center mb-5">
+    Tem alguma dúvida, sugestão ou quer compartilhar sua experiência com o campo? <br>
+    Preencha o formulário abaixo ou entre em contato pelas redes sociais!
+  </p>
+
+  <form>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="assunto" class="form-label">Assunto</label>
+      <select class="form-select" id="assunto" required>
+        <option selected disabled>Selecione um assunto</option>
+        <option value="tema">Sugestão de Tema</option>
+        <option value="duvida">Dúvida sobre o conteúdo</option>
+        <option value="experiencia">Compartilhar experiência</option>
+        <option value="parceria">Parceria / Projeto</option>
+        <option value="outro">Outro</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="mensagem" class="form-label">Mensagem</label>
+      <textarea class="form-control" id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+    </div>
+
+    <div class="mb-4">
+      <label for="arquivo" class="form-label">Anexar arquivo (opcional)</label>
+      <input class="form-control" type="file" id="arquivo">
+    </div>
+
+    <div class="d-grid">
+      <button type="submit" class="btn btn-success btn-lg">📩 Enviar Mensagem</button>
+    </div>
+  </form>
+
+  <hr class="my-5">
+
+  <div class="text-center">
+    <h5 class="mb-3">📞 Outras formas de contato</h5>
+    <p><strong>E-mail:</strong> organizacao.campo@gov.br</p>
+    <p><strong>WhatsApp:</strong> (11) 91234-5678</p>
+
+    <div class="d-flex justify-content-center gap-3 mt-3">
+      <a href="#" class="btn btn-outline-success" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+      <a href="#" class="btn btn-outline-success" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons CDN (opcional, para os ícones das redes sociais) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 
     <div class="footer">
