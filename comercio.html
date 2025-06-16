@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1; /* Permite que o contêiner ocupe o espaço disponível */
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #198754; /* Cor do rodapé igual à da barra de navegação */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto */
+            padding: 15px; /* Padding vertical do rodapé */
+        }
+
+        .img-card {
+    height: 300px;
+    object-fit: cover;
+    
+    
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+<section class="cabecalho text-center py-4">
+    <h1>AGRINHO 2025</h1>
+    <h3>Festejando Conexão Campo Cidade</h3>
+</section>
+
+<!-- Navbar -->
+<style>
+  /* Botão hamburger dentro da navbar */
+  #sidebarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #sidebarToggle div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Sidebar lateral */
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1049;
+    top: 0;
+    left: 0;
+    background-color: #198754; /* verde bootstrap */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  #sidebar button {
+    display: block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #sidebar button:hover {
+    background-color: #14532d;
+  }
+
+  /* Quando a sidebar estiver aberta */
+  #sidebar.open {
+    width: 250px;
+  }
+
+  /* Para evitar scroll quando sidebar aberta */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-success">
+  <div class="container-fluid d-flex align-items-center">
+    <!-- Botão hamburger dentro da navbar, à esquerda -->
+    <button id="sidebarToggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="sidebar">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='index.html'">Página Inicial</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia e Sustentabilidade</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='producao.html'">Campo Produtor</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='tecnologia.html'">Tecnologia no Campo</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='comercio.html'">Comércio e Distribuição</button>
+
+    <button class="btn btn-success text-white" onclick="location.href='impactos.html'">Impactos Ambientais</button>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" role="navigation" aria-hidden="true">
+  <button onclick="location.href='index.html'">Início</button>
+  <button onclick="location.href='galeria.html'">Galeria</button>
+  <button onclick="location.href='info.html'">Informações</button>
+  <button onclick="location.href='contato.html'">Contate-nos</button>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const body = document.body;
+
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-hidden', !isOpen);
+    body.classList.toggle('sidebar-open', isOpen);
+  });
+
+  // Fecha sidebar clicando fora dela
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', false);
+      sidebar.setAttribute('aria-hidden', true);
+      body.classList.remove('sidebar-open');
+    }
+  });
+</script>
+
+</nav>
+
+<audio id="musica" autoplay loop playsinline>
+  <source src="1.mpeg (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 5; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 0.5;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+  <audio id="somClick" src="estralo.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+  <button id="muteBtn" aria-label="Mutar som" 
+  style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    background-color: green;
+    transition: background-color 0.3s ease;
+  ">
+  🔊
+</button>
+
+<script>
+  const btn = document.getElementById('muteBtn');
+
+  btn.addEventListener('click', () => {
+    const medias = document.querySelectorAll('audio, video');
+    const isMuted = medias.length > 0 ? medias[0].muted : false;
+
+    medias.forEach(media => {
+      media.muted = !isMuted;
+    });
+
+    btn.textContent = !isMuted ? '🔇' : '🔊';
+    btn.style.backgroundColor = !isMuted ? 'red' : 'green';
+  });
+</script>
+
+<div style="height: 40px;"></div>
+
+
+<div class="container">
+  <h2>A Ponte entre Produção e Consumo</h2>
+  <p>
+    O comércio e a distribuição de produtos rurais desempenham um papel essencial na conexão entre o campo e a cidade. Toda a cadeia que envolve o transporte, o armazenamento e a venda dos alimentos e matérias-primas agrícolas garante que a produção rural chegue com qualidade, segurança e no tempo certo às mesas urbanas. Além de abastecer as cidades, esse processo movimenta a economia, gerando empregos, renda e desenvolvimento nas comunidades rurais.
+  </p>
+
+  <p>
+    O trajeto de um produto agrícola, como o milho, o leite ou os hortifrútis, é longo e complexo. Ele passa por etapas como o beneficiamento, a classificação, o empacotamento e o transporte, antes de chegar aos centros de distribuição, feiras livres, supermercados e indústrias de transformação. Cada elo dessa cadeia precisa funcionar de forma eficiente para evitar desperdícios, garantir a conservação dos alimentos e manter preços acessíveis ao consumidor final.
+  </p>
+
+  <p>
+    O avanço da tecnologia tem modernizado a logística rural, com o uso de sistemas de rastreamento, transporte refrigerado e plataformas digitais de comercialização. Hoje, muitos agricultores contam com o apoio de cooperativas, associações e programas de incentivo que facilitam o acesso aos mercados consumidores, eliminando intermediários e aumentando a lucratividade para o produtor.
+  </p>
+
+  <p>
+    Além dos produtos alimentícios, o comércio rural também envolve a venda de insumos agrícolas, como sementes, fertilizantes, defensivos e máquinas, criando um ciclo econômico que beneficia tanto produtores quanto consumidores. A integração eficiente entre produção, transporte e comercialização é o que mantém o equilíbrio entre oferta e demanda, garantindo segurança alimentar e fortalecendo a economia nacional.
+  </p>
+</div>
+
+<div class="container">
+  <h3>Principais Etapas e Elementos do Comércio e Distribuição Rural</h3>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="border: 1px solid #ddd; padding: 8px;">Etapa</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Descrição</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Participantes Envolvidos</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Importância</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Produção</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Cultivo de alimentos e criação de animais nas propriedades rurais.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Produtores rurais, agricultores familiares, cooperativas.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Base de toda a cadeia. Sem produção, não há o que comercializar.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Armazenamento</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Conservação dos produtos até o momento da venda ou transporte.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Armazéns, silos, frigoríficos, cooperativas de produtores.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Evita perdas e desperdícios, mantendo a qualidade dos produtos.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Transporte</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Movimentação dos produtos do campo até os centros de distribuição ou pontos de venda.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Transportadoras, motoristas autônomos, cooperativas logísticas.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Garante que os produtos cheguem no tempo certo e em boas condições.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Comercialização</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Venda dos produtos aos consumidores finais ou empresas transformadoras.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Feirantes, atacadistas, varejistas, supermercados, indústrias.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Movimenta a economia e gera renda para os produtores.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Tecnologia e Logística</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Uso de ferramentas modernas para gestão de estoques, rastreamento e controle de qualidade.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Empresas de tecnologia agrícola, serviços de logística, startups do agronegócio.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Aumenta a eficiência, reduz custos e melhora a rastreabilidade dos produtos.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Mercados de Destino</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Locais onde os produtos rurais são vendidos ou transformados.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Centros de distribuição, supermercados, indústrias alimentícias, exportadoras.</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">Permite que os produtos cheguem ao consumidor final, tanto no mercado interno quanto externo.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <h2 style="margin-top: 20px;">Canais de Distribuição Rural</h2>
+  <p>
+    Os canais de distribuição rural representam os diversos meios pelos quais os produtos agrícolas e pecuários saem das propriedades rurais e chegam aos consumidores nas cidades. Cada canal possui suas características, públicos-alvo e estrutura logística, formando uma rede essencial para o abastecimento alimentar e o fortalecimento da economia rural.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Feiras Livres:</strong>
+      <p>
+        As feiras livres são uma das formas mais tradicionais de comercialização direta entre produtores rurais e consumidores urbanos. Realizadas semanalmente em diferentes bairros, oferecem alimentos frescos como frutas, verduras, legumes, ovos e produtos caseiros. As feiras fortalecem a economia local, promovem o consumo de produtos sazonais e reduzem a necessidade de intermediários.
+      </p>
+    </li>
+
+    <li>
+      <strong>Mercados Municipais:</strong>
+      <p>
+        Os mercados municipais funcionam como grandes centros de venda de produtos rurais. São locais fixos que concentram diversos comerciantes, oferecendo variedade, qualidade e preços acessíveis. Além de alimentos frescos, muitos mercados também vendem produtos artesanais e itens típicos da cultura regional, sendo importantes pontos de encontro entre campo e cidade.
+      </p>
+    </li>
+
+    <li>
+      <strong>Cooperativas Agrícolas:</strong>
+      <p>
+        As cooperativas agrícolas são associações de produtores que trabalham em conjunto para produzir, armazenar e comercializar seus produtos. Elas oferecem vantagens como maior poder de negociação, acesso a mercados maiores, melhores condições de transporte e armazenamento coletivo. Além disso, promovem capacitação técnica e apoio financeiro aos agricultores associados.
+      </p>
+    </li>
+
+    <li>
+      <strong>Distribuidoras e Atacadistas:</strong>
+      <p>
+        Distribuidoras e atacadistas compram grandes volumes de produtos diretamente dos produtores ou cooperativas, realizando o transporte e a redistribuição para supermercados, restaurantes, indústrias e outros pontos de venda. Essas empresas são fundamentais para atender a demanda de grandes centros urbanos, oferecendo infraestrutura de armazenamento, transporte refrigerado e logística eficiente.
+      </p>
+    </li>
+
+    <li>
+      <strong>Agroindústrias Locais:</strong>
+      <p>
+        As agroindústrias locais são responsáveis por transformar a matéria-prima rural em produtos industrializados com maior valor agregado, como queijos, embutidos, geleias, doces caseiros e conservas. Esses produtos são vendidos tanto no mercado regional quanto em redes de comércio maiores, incentivando o desenvolvimento da economia local e gerando emprego nas áreas rurais.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    A escolha do canal de distribuição depende de fatores como tipo de produto, volume de produção, distância até os centros urbanos e condições logísticas. Muitos produtores optam por utilizar múltiplos canais ao mesmo tempo, ampliando suas oportunidades de venda e diversificando os mercados atendidos. Uma rede de distribuição eficiente garante o abastecimento contínuo das cidades e contribui para o desenvolvimento sustentável do campo.
+  </p>
+</div>
+
+<div class="container" style="margin-top: 30px;">
+  <h2>Logística Rural: O Caminho até o Consumidor</h2>
+  
+  <div style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px;">
+    <img src="imagens/logistica-rural.jpg" alt="Transporte e logística de produtos rurais" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    <p style="font-size: 0.9em; color: #555; text-align: center;">Imagem ilustrativa: Transporte de produtos rurais para os centros urbanos.</p>
+  </div>
+
+  <p>
+    A logística rural é uma etapa fundamental no processo de comercialização de produtos agrícolas. Ela envolve todas as atividades necessárias para que os alimentos, matérias-primas e produtos industrializados do campo cheguem de forma segura, rápida e com qualidade aos consumidores das cidades. No entanto, essa logística enfrenta diversos desafios que exigem soluções criativas e o uso de tecnologias modernas.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Transporte de Mercadorias:</strong>
+      <p>
+        O transporte é uma das principais etapas da logística rural. Em muitas regiões, os produtores precisam percorrer longas distâncias até os centros de distribuição ou mercados consumidores. A falta de frota própria, os altos custos com combustível e a necessidade de veículos adaptados, como caminhões refrigerados, são algumas das dificuldades enfrentadas. Muitos produtores recorrem a cooperativas ou empresas terceirizadas para viabilizar o transporte em escala.
+      </p>
+    </li>
+
+    <li>
+      <strong>Armazenamento e Refrigeração:</strong>
+      <p>
+        Produtos perecíveis, como frutas, verduras, leite e carnes, precisam de armazenamento adequado para manter sua qualidade. A carência de armazéns climatizados ou câmaras frias em áreas rurais é um obstáculo frequente. Soluções como o armazenamento coletivo em cooperativas e o investimento em tecnologias de refrigeração móvel têm ajudado a reduzir perdas durante o processo logístico.
+      </p>
+    </li>
+
+    <li>
+      <strong>Estradas e Infraestrutura:</strong>
+      <p>
+        Um dos maiores desafios da logística rural é a infraestrutura precária. Muitas estradas de acesso às propriedades agrícolas são de terra e ficam intransitáveis em épocas de chuva. Isso encarece o transporte, aumenta o tempo de entrega e pode causar prejuízos com a perda de carga. Investimentos em pavimentação rural, manutenção de estradas vicinais e criação de rotas alternativas são algumas das soluções buscadas por governos e cooperativas.
+      </p>
+    </li>
+
+    <li>
+      <strong>Tecnologia na Logística:</strong>
+      <p>
+        A tecnologia tem revolucionado a logística rural. O uso de aplicativos de rastreamento permite que produtores acompanhem em tempo real a localização de suas cargas. Sistemas de gestão logística ajudam a planejar rotas mais eficientes, calcular custos e prever prazos de entrega. Além disso, plataformas digitais de venda direta ao consumidor estão encurtando os caminhos entre o campo e a cidade, reduzindo a dependência de intermediários.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    Uma logística rural eficiente é essencial para garantir a competitividade do produtor, reduzir perdas pós-colheita e assegurar que os alimentos cheguem frescos e com qualidade até o consumidor final. O investimento em infraestrutura, capacitação e tecnologia é o caminho para superar os desafios e tornar o campo cada vez mais integrado ao mercado urbano.
+  </p>
+
+  <div style="clear: both;"></div>
+</div>
+
+<div class="container" style="margin-top: 30px;">
+  <h2>A Importância da Agricultura Familiar e das Pequenas Produções</h2>
+
+  <p>
+    A agricultura familiar desempenha um papel fundamental na produção de alimentos e na segurança alimentar das populações urbanas e rurais. No Brasil, segundo dados oficiais, a agricultura familiar é responsável por cerca de 70% dos alimentos que chegam à mesa dos brasileiros. Essa modalidade de produção é caracterizada por pequenas propriedades, gestão familiar, uso de mão de obra própria e grande diversidade de culturas.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Agricultura Familiar:</strong>
+      <p>
+        Os agricultores familiares cultivam uma variedade de produtos, como frutas, legumes, hortaliças, grãos, leite e ovos. Eles utilizam técnicas de cultivo adaptadas à realidade local, com foco na sustentabilidade e na preservação ambiental. Muitas vezes, a produção é diversificada para garantir segurança financeira, com o excedente sendo comercializado em mercados locais ou através de programas governamentais.
+      </p>
+    </li>
+
+    <li>
+      <strong>Sistemas de Compras Coletivas:</strong>
+      <p>
+        Para fortalecer a comercialização e garantir mercado para a produção, muitos agricultores familiares participam de programas de compras públicas. No Brasil, dois exemplos importantes são:
+      </p>
+      <ul>
+        <li>
+          <strong>PAA (Programa de Aquisição de Alimentos):</strong>
+          <p>
+            Criado para incentivar a agricultura familiar, o PAA permite que órgãos públicos adquiram alimentos diretamente dos pequenos produtores. Esses alimentos são destinados a instituições como escolas, creches, asilos e comunidades em situação de vulnerabilidade social. Além de gerar renda, o programa contribui para a segurança alimentar.
+          </p>
+        </li>
+        <li>
+          <strong>PNAE (Programa Nacional de Alimentação Escolar):</strong>
+          <p>
+            O PNAE determina que pelo menos 30% dos recursos destinados à merenda escolar sejam utilizados na compra de produtos da agricultura familiar. Isso cria um mercado estável para os produtores locais e garante alimentos mais frescos e saudáveis para os alunos da rede pública de ensino.
+          </p>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Vendas Diretas ao Consumidor:</strong>
+      <p>
+        Muitos pequenos produtores optam por comercializar seus produtos de forma direta, sem intermediários. Essa prática aumenta a margem de lucro e cria um vínculo mais próximo entre quem produz e quem consome.
+      </p>
+      <ul>
+        <li>
+          <strong>Cestas de Alimentos:</strong>
+          <p>
+            Os agricultores organizam cestas contendo uma variedade de produtos sazonais, como frutas, verduras e legumes. Essas cestas são vendidas por assinatura ou por encomenda, sendo entregues diretamente nas casas dos consumidores ou em pontos de retirada nas cidades.
+          </p>
+        </li>
+        <li>
+          <strong>Entrega Direta e Feiras Orgânicas:</strong>
+          <p>
+            Alguns produtores realizam entregas semanais de produtos frescos para grupos de consumidores organizados em bairros ou condomínios. Outros participam de feiras de produtos orgânicos e agroecológicos, atendendo um público cada vez mais preocupado com a procedência e a qualidade dos alimentos.
+          </p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    A organização dos pequenos produtores é essencial para superar os desafios logísticos e de comercialização. Por meio de associações, cooperativas e redes de apoio, a agricultura familiar consegue ampliar o alcance dos seus produtos, garantir preços mais justos e fortalecer a economia das comunidades rurais. Além disso, ela promove a diversidade alimentar e contribui para a sustentabilidade do sistema agrícola nacional.
+  </p>
+</div>
+
+<div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
+  <style>
+    .flex-container {
+      display: flex;
+      gap: 30px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2e7d32;
+      align-items: flex-start;
+    }
+    .image-left {
+      flex: 1;
+      max-width: 45%;
+    }
+    .image-left img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+    .table-right {
+      flex: 1;
+      max-width: 50%;
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 350px;
+      background: #f9fff9;
+      box-shadow: 0 0 8px rgba(46, 125, 50, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 1px solid #a5d6a7;
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.2;
+      word-wrap: break-word;
+    }
+    th {
+      background-color: #4caf50;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    td strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    /* responsividade */
+    @media (max-width: 700px) {
+      .flex-container {
+        flex-direction: column;
+      }
+      .image-left, .table-right {
+        max-width: 100%;
+      }
+      table {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <div class="flex-container">
+    <div class="image-left">
+      <img src="sua-imagem.jpg" alt="Comércio Rural" />
+    </div>
+
+    <div class="table-right">
+      <h2>Fluxo do Comércio Rural</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produção Rural</th>
+            <th>Logística</th>
+            <th>Canais de Venda</th>
+            <th>Consumo na Cidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Agricultura</strong> Cultivo sustentável de alimentos e matérias-primas.</td>
+            <td><strong>Transporte</strong> Movimentação eficiente por rodovias e ferrovias.</td>
+            <td><strong>Feiras Livres</strong> Venda direta de produtos frescos à comunidade.</td>
+            <td><strong>Consumidor Final</strong> Compra para uso doméstico, priorizando qualidade.</td>
+          </tr>
+          <tr>
+            <td><strong>Pecuária</strong> Criação de animais com práticas sustentáveis.</td>
+            <td><strong>Armazenamento</strong> Silos e câmaras para conservar produtos.</td>
+            <td><strong>Mercados e Supermercados</strong> Venda em larga escala com variedade.</td>
+            <td><strong>Restaurantes</strong> Uso de produtos frescos na gastronomia local.</td>
+          </tr>
+          <tr>
+            <td><strong>Agroindústria Local</strong> Processamento para agregar valor e gerar empregos.</td>
+            <td><strong>Distribuição</strong> Rede que conecta produtores a pontos de venda.</td>
+            <td><strong>Vendas Diretas</strong> Comércio sem intermediários, presencial ou online.</td>
+            <td><strong>Comércio Varejista</strong> Lojas locais que fornecem produtos rurais.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-md-6">
+      <h2 class="text-center">Tendências Atuais no Comércio Rural</h2>
+
+      <p>
+        O comércio rural está passando por transformações significativas com a chegada de novas tecnologias e formas inovadoras de comercialização. O e-commerce de produtos do campo tem permitido que agricultores vendam diretamente para consumidores, ampliando mercados e reduzindo intermediários.
+      </p>
+
+      <p>
+        As feiras online surgem como uma alternativa moderna às feiras presenciais, conectando produtores e compradores por meio da internet, o que facilita o acesso a uma variedade maior de produtos, mesmo para quem está distante das áreas rurais.
+      </p>
+
+      <p>
+        Aplicativos locais de entrega têm otimizado a logística, garantindo que os produtos cheguem rapidamente e em boas condições ao consumidor final, trazendo mais comodidade e eficiência para o comércio rural.
+      </p>
+
+      <p>
+        Paralelamente, cresce a valorização dos produtos orgânicos e de origem controlada, que oferecem mais segurança e qualidade ao consumidor, além de promoverem práticas sustentáveis e o desenvolvimento das comunidades rurais.
+      </p>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img class="img-fluid rounded" src="./assets/image/comercio-rural-tendencias.jpg" alt="Tecnologia e inovação no comércio rural">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row pt-5">
+      <h3 class="text-center pb-3">Temas em Destaque</h3>
+
+      <div class="col-md-4">
+          <div class="card" data-bs-toggle="modal" data-bs-target="#modalIntegracao">
+              <img src="./assets/image/integracao-campo-cidade.png" class="img-card card-img-top" alt="Integração Campo-Cidade">
+              <div class="card-body">
+                  <h5 class="card-title">Benefícios da Integração Campo-Cidade</h5>
+                  <p class="card-text">Fortalecer a conexão entre campo e cidade gera emprego, reduz desperdícios e promove alimentos frescos e sustentáveis para as áreas urbanas.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" data-bs-toggle="modal" data-bs-target="#modalSucesso">
+              <img src="./assets/image/casos-sucesso.png" class="img-card card-img-top" alt="Casos de sucesso">
+              <div class="card-body">
+                  <h5 class="card-title">Exemplos de Sucesso</h5>
+                  <p class="card-text">Conheça cooperativas e pequenos produtores que inovaram na distribuição, alcançando crescimento sustentável e reconhecimento no mercado.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" data-bs-toggle="modal" data-bs-target="#modalFortalecimento">
+              <img src="./assets/image/laços-campo-cidade.png" class="img-card card-img-top" alt="Fortalecimento dos laços">
+              <div class="card-body">
+                  <h5 class="card-title">Fortalecendo os Laços entre Campo e Cidade</h5>
+                  <p class="card-text">Valorizar e apoiar os produtores rurais é essencial para garantir o desenvolvimento sustentável e a segurança alimentar da população.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal - Benefícios da Integração Campo-Cidade -->
+  <div class="modal fade" id="modalIntegracao" tabindex="-1" aria-labelledby="modalIntegracaoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded shadow-lg">
+        <div class="modal-header text-white bg-primary">
+          <h5 class="modal-title fw-bold fs-4" id="modalIntegracaoLabel">Benefícios da Integração Campo-Cidade</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p>
+            A integração entre as áreas rurais e urbanas é fundamental para o equilíbrio econômico, social e ambiental do país. Fortalecer esse elo traz diversos benefícios para ambos os lados.
+          </p>
+
+          <h6 class="fw-bold mt-3">Geração de emprego e renda</h6>
+          <p>
+            A comercialização eficiente dos produtos do campo fomenta a economia local, cria oportunidades de trabalho e melhora a qualidade de vida das famílias rurais.
+          </p>
+
+          <h6 class="fw-bold mt-3">Redução do desperdício de alimentos</h6>
+          <p>
+            Com sistemas logísticos mais eficientes e canais de distribuição adequados, a perda de alimentos durante o transporte e armazenamento diminui consideravelmente.
+          </p>
+
+          <h6 class="fw-bold mt-3">Incentivo à produção local e sustentável</h6>
+          <p>
+            O estímulo ao consumo de produtos locais valoriza a agricultura familiar e práticas que respeitam o meio ambiente, promovendo sustentabilidade e biodiversidade.
+          </p>
+
+          <h6 class="fw-bold mt-3">Melhora no acesso a alimentos frescos e saudáveis</h6>
+          <p>
+            A aproximação entre campo e cidade facilita o acesso da população urbana a alimentos mais frescos, nutritivos e de melhor qualidade, contribuindo para a saúde pública.
+          </p>
+
+          <div class="alert alert-info mt-4" role="alert">
+            📌 <strong>Dica:</strong> conhecer e apoiar os produtores locais fortalece toda a cadeia produtiva e o desenvolvimento sustentável.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal - Exemplos de Sucesso -->
+  <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded shadow-lg">
+        <div class="modal-header text-white bg-primary">
+          <h5 class="modal-title fw-bold fs-4" id="modalSucessoLabel">Exemplos de Sucesso</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p>
+            Diversas iniciativas mostram como a integração campo-cidade pode ser eficaz e inspiradora. Cooperativas e pequenos produtores que investem em inovação, organização e sustentabilidade alcançam destaque e crescimento.
+          </p>
+
+          <h6 class="fw-bold mt-3">Cooperativa Verde Vida</h6>
+          <p>
+            Localizada no interior de Minas Gerais, essa cooperativa reúne pequenos agricultores que comercializam orgânicos via feiras online e entregas por aplicativos, aumentando a renda e reduzindo desperdícios.
+          </p>
+
+          <h6 class="fw-bold mt-3">Agroindústria Sabor do Campo</h6>
+          <p>
+            Com foco em produtos artesanais certificados, essa pequena empresa em Santa Catarina agrega valor à produção local e atende supermercados da região com logística eficiente.
+          </p>
+
+          <h6 class="fw-bold mt-3">Projeto Cesta Rural Urbana</h6>
+          <p>
+            Essa iniciativa conecta diretamente famílias rurais e consumidores urbanos com cestas de alimentos frescos entregues semanalmente, fortalecendo a economia local e promovendo hábitos alimentares saudáveis.
+          </p>
+
+          <div class="alert alert-info mt-4" role="alert">
+            📌 <strong>Dica:</strong> conhecer esses exemplos pode ajudar a replicar modelos de sucesso na sua região.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal - Fortalecendo os Laços entre Campo e Cidade -->
+  <div class="modal fade" id="modalFortalecimento" tabindex="-1" aria-labelledby="modalFortalecimentoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded shadow-lg">
+        <div class="modal-header text-white bg-primary">
+          <h5 class="modal-title fw-bold fs-4" id="modalFortalecimentoLabel">Fortalecendo os Laços entre Campo e Cidade</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p>
+            Valorizar e apoiar os produtores rurais é essencial para garantir o desenvolvimento sustentável, a segurança alimentar e o fortalecimento das comunidades do campo.
+          </p>
+
+          <h6 class="fw-bold mt-3">Importância do apoio local</h6>
+          <p>
+            Investir em políticas públicas, capacitação técnica e infraestrutura favorece a permanência das famílias no campo e melhora a qualidade dos produtos ofertados.
+          </p>
+
+          <h6 class="fw-bold mt-3">Parcerias entre campo e cidade</h6>
+          <p>
+            Projetos colaborativos entre agricultores, comerciantes e consumidores geram trocas econômicas e culturais, fortalecendo o sentimento de comunidade e respeito mútuo.
+          </p>
+
+          <h6 class="fw-bold mt-3">Consumo consciente e sustentável</h6>
+          <p>
+            Escolher produtos locais e de origem confiável contribui para a preservação ambiental e para a manutenção da diversidade agrícola, beneficiando toda a sociedade.
+          </p>
+
+          <div class="alert alert-info mt-4" role="alert">
+            📌 <strong>Dica:</strong> apoiar o campo é investir no futuro, com alimento de qualidade e economia mais justa para todos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-5 pb-5">
+  <h2 class="text-center mb-4">Campo e Cidade: A Conexão Que Pode Revolucionar o Futuro</h2>
+  <p>
+    A verdadeira transformação do nosso país passa pela integração eficiente entre o campo e a cidade. O comércio e a distribuição não são apenas etapas da cadeia produtiva — são pontes vitais que unem produtores rurais e consumidores urbanos, garantindo acesso a alimentos frescos, gerando emprego e fomentando uma economia mais justa e sustentável.
+  </p>
+  <p>
+    Valorizar essa conexão é investir em inovação, reduzir desperdícios e fortalecer comunidades inteiras. O futuro do agronegócio e da alimentação saudável depende de escolhas conscientes, colaboração e apoio mútuo entre todos os elos dessa cadeia.
+  </p>
+  <p>
+    Mais do que nunca, o campo e a cidade precisam caminhar juntos — porque quando essa relação funciona, quem ganha é toda a sociedade.
+  </p>
+</div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Perguntas Frequentes sobre Comércio e Distribuição Rural</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqHeadingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+          Quais são os principais canais de distribuição dos produtos rurais?
+        </button>
+      </h2>
+      <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Os principais canais incluem feiras livres, mercados municipais, cooperativas agrícolas, distribuidoras, atacadistas e agroindústrias locais, que facilitam a chegada dos produtos ao consumidor urbano.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqHeadingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+          Quais os principais desafios da logística rural?
+        </button>
+      </h2>
+      <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Entre os desafios estão o transporte em estradas precárias, armazenamento e refrigeração inadequados, além da necessidade de tecnologias para rastreamento e gestão eficiente das cargas.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqHeadingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+          Como o e-commerce tem impactado o comércio rural?
+        </button>
+      </h2>
+      <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          O comércio online tem ampliado o alcance dos pequenos produtores, permitindo vendas diretas ao consumidor, redução de intermediários e maior valorização de produtos orgânicos e de origem controlada.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqHeadingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+          Qual a importância da agricultura familiar na cadeia de distribuição?
+        </button>
+      </h2>
+      <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          A agricultura familiar promove a diversificação dos produtos, fortalece a economia local e contribui para o desenvolvimento sustentável, além de garantir alimentos frescos e saudáveis para a população.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqHeadingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+          Como fortalecer a conexão entre campo e cidade?
+        </button>
+      </h2>
+      <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Investindo em infraestrutura, apoiando cooperativas, incentivando tecnologias para logística e comercialização, e valorizando a agricultura local com políticas públicas e consumo consciente.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="margin-top: 40px; padding: 20px; background-color: #ffffff; border-radius: 8px; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; color: #000000;">
+  <h2 style="color: #000000; margin-bottom: 15px;">Referência</h2>
+  <p>
+    Mercados e Comercialização de Produtos Agrícolas – HEDGE AGRO<br>
+    <a href="https://hedgeagro.com.br/mercados-e-comercializacao-de-produtos-agricolas/"
+       target="_blank" rel="noopener noreferrer"
+       style="color: #800080 !important; text-decoration: underline;">
+       https://hedgeagro.com.br/mercados-e-comercializacao-de-produtos-agricolas/
+    </a>
+  </p>
+</section>
+
+
+<div class="footer">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

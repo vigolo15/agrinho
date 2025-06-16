@@ -17,30 +17,127 @@
 </section>
 
 <!-- Navbar -->
+<style>
+  /* Botão hamburger dentro da navbar */
+  #sidebarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #sidebarToggle div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Sidebar lateral */
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1049;
+    top: 0;
+    left: 0;
+    background-color: #198754; /* verde bootstrap */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  #sidebar button {
+    display: block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #sidebar button:hover {
+    background-color: #14532d;
+  }
+
+  /* Quando a sidebar estiver aberta */
+  #sidebar.open {
+    width: 250px;
+  }
+
+  /* Para evitar scroll quando sidebar aberta */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+</style>
+
 <nav class="navbar navbar-expand-lg bg-success">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <button class="btn btn-success text-white me-2" onclick="location.href='index.html'">Página Inicial</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia e Sustentabilidade</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-success text-white" onclick="location.href='producao.html'">Campo Produtor</button>
-                </li>
-            </ul>
-        </div>
-    </div>
+  <div class="container-fluid d-flex align-items-center">
+    <!-- Botão hamburger dentro da navbar, à esquerda -->
+    <button id="sidebarToggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="sidebar">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='index.html'">Página Inicial</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia e Sustentabilidade</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='producao.html'">Campo Produtor</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='tecnologia.html'">Tecnologia no Campo</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='comercio.html'">Comércio e Distribuição</button>
+
+    <button class="btn btn-success text-white" onclick="location.href='impactos.html'">Impactos Ambientais</button>
+  </div>
 </nav>
+
+<!-- Sidebar -->
+<div id="sidebar" role="navigation" aria-hidden="true">
+  <button onclick="location.href='index.html'">Início</button>
+  <button onclick="location.href='galeria.html'">Galeria</button>
+  <button onclick="location.href='info.html'">Informações</button>
+  <button onclick="location.href='contato.html'">Contate-nos</button>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const body = document.body;
+
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-hidden', !isOpen);
+    body.classList.toggle('sidebar-open', isOpen);
+  });
+
+  // Fecha sidebar clicando fora dela
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', false);
+      sidebar.setAttribute('aria-hidden', true);
+      body.classList.remove('sidebar-open');
+    }
+  });
+</script>
+
 
 
 
