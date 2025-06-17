@@ -246,14 +246,25 @@
         </div>
 
         <!-- Duas Imagens Abaixo do Texto -->
-        <div class="row text-center pt-5">
-            <div class="col-md-6">
-                <img src="./assets/image/açude.png.jpeg" class="img-fluid" alt="Imagem 1">
-            </div>
-            <div class="col-md-6">
-                <img src="./assets/image/poça.png.jpeg" class="img-fluid" alt="Imagem 2">
-            </div>
-        </div>
+        <style>
+  .img-fixa {
+    width: 100%;
+    aspect-ratio: 3 / 4;      /* Mantém proporção 3x4 */
+    object-fit: cover;        /* Preenche cortando o excesso se precisar */
+    display: block;
+    border-radius: 12px;      /* Bordas arredondadas */
+  }
+</style>
+
+<div class="row text-center pt-5">
+  <div class="col-md-6">
+    <img src="./assets/image/açude.png.jpeg" class="img-fluid img-fixa" alt="Imagem 1">
+  </div>
+  <div class="col-md-6">
+    <img src="./assets/image/agua2.jpeg" class="img-fluid img-fixa" alt="Imagem 2">
+  </div>
+</div>
+
 
         <div class="empty-space"></div>
 
@@ -411,7 +422,7 @@
             <div class="col-md-3">
                 <div class="p-3 border rounded shadow-sm">
                     <h5>Captação de Chuva</h5>
-                    <p>Instalação de sistemas eficientes, como calhas e cisternas, para coletar e armazenar água da chuva, garantindo o abastecimento em regiões com baixa pluviosidade.</p>
+                    <p>Instalação de sistemas eficientes, como calhas, filtros e cisternas, para coletar e armazenar água da chuva, garantindo o abastecimento em regiões com baixa pluviosidade e menor dependência de outras fontes.</p>
                 </div>
             </div>
             <div class="col-md-3">
@@ -456,6 +467,109 @@
     }
 </style>
 
+<div style="display: flex; align-items: center;">
+    <!-- Imagem à esquerda -->
+    <div style="flex: 1;">
+        <img src="assets/image/torneira.png.jpeg" alt="Imagem relacionada à água" style="width: 100%; max-width: 300px; border-radius: 12px;"/>
+    </div>
+
+    <!-- Texto à direita -->
+    <div style="flex: 2; padding-left: 20px;">
+        <h2 class="text-center">Acessibilidade à Água: Um Pilar para o Desenvolvimento Sustentável</h2>
+
+        <p>
+            O acesso à água potável é essencial para a saúde e o bem-estar das comunidades, especialmente nas áreas rurais. 
+            Garantir essa acessibilidade exige investimentos em infraestrutura, tecnologias adequadas e práticas sustentáveis 
+            que assegurem o uso consciente e a preservação dos recursos hídricos. Com os desafios das mudanças climáticas e 
+            o aumento da população, é fundamental implementar soluções eficientes, como captação de água da chuva e sistemas 
+            de filtragem, além de promover a educação ambiental para o uso responsável da água.
+        </p>
+
+        <p>
+            Além de melhorar a qualidade de vida, a acessibilidade à água fortalece a autonomia das comunidades rurais, que 
+            dependem dela para a agricultura e outras atividades essenciais. Projetos que incentivam a participação local 
+            e a colaboração entre governo e sociedade são fundamentais para garantir um futuro mais justo e sustentável. 
+            Com água disponível, é possível avançar em saúde, segurança alimentar e desenvolvimento econômico, conectando 
+            campo e cidade em prol do progresso coletivo.
+        </p>
+    </div>
+</div>
+</div>
+        </div>
+
+<style>
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap; /* permite quebra */
+    align-items: flex-start;
+    gap: 20px; /* espaço entre imagem e texto */
+  }
+
+  .container-flex img {
+    flex: 0 0 300px;  /* largura fixa (máximo 300px), sem encolher */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .container-flex .texto {
+    flex: 1 1 300px; /* cresce e encolhe, mínimo 300px */
+  }
+
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+    }
+
+    .container-flex img,
+    .container-flex .texto {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<style>
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .container-flex img {
+    flex: 0 0 230px;  /* largura da imagem menor */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .container-flex .texto {
+    flex: 1 1 300px;
+  }
+
+  .container-flex .texto h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+    }
+
+    .container-flex img,
+    .container-flex .texto {
+      flex: 1 1 100%;
+    }
+
+    .container-flex .texto h2 {
+      text-align: center;
+    }
+  }
+</style>
+
 <div class="container my-4">
   <h2 class="mb-3">Impactos da Escassez de Água na Vida Rural</h2>
 
@@ -488,62 +602,42 @@
 </div>
 
 
-<div style="display: flex; align-items: center;">
-    <!-- Imagem à esquerda -->
-    <div style="flex: 1;">
-        <img src="assets/image/torneira.png.jpeg" alt="Imagem relacionada à água" style="width: 100%; max-width: 300px;"/>
-    </div>
 
-    <!-- Texto à direita -->
-    <div style="flex: 2; padding-left: 20px;">
-        <h2 class="text-center">Acessibilidade à Água: Um Pilar para o Desenvolvimento Sustentável</h2>
-
-        <p>
-            O acesso à água potável é essencial para a saúde e o bem-estar das comunidades, especialmente nas áreas rurais. 
-            Garantir essa acessibilidade exige investimentos em infraestrutura, tecnologias adequadas e práticas sustentáveis 
-            que assegurem o uso consciente e a preservação dos recursos hídricos. Com os desafios das mudanças climáticas e 
-            o aumento da população, é fundamental implementar soluções eficientes, como captação de água da chuva e sistemas 
-            de filtragem, além de promover a educação ambiental para o uso responsável da água.
-        </p>
-
-        <p>
-            Além de melhorar a qualidade de vida, a acessibilidade à água fortalece a autonomia das comunidades rurais, que 
-            dependem dela para a agricultura e outras atividades essenciais. Projetos que incentivam a participação local 
-            e a colaboração entre governo e sociedade são fundamentais para garantir um futuro mais justo e sustentável. 
-            Com água disponível, é possível avançar em saúde, segurança alimentar e desenvolvimento econômico, conectando 
-            campo e cidade em prol do progresso coletivo.
-        </p>
-    </div>
-</div>
-</div>
-        </div>
 
 <div class="container my-4">
-  <h2 class="mb-3">Tecnologias Inovadoras para o Uso da Água no Campo</h2>
-  
-  <p>
-    A água é um recurso essencial para a agricultura, e seu uso eficiente tem se tornado prioridade para garantir a sustentabilidade e aumentar a produtividade rural. Diversas tecnologias inovadoras têm sido implementadas para otimizar o uso da água, reduzindo desperdícios e melhorando a irrigação, mesmo em regiões com escassez hídrica.
-  </p>
-  
-  <h4>Microaspersão e Gotejamento para Irrigação Eficiente</h4>
-  <p>
-    Sistemas de microaspersão e irrigação por gotejamento proporcionam a aplicação direta da água nas raízes das plantas, minimizando perdas por evaporação e escoamento superficial. Essas técnicas permitem a economia de até 60% do volume de água comparado à irrigação tradicional, além de favorecer o crescimento saudável das culturas, reduzindo o desenvolvimento de doenças foliares.
-  </p>
-  
-  <h4>Sensores de Umidade do Solo para Otimizar o Uso da Água</h4>
-  <p>
-    O uso de sensores de umidade do solo tem revolucionado o manejo hídrico na agricultura. Esses dispositivos monitoram em tempo real o nível de água presente no solo, fornecendo dados precisos para acionamento automático dos sistemas de irrigação. Isso evita tanto o excesso quanto a falta de água, promovendo a saúde das plantas e a eficiência do uso dos recursos.
-  </p>
-  
-  <h4>Dessalinização Simples para Regiões com Água Salobra</h4>
-  <p>
-    Em áreas onde a água disponível apresenta alta salinidade, tecnologias acessíveis de dessalinização, como filtros por osmose reversa compacta e sistemas de purificação solar, têm sido adotadas. Essas soluções tornam a água salobra adequada para irrigação, contribuindo para a expansão da agricultura em regiões anteriormente limitadas pela qualidade da água.
-  </p>
-  
-  <p>
-    A adoção dessas inovações, combinadas com práticas agrícolas sustentáveis, pode transformar o uso da água no campo, garantindo produção eficiente e preservação ambiental.
-  </p>
+  <div class="container-flex">
+    <img src="assets/image/cdag.jpeg" alt="Uso da Água no Campo" />
+    
+    <div class="texto">
+      <h2>Tecnologias Inovadoras para o Uso da Água no Campo</h2>
+      
+      <p>
+        A água é um recurso essencial para a agricultura, e seu uso eficiente tem se tornado prioridade para garantir a sustentabilidade e aumentar a produtividade rural. Diversas tecnologias inovadoras têm sido implementadas para otimizar o uso da água, reduzindo desperdícios e melhorando a irrigação, mesmo em regiões com escassez hídrica.
+      </p>
+
+      <h4>Microaspersão e Gotejamento para Irrigação Eficiente</h4>
+      <p>
+        Sistemas de microaspersão e irrigação por gotejamento proporcionam a aplicação direta da água nas raízes das plantas, minimizando perdas por evaporação e escoamento superficial. Essas técnicas permitem a economia de até 60% do volume de água comparado à irrigação tradicional, além de favorecer o crescimento saudável das culturas, reduzindo o desenvolvimento de doenças foliares.
+      </p>
+
+      <h4>Sensores de Umidade do Solo para Otimizar o Uso da Água</h4>
+      <p>
+        O uso de sensores de umidade do solo tem revolucionado o manejo hídrico na agricultura. Esses dispositivos monitoram em tempo real o nível de água presente no solo, fornecendo dados precisos para acionamento automático dos sistemas de irrigação. Isso evita tanto o excesso quanto a falta de água, promovendo a saúde das plantas e a eficiência do uso dos recursos.
+      </p>
+
+      <h4>Dessalinização Simples para Regiões com Água Salobra</h4>
+      <p>
+        Em áreas onde a água disponível apresenta alta salinidade, tecnologias acessíveis de dessalinização, como filtros por osmose reversa compacta e sistemas de purificação solar, têm sido adotadas. Essas soluções tornam a água salobra adequada para irrigação, contribuindo para a expansão da agricultura em regiões anteriormente limitadas pela qualidade da água.
+      </p>
+
+      <p>
+        A adoção dessas inovações, combinadas com práticas agrícolas sustentáveis, pode transformar o uso da água no campo, garantindo produção eficiente e preservação ambiental.
+      </p>
+    </div>
+  </div>
 </div>
+
+
 
 
         <!-- Infográficos estáticos -->

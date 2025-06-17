@@ -327,7 +327,7 @@
 
     <!-- Coluna da imagem -->
     <div class="col-md-6">
-      <img src="assets/image/tecnologia.jpeg" alt="Tecnologia aplicada no campo com drone e plantação" class="img-fluid rounded shadow" style="max-width: 85%; height: auto;">
+      <img src="assets/image/tec1.jpeg" alt="Tecnologia aplicada no campo com drone e plantação" class="img-fluid rounded shadow" style="max-width: 85%; height: auto;">
     </div>
 
   </div>
@@ -428,7 +428,7 @@
             <div class="col-md-3">
                 <div class="card-reveal" onclick="reveal(this)">
                     <div class="overlay-text">CLIQUE PARA DESCOBRIR</div>
-                    <img src="imagens/irrigacao.jpg" alt="Irrigação inteligente">
+                    <img src="assets/image/irrigação.jpeg" alt="Irrigação inteligente">
                 </div>
                 <div class="caption">Irrigação automatizada por sensores</div>
             </div>
@@ -437,7 +437,7 @@
             <div class="col-md-3">
                 <div class="card-reveal" onclick="reveal(this)">
                     <div class="overlay-text">CLIQUE PARA DESCOBRIR</div>
-                    <img src="imagens/app-agricola.jpg" alt="Aplicativo de gestão agrícola">
+                    <img src="assets/image/app.jpeg" alt="Aplicativo de gestão agrícola">
                 </div>
                 <div class="caption">Aplicativos de gestão agrícola</div>
             </div>
@@ -530,10 +530,35 @@
 </div>
 
 
-      <div class="container" style="font-family: Arial, sans-serif; margin-top: 20px; margin-bottom: 20px;">
+      <style>
+  .tabela-responsiva {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 2px solid #000; /* Borda só ao redor da tabela */
+  }
+
+  .tabela-responsiva th,
+  .tabela-responsiva td {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding: 6px 8px; /* Padding menor para compactar */
+    border: none; /* Sem linhas internas */
+    text-align: left;
+  }
+
+  .tabela-responsiva thead {
+    background-color: #383d38;
+    color: white;
+  }
+</style>
+
+<div class="container" style="font-family: Arial, sans-serif; margin-top: 20px; margin-bottom: 20px;">
   <h2 style="text-align:center; margin-bottom: 20px;">Uso da Tecnologia no Campo</h2>
-  <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; text-align: left;">
-    <thead style="background-color: #383d38; color: white;">
+
+  <table class="tabela-responsiva">
+    <thead>
       <tr>
         <th>Tipo de Tecnologia</th>
         <th>Aplicações</th>
@@ -544,107 +569,60 @@
     <tbody>
       <tr>
         <td><strong>Drones Agrícolas</strong></td>
-        <td>
-          Monitoramento aéreo das plantações, detecção precoce de pragas, avaliação do estresse hídrico e aplicação localizada de defensivos.
-        </td>
-        <td>
-          Aumento da precisão no manejo, redução do uso de defensivos, economia de tempo e custos.
-        </td>
-        <td>
-          Alto custo inicial, necessidade de operadores treinados, limitações climáticas.
-        </td>
+        <td>Monitoramento aéreo das plantações, detecção precoce de pragas, avaliação do estresse hídrico e aplicação localizada de defensivos.</td>
+        <td>Aumento da precisão no manejo, redução do uso de defensivos, economia de tempo e custos.</td>
+        <td>Alto custo inicial, necessidade de operadores treinados, limitações climáticas.</td>
       </tr>
       <tr>
         <td><strong>Sensores de Solo</strong></td>
-        <td>
-          Medição da umidade, temperatura, pH, nutrientes e salinidade do solo em tempo real.
-        </td>
-        <td>
-          Irrigação eficiente, melhor adubação, aumento da produtividade, redução do desperdício de insumos.
-        </td>
-        <td>
-          Custo de instalação e manutenção, necessidade de integração com sistemas de irrigação.
-        </td>
+        <td>Medição da umidade, temperatura, pH, nutrientes e salinidade do solo em tempo real.</td>
+        <td>Irrigação eficiente, melhor adubação, aumento da produtividade, redução do desperdício de insumos.</td>
+        <td>Custo de instalação e manutenção, necessidade de integração com sistemas de irrigação.</td>
       </tr>
       <tr>
         <td><strong>Tratores e Máquinas GPS</strong></td>
-        <td>
-          Plantio, colheita e pulverização com precisão centimétrica, mapeamento de áreas e roteirização.
-        </td>
-        <td>
-          Redução do desperdício, aumento da eficiência operacional e menor impacto ambiental.
-        </td>
-        <td>
-          Investimento alto, necessidade de capacitação técnica, manutenção especializada.
-        </td>
+        <td>Plantio, colheita e pulverização com precisão centimétrica, mapeamento de áreas e roteirização.</td>
+        <td>Redução do desperdício, aumento da eficiência operacional e menor impacto ambiental.</td>
+        <td>Investimento alto, necessidade de capacitação técnica, manutenção especializada.</td>
       </tr>
       <tr>
         <td><strong>Software de Gestão Agrícola</strong></td>
-        <td>
-          Controle de estoque, análise financeira, monitoramento climático, planejamento de colheita e comercialização.
-        </td>
-        <td>
-          Organização, tomadas de decisão baseadas em dados, melhor planejamento e redução de riscos.
-        </td>
-        <td>
-          Dependência de acesso à internet, adaptação do produtor à tecnologia.
-        </td>
+        <td>Controle de estoque, análise financeira, monitoramento climático, planejamento de colheita e comercialização.</td>
+        <td>Organização, tomadas de decisão baseadas em dados, melhor planejamento e redução de riscos.</td>
+        <td>Dependência de acesso à internet, adaptação do produtor à tecnologia.</td>
       </tr>
       <tr>
         <td><strong>Sistemas de Irrigação Automatizada</strong></td>
-        <td>
-          Irrigação controlada por sensores que medem a umidade do solo e clima, ativada somente quando necessário.
-        </td>
-        <td>
-          Economia de água e energia, redução de custos e melhor saúde das plantas.
-        </td>
-        <td>
-          Custo inicial elevado, necessidade de manutenção periódica e suporte técnico.
-        </td>
+        <td>Irrigação controlada por sensores que medem a umidade do solo e clima, ativada somente quando necessário.</td>
+        <td>Economia de água e energia, redução de custos e melhor saúde das plantas.</td>
+        <td>Custo inicial elevado, necessidade de manutenção periódica e suporte técnico.</td>
       </tr>
       <tr>
         <td><strong>Biotecnologia e Melhoramento Genético</strong></td>
-        <td>
-          Desenvolvimento de sementes resistentes a pragas, doenças e condições climáticas adversas.
-        </td>
-        <td>
-          Aumento da produtividade, menor uso de defensivos e adaptação a mudanças climáticas.
-        </td>
-        <td>
-          Questões regulatórias, aceitação do consumidor e custo de desenvolvimento.
-        </td>
+        <td>Desenvolvimento de sementes resistentes a pragas, doenças e condições climáticas adversas.</td>
+        <td>Aumento da produtividade, menor uso de defensivos e adaptação a mudanças climáticas.</td>
+        <td>Questões regulatórias, aceitação do consumidor e custo de desenvolvimento.</td>
       </tr>
       <tr>
         <td><strong>Internet das Coisas (IoT) Rural</strong></td>
-        <td>
-          Rede de sensores conectados para monitoramento integrado de solo, clima, máquinas e rebanho.
-        </td>
-        <td>
-          Monitoramento em tempo real, automação, maior eficiência e menor intervenção humana.
-        </td>
-        <td>
-          Investimento em infraestrutura, segurança de dados e conectividade em áreas remotas.
-        </td>
+        <td>Rede de sensores conectados para monitoramento integrado de solo, clima, máquinas e rebanho.</td>
+        <td>Monitoramento em tempo real, automação, maior eficiência e menor intervenção humana.</td>
+        <td>Investimento em infraestrutura, segurança de dados e conectividade em áreas remotas.</td>
       </tr>
       <tr>
         <td><strong>Big Data e Análise de Dados</strong></td>
-        <td>
-          Coleta e análise de grandes volumes de dados para previsão de safra, gestão de riscos e otimização da produção.
-        </td>
-        <td>
-          Decisões estratégicas mais assertivas, antecipação de problemas e maximização do lucro.
-        </td>
-        <td>
-          Necessidade de conhecimento especializado, custos com softwares e infraestrutura tecnológica.
-        </td>
+        <td>Coleta e análise de grandes volumes de dados para previsão de safra, gestão de riscos e otimização da produção.</td>
+        <td>Decisões estratégicas mais assertivas, antecipação de problemas e maximização do lucro.</td>
+        <td>Necessidade de conhecimento especializado, custos com softwares e infraestrutura tecnológica.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
+
 <div class="container" style="display: flex; align-items: center; gap: 30px; margin-top: 40px; margin-bottom: 40px; font-family: Arial, sans-serif;">
   <div style="flex: 1; max-width: 400px;">
-    <img src="" alt="Tecnologia no campo" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+    <img src="assets/image/tec2.jpeg" alt="Tecnologia no campo" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
   </div>
   <div style="flex: 2;">
     <h2>O Futuro da Tecnologia no Campo</h2>
