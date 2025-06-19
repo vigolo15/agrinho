@@ -140,7 +140,7 @@
   <button onclick="location.href='index.html'">Início</button>
   <button onclick="location.href='galeria.html'">Galeria</button>
   <button onclick="location.href='info.html'">Informações</button>
-  <button onclick="location.href='contato.html'">Contate-nos</button>
+  <button onclick="location.href='contato.html'">Fale Conosco</button>
 </div>
 
 <script>
@@ -181,7 +181,7 @@
   const musica = document.getElementById('musica');
   
   // Força a tocar o áudio (mesmo que bloqueie, tenta)
-  musica.volume = 0.5;
+  musica.volume = 1;
   musica.play().catch(e => {
     console.log('Autoplay bloqueado, sem som até interação.');
   });
