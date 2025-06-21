@@ -5,7 +5,8 @@ Este projeto é uma página web informativa sobre os desafios e as potencialidad
 **Tecnologias Utilizadas:**  
 - **HTML:** Estrutura principal da página.  
 - **CSS:** Estilização visual da página.  
-- **Fontes:** Fontes personalizadas para melhorar a legibilidade e o design.  
+- **Fontes:** Fontes personalizadas para melhorar a legibilidade e o design.
+- **Áudio:** Todos os sons de clique e trilhas musicais presentes no projeto foram gravados por mim, utilizando um violão, garantindo uma identidade sonora única e autoral.
 
 **Arquivos:**  
 - `index.html`: Página inicial com introdução ao projeto.  
