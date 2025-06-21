@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="agua.css">
+    <style>
+        #lineChart {
+            transition: transform 0.3s ease;
+        }
+
+        #lineChart:hover {
+            transform: scale(1.05);
+        }
+
+        body {
+  overflow-x: hidden;
+}
+    </style>
+</head>
+
+<!-- Cabeçalho -->
+<section class="cabecalho text-center py-4" style="background-color: #004B49;">
+  <h1>AGRINHO 2025</h1>
+  <h3 style="color: #98FF98;">Festejando Conexão Campo Cidade</h3>
+</section>
+
+<!-- Navbar -->
+<style>
+  /* Botão hamburger dentro da navbar */
+  #sidebarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #sidebarToggle div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Sidebar lateral */
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1049;
+    top: 0;
+    left: 0;
+    background-color: #198754; /* verde bootstrap */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  #sidebar button {
+    display: block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #sidebar button:hover {
+    background-color: #14532d;
+  }
+
+  /* Quando a sidebar estiver aberta */
+  #sidebar.open {
+    width: 250px;
+  }
+
+  /* Para evitar scroll quando sidebar aberta */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-success">
+  <div class="container-fluid d-flex align-items-center">
+    <button id="sidebarToggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="sidebar">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='../index.html'">Página Inicial</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia e Sustentabilidade</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='producao.html'">Campo Produtor</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='tecnologia.html'">Tecnologia no Campo</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='comercio.html'">Comércio e Distribuição</button>
+
+    <button class="btn btn-success text-white" onclick="location.href='impactos.html'">Impactos Ambientais</button>
+  </div>
+</nav>
+
+
+<!-- Sidebar -->
+<div id="sidebar" role="navigation" aria-hidden="true">
+  <button onclick="location.href='index.html'">Início</button>
+  <button onclick="location.href='galeria.html'">Galeria</button>
+  <button onclick="location.href='info.html'">Informações</button>
+  <button onclick="location.href='contato.html'">Fale Conosco</button>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const body = document.body;
+
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-hidden', !isOpen);
+    body.classList.toggle('sidebar-open', isOpen);
+  });
+
+  // Fecha sidebar clicando fora dela
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', false);
+      sidebar.setAttribute('aria-hidden', true);
+      body.classList.remove('sidebar-open');
+    }
+  });
+</script>
+
+
+
+
+    <audio id="musica" autoplay loop playsinline>
+  <source src="../Sons/1.mpeg (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 5; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 1;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+<audio id="somClick" src="../Sons/estralo.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+  <button id="muteBtn" aria-label="Mutar som" 
+  style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    background-color: green;
+    transition: background-color 0.3s ease;
+  ">
+  🔊
+</button>
+
+<script>
+  const btn = document.getElementById('muteBtn');
+
+  btn.addEventListener('click', () => {
+    const medias = document.querySelectorAll('audio, video');
+    const isMuted = medias.length > 0 ? medias[0].muted : false;
+
+    medias.forEach(media => {
+      media.muted = !isMuted;
+    });
+
+    btn.textContent = !isMuted ? '🔇' : '🔊';
+    btn.style.backgroundColor = !isMuted ? 'red' : 'green';
+  });
+</script>
+
+
+<body>
+
+    
+
+    <div class="container">
+        <!-- Texto Centralizado -->
+        <div class="text-center pt-5">
+            <h2>Água Limpa e Acessível para Todos</h2>
+
+<p>O acesso à água limpa e segura é essencial para o desenvolvimento sustentável e a melhoria da qualidade de vida. Com o aumento da população e os impactos das mudanças climáticas, a gestão eficiente dos recursos hídricos torna-se cada vez mais urgente e necessária. Garantir que todas as comunidades tenham acesso a fontes confiáveis de água não é apenas uma questão de sobrevivência, mas também um pilar fundamental para a agricultura e o bem-estar social.</p>
+
+<p>A captação e o armazenamento da água da chuva são estratégias eficazes que muitas comunidades têm adotado com sucesso. Essa técnica possibilita o aproveitamento dos períodos chuvosos para garantir o suprimento durante os meses de seca. Além disso, a educação ambiental desempenha um papel crucial ao promover a conscientização sobre o uso racional e a preservação dos recursos hídricos.</p>
+
+<p>Outro ponto fundamental é a infraestrutura para o abastecimento de água. Muitas comunidades ainda enfrentam a ausência de sistemas eficientes de distribuição, o que contribui para desperdícios e riscos de contaminação. Investimentos em tecnologias e melhorias estruturais são indispensáveis para assegurar o acesso à água potável e de qualidade.</p>
+
+<p>Por fim, o engajamento comunitário é vital para o sucesso de qualquer projeto relacionado à água. Quando as pessoas se sentem envolvidas e responsáveis, tendem a cuidar melhor dos recursos hídricos, participando ativamente de ações de conservação e manutenção, o que fortalece a sustentabilidade dos sistemas implantados.</p>
+
+        </div>
+
+        <!-- Duas Imagens Abaixo do Texto -->
+        <style>
+  .img-fixa {
+    width: 100%;
+    aspect-ratio: 3 / 4;      /* Mantém proporção 3x4 */
+    object-fit: cover;        /* Preenche cortando o excesso se precisar */
+    display: block;
+    border-radius: 12px;      /* Bordas arredondadas */
+  }
+</style>
+
+<div class="row text-center pt-5">
+  <div class="col-md-6">
+    <img src="../assets/image/açude.png.jpeg" class="img-fluid img-fixa" alt="Imagem 1">
+  </div>
+  <div class="col-md-6">
+    <img src="../assets/image/agua2.jpeg" class="img-fluid img-fixa" alt="Imagem 2">
+  </div>
+</div>
+
+
+        <div class="empty-space"></div>
+
+        <div class="container my-4">
+  <h2 class="mb-3">A Importância de Preservar Nascentes e Rios</h2>
+  <p>
+    As nascentes e rios são fontes essenciais de água doce, fundamentais para o equilíbrio ambiental, abastecimento humano, agricultura e biodiversidade. A preservação dessas fontes garante a continuidade dos recursos hídricos, evitando o assoreamento, a poluição e a escassez de água nas regiões rurais e urbanas.
+  </p>
+
+  <h3 class="mt-4">Conservação das Nascentes e Manutenção dos Recursos Hídricos</h3>
+  <p>
+    A conservação das nascentes é diretamente ligada à manutenção da qualidade e quantidade dos recursos hídricos. Nascentes protegidas evitam a erosão do solo, filtram impurezas naturais e evitam o desmatamento, contribuindo para a recarga dos aquíferos e a estabilidade dos cursos d’água. Com isso, reduz-se o risco de enchentes e secas, promovendo um ciclo hídrico mais sustentável.
+  </p>
+
+  <h3 class="mt-4">Boas Práticas Agrícolas que Protegem os Corpos d’Água</h3>
+  <p>
+    Agricultores que adotam práticas agroecológicas como o plantio direto, a manutenção de áreas de preservação permanente (APPs) nas margens dos rios, o uso reduzido de agroquímicos e o manejo integrado do solo ajudam a proteger as nascentes e rios. Essas técnicas promovem o uso sustentável do solo e evitam a contaminação dos corpos d’água, garantindo a saúde dos ecossistemas e a produção agrícola de forma responsável.
+  </p>
+
+  <h3 class="mt-4">Projetos Locais que Envolvem Agricultores e a Comunidade</h3>
+  <p>
+    Em muitas regiões, projetos ambientais comunitários têm sido fundamentais para a conservação dos recursos hídricos. Iniciativas que envolvem o reflorestamento de matas ciliares, a educação ambiental e a construção de sistemas de captação de água da chuva unem agricultores, escolas e moradores em ações colaborativas. Esses projetos fortalecem a consciência ambiental local, promovendo o uso racional da água e a proteção das nascentes para as futuras gerações.
+  </p>
+</div>
+
+
+<style>
+    .empty-space {
+        height: 50px; /* Ajuste a altura conforme necessário */
+    }
+</style>
+
+
+        <div style="max-width: 900px; margin: 40px auto;">
+  <div style="position: relative; height: 400px;">
+    <canvas id="aguaChart"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('aguaChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
+      datasets: [{
+        label: 'Acessibilidade à Água no Campo (%)',
+        data: [55, 57, 56, 59, 60, 62, 63, 65],
+        borderColor: '#198754',
+        backgroundColor: 'rgba(25,135,84,0.1)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        pointBackgroundColor: '#198754',
+        borderWidth: 3,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Evolução da Acessibilidade à Água no Campo (2018–2025)',
+          font: { size: 20, weight: 'bold' },
+          padding: { top: 20, bottom: 30 }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%`
+          }
+        },
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          min: 50,
+          max: 70,
+          ticks: {
+            stepSize: 5,
+            callback: val => val + '%',
+            font: { size: 14 }
+          },
+          title: {
+            display: true,
+            text: 'Percentual (%)',
+            font: { size: 16, weight: 'bold' }
+          }
+        },
+        x: {
+          ticks: { font: { size: 14 } },
+          title: {
+            display: true,
+            text: 'Ano',
+            font: { size: 16, weight: 'bold' }
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
+
+        <!-- Tabela com informações -->
+        <div class="pt-5">
+            <h4 class="text-center">Comparativo de Acessibilidade à Água</h4>
+            <table class="table table-bordered table-striped mt-3">
+                <thead class="table-success">
+                    <tr>
+                        <th>Região</th>
+                        <th>Fonte Principal</th>
+                        <th>Soluções Implementadas</th>
+                        <th>Desafios Enfrentados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nordeste</td>
+                        <td>Poços artesianos</td>
+                        <td>Sistemas de captação de chuva</td>
+                        <td>Secas prolongadas</td>
+                    </tr>
+                    <tr>
+                        <td>Centro-Oeste</td>
+                        <td>Rios e nascentes</td>
+                        <td>Filtros comunitários</td>
+                        <td>Contaminação por agrotóxicos</td>
+                    </tr>
+                    <tr>
+                        <td>Sul</td>
+                        <td>Redes públicas</td>
+                        <td>Reservatórios familiares</td>
+                        <td>Distribuição irregular</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Quatro blocos explicativos -->
+        <div class="row pt-5">
+            <h4 class="text-center pb-3">Aplicações Práticas</h4>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Educação Ambiental</h5>
+                    <p>Programas e campanhas educativas em escolas e comunidades promovem o uso da água, formando cidadãos responsáveis. Essas ações ajudam a preservar os recursos hídricos para o futuro.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Captação de Chuva</h5>
+                    <p>Instalação de sistemas eficientes, como calhas, filtros e cisternas, para coletar e armazenar água, garantindo abastecimento em áreas com baixa pluviosidade e menor dependência de outras fontes.</p>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Purificação Doméstica</h5>
+                    <p>Programas e campanhas educativas em escolas e comunidades promovem o uso consciente da água, formando cidadãos responsáveis e incentivando a preservação dos recursos hídricos.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 border rounded shadow-sm">
+                    <h5>Engajamento Comunitário</h5>
+                    <p>Iniciativas colaborativas que envolvem moradores na gestão e preservação dos recursos hídricos, fortalecendo o senso de responsabilidade coletiva e cuidado ambiental.</p>
+                </div>
+            </div>
+        </div>
+
+        
+
+</p>
+
+
+        <!-- Linha do tempo -->
+        <div class="pt-5">
+            <h4 class="text-center">Linha do Tempo: Evolução da Acessibilidade à Água</h4>
+            <ul>
+  <li><strong>2000:</strong> Início dos programas de instalação de cisternas no semiárido, garantindo armazenamento de água para milhares de famílias.</li>
+  <li><strong>2005:</strong> Implementação de tecnologias simples para captação e armazenamento de água da chuva em comunidades rurais.</li>
+  <li><strong>2010:</strong> Expansão dos poços artesianos e implantação de sistemas de filtragem para melhorar a qualidade da água consumida.</li>
+  <li><strong>2013:</strong> Parcerias entre governo e ONGs para fortalecer a infraestrutura hídrica em áreas remotas.</li>
+  <li><strong>2015:</strong> Lançamento de campanhas nacionais para promover o uso consciente e sustentável dos recursos hídricos.</li>
+  <li><strong>2017:</strong> Desenvolvimento de programas educacionais sobre conservação da água em escolas rurais.</li>
+  <li><strong>2020:</strong> Implantação de projetos sustentáveis com tecnologias locais para otimizar o acesso e a preservação da água.</li>
+  <li><strong>2023:</strong> Início da digitalização do monitoramento dos recursos hídricos para melhor gestão e prevenção de crises.</li>
+  <li><strong>2025:</strong> Expansão dos sistemas de reúso e tratamento de água para garantir sustentabilidade a longo prazo nas comunidades rurais.</li>
+</ul>
+
+<div class="empty-space"></div>
+
+<style>
+    .empty-space {
+        height: 50px; /* Ajuste a altura conforme necessário */
+    }
+</style>
+
+<div style="display: flex; align-items: center;">
+    <!-- Imagem à esquerda -->
+    <div style="flex: 1;">
+        <img src="../assets/image/torneira.png.jpeg" alt="Imagem relacionada à água" style="width: 100%; max-width: 300px; border-radius: 12px;"/>
+    </div>
+
+    <!-- Texto à direita -->
+    <div style="flex: 2; padding-left: 20px;">
+        <h2 class="text-center">Um Pilar para o Desenvolvimento Sustentável</h2>
+
+        <p>
+            O acesso à água potável é essencial para a saúde e o bem-estar das comunidades, especialmente nas áreas rurais. 
+            Garantir essa acessibilidade exige investimentos em infraestrutura, tecnologias adequadas e práticas sustentáveis 
+            que assegurem o uso consciente e a preservação dos recursos hídricos. Com os desafios das mudanças climáticas e 
+            o aumento da população, é fundamental implementar soluções eficientes, como captação de água da chuva e sistemas 
+            de filtragem, além de promover a educação ambiental para o uso responsável da água.
+        </p>
+
+        <p>
+            Além de melhorar a qualidade de vida, a acessibilidade à água fortalece a autonomia das comunidades rurais, que 
+            dependem dela para a agricultura e outras atividades essenciais. Projetos que incentivam a participação local 
+            e a colaboração entre governo e sociedade são fundamentais para garantir um futuro mais justo e sustentável. 
+            Com água disponível, é possível avançar em saúde, segurança alimentar e desenvolvimento econômico, conectando 
+            campo e cidade em prol do progresso coletivo.
+        </p>
+    </div>
+</div>
+</div>
+        </div>
+
+<style>
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap; /* permite quebra */
+    align-items: flex-start;
+    gap: 20px; /* espaço entre imagem e texto */
+  }
+
+  .container-flex img {
+    flex: 0 0 300px;  /* largura fixa (máximo 300px), sem encolher */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .container-flex .texto {
+    flex: 1 1 300px; /* cresce e encolhe, mínimo 300px */
+  }
+
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+    }
+
+    .container-flex img,
+    .container-flex .texto {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<style>
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .container-flex img {
+    flex: 0 0 230px;  /* largura da imagem menor */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .container-flex .texto {
+    flex: 1 1 300px;
+  }
+
+  .container-flex .texto h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+    }
+
+    .container-flex img,
+    .container-flex .texto {
+      flex: 1 1 100%;
+    }
+
+    .container-flex .texto h2 {
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="container my-4">
+  <h2 class="mb-3">Impactos da Escassez de Água na Vida Rural</h2>
+
+  <h4>Como a falta de água afeta a produção agrícola e a renda familiar</h4>
+  <p>
+    A escassez de água é um dos maiores desafios enfrentados pelas comunidades rurais. A agricultura depende diretamente do acesso a fontes hídricas confiáveis para irrigação das plantações, alimentação dos animais e manutenção do solo. Quando a água se torna insuficiente, a produtividade agrícola cai drasticamente, levando à redução das colheitas e, consequentemente, da renda das famílias que dependem exclusivamente da agricultura para sua subsistência.
+  </p>
+  <p>
+    Além disso, a limitação no uso da água força os produtores a adotarem práticas menos eficientes e mais caras, como irrigação por métodos inadequados ou compra de água, o que compromete ainda mais o orçamento familiar. A falta de investimentos em infraestrutura hídrica, como cisternas e sistemas de armazenamento, agrava essa situação, deixando a população vulnerável às secas prolongadas.
+  </p>
+
+  <h4>Efeitos na saúde das pessoas e dos animais</h4>
+  <p>
+    A escassez de água também impacta diretamente a saúde das pessoas e dos animais nas zonas rurais. A água de má qualidade, muitas vezes utilizada por falta de alternativa, pode transmitir doenças como diarreia, hepatite e infecções de pele. A insuficiência de água para higiene pessoal e para o preparo dos alimentos aumenta o risco de contaminação e adoecimento.
+  </p>
+  <p>
+    Para os animais, a falta de água reduz a produção de leite, a taxa de crescimento e a resistência a doenças, prejudicando a qualidade e a quantidade dos produtos agrícolas derivados, como carne e laticínios. O sofrimento dos animais também implica em perdas econômicas para os produtores rurais.
+  </p>
+
+  <h4>Migrações internas e o abandono do campo por falta de recursos hídricos</h4>
+  <p>
+    A insuficiência de recursos hídricos é um dos principais motivos que levam à migração interna no Brasil. Muitas famílias rurais, diante da impossibilidade de manter suas atividades agrícolas e pecuárias, migram para áreas urbanas em busca de melhores condições de vida e trabalho.
+  </p>
+  <p>
+    Esse êxodo rural provoca o abandono das terras, o enfraquecimento das comunidades locais e o aumento da vulnerabilidade social nas cidades, que nem sempre oferecem infraestrutura adequada para receber o crescimento populacional. Além disso, a perda da mão de obra rural compromete a produção alimentar regional e nacional, aumentando a dependência das áreas urbanas em relação ao campo.
+  </p>
+  <p>
+    Portanto, investir em tecnologias de conservação e uso racional da água, além de políticas públicas eficazes para garantir o acesso à água potável, são fundamentais para preservar a vida no campo e assegurar a segurança hídrica e alimentar do país.
+  </p>
+</div>
+
+
+
+
+<div class="container my-4">
+  <div class="container-flex">
+    <img src="../assets/image/cdag.jpeg" alt="Uso da Água no Campo" />
+    
+    <div class="texto">
+      <h2>Tecnologias Inovadoras para o Uso da Água no Campo</h2>
+      
+      <p>
+        A água é um recurso essencial para a agricultura, e seu uso eficiente tem se tornado prioridade para garantir a sustentabilidade e aumentar a produtividade rural. Diversas tecnologias inovadoras têm sido implementadas para otimizar o uso da água, reduzindo desperdícios e melhorando a irrigação, mesmo em regiões com escassez hídrica, como por exemplo proteção das nascentes associada com sistemas de captação e armazenamento de água.
+      </p>
+
+      <h4>Microaspersão e Gotejamento para Irrigação Eficiente</h4>
+      <p>
+        Sistemas de microaspersão e irrigação por gotejamento proporcionam a aplicação direta da água nas raízes das plantas, minimizando perdas por evaporação e escoamento superficial. Essas técnicas permitem a economia de até 60% do volume de água comparado à irrigação tradicional, além de favorecer o crescimento saudável das culturas, reduzindo o desenvolvimento de doenças foliares.
+      </p>
+
+      <h4>Sensores de Umidade do Solo para Otimizar o Uso da Água</h4>
+      <p>
+        O uso de sensores de umidade do solo tem revolucionado o manejo hídrico na agricultura. Esses dispositivos monitoram em tempo real o nível de água presente no solo, fornecendo dados precisos para acionamento automático dos sistemas de irrigação. Isso evita tanto o excesso quanto a falta de água, promovendo a saúde das plantas e a eficiência do uso dos recursos.
+      </p>
+
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+        <!-- Infográficos estáticos -->
+        <div class="row text-center pt-5">
+            <h4 class="pb-3">Fatos Interessantes</h4>
+            <div class="col">
+                <div class="p-3 bg-light rounded">
+                    💧 <strong>70%</strong> da água é usada na agricultura.
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-light rounded">
+                    🌍 <strong>1 em cada 3</strong> pessoas não tem acesso a água segura.
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-light rounded">
+                    🌾 <strong>69%</strong> da água doce é destinada ao campo.
+                </div>
+            </div>
+        </div>
+
+        <!-- Frase inspiradora -->
+        <div class="text-center py-5">
+            <h5 class="fst-italic text-success">“Cada gota conta. Preservar a água é plantar o futuro.” 💧</h5>
+        </div>
+    </div>
+
+    <section style="margin-top: 40px; padding: 20px; background-color: #ffffff; border-radius: 8px; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; color: #000000;">
+  <h2 style="color: #000000; margin-bottom: 15px;">Referência</h2>
+  <p>
+    Acesso à Água no Meio Rural – Agência Nacional de Águas e Saneamento Básico (ANA)<br>
+    <a href="https://www.gov.br/ana/pt-br/assuntos/seguranca-hidrica/no-meio-rural"
+       target="_blank" rel="noopener noreferrer"
+       style="color: #800080 !important; text-decoration: underline;">
+       https://www.gov.br/ana/pt-br/assuntos/seguranca-hidrica/no-meio-rural
+    </a>
+  </p>
+</section>
+
+
+
+    <div class="footer bg-success text-white text-center py-3">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        const lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Acessibilidade à Água (%)',
+                    data: [70, 50, 80, 40, 90, 60, 100, 55], // Dados com variações bruscas
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 2,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Porcentagem de Acessibilidade'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Anos'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

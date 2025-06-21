@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1; /* Permite que o contêiner ocupe o espaço disponível */
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #198754; /* Cor do rodapé igual à da barra de navegação */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto */
+            padding: 15px; /* Padding vertical do rodapé */
+        }
+
+        .img-card {
+    height: 300px;
+    object-fit: cover;
+    
+    
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+<section class="cabecalho text-center py-4" style="background-color: #004B49;">
+  <h1>AGRINHO 2025</h1>
+  <h3 style="color: #98FF98;">Festejando Conexão Campo Cidade</h3>
+</section>
+
+<!-- Navbar -->
+<style>
+  /* Estilo do botão hamburger com 3 linhas */
+  #sidebarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #sidebarToggle div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Sidebar lateral */
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1049;
+    top: 0;
+    left: 0;
+    background-color: #198754; /* verde bootstrap */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  #sidebar button {
+    display: block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #sidebar button:hover {
+    background-color: #14532d;
+  }
+
+  #sidebar.open {
+    width: 250px;
+  }
+
+  body.sidebar-open {
+    overflow: hidden;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-success">
+  <div class="container-fluid d-flex align-items-center">
+    <!-- Botão hamburger lateral, à esquerda -->
+    <button id="sidebarToggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="sidebar">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <!-- Botão toggler padrão do bootstrap -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-success text-white me-2" onclick="location.href='../index.html'">Página Inicial</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" role="navigation" aria-hidden="true">
+  <button onclick="location.href='index.html'">Início</button>
+  <button onclick="location.href='galeria.html'">Galeria</button>
+  <button onclick="location.href='info.html'">Informações</button>
+  <button onclick="location.href='contato.html'">Fale Conosco</button>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const body = document.body;
+
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-hidden', !isOpen);
+    body.classList.toggle('sidebar-open', isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', false);
+      sidebar.setAttribute('aria-hidden', true);
+      body.classList.remove('sidebar-open');
+    }
+  });
+</script>
+
+
+
+
+    <audio id="musica" autoplay loop playsinline>
+  <source src="../Sons/1.mpeg (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 5; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 1;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+<audio id="somClick" src="../Sons/estralo.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+  <button id="muteBtn" aria-label="Mutar som" 
+  style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    background-color: green;
+    transition: background-color 0.3s ease;
+  ">
+  🔊
+</button>
+
+<script>
+  const btn = document.getElementById('muteBtn');
+
+  btn.addEventListener('click', () => {
+    const medias = document.querySelectorAll('audio, video');
+    const isMuted = medias.length > 0 ? medias[0].muted : false;
+
+    medias.forEach(media => {
+      media.muted = !isMuted;
+    });
+
+    btn.textContent = !isMuted ? '🔇' : '🔊';
+    btn.style.backgroundColor = !isMuted ? 'red' : 'green';
+  });
+</script>
+
+<div class="container pt-5" style="font-family: Arial, sans-serif; color: #333;">
+  <h2 class="text-center">Conexão Campo-Cidade</h2>
+
+  <p style="text-align: justify;">
+    A relação entre o campo e a cidade é fundamental para o desenvolvimento sustentável e equilibrado de qualquer país. Enquanto a zona rural é responsável pela produção de alimentos, matérias-primas e recursos naturais essenciais, as cidades representam os centros de consumo, inovação e serviços.
+  </p>
+
+  <p style="text-align: justify;">
+    A conexão entre esses dois mundos possibilita a troca de conhecimentos, tecnologias e valores, promovendo a valorização da vida no campo e garantindo o abastecimento das populações urbanas. Além disso, essa integração estimula a economia local, fortalece a cultura rural e contribui para a conservação do meio ambiente.
+  </p>
+
+  <p style="text-align: justify;">
+    Entender e fortalecer essa conexão é essencial para construirmos um futuro mais justo, produtivo e sustentável, em que o campo e a cidade caminhem juntos, respeitando suas particularidades e potencialidades.
+  </p>
+</div>
+
+
+<div class="container" style="max-width: 960px; margin: 40px auto; display: flex; gap: 20px; justify-content: center;">
+
+  <div style="flex: 1; background-color: #198754; color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3); font-family: Arial, sans-serif; text-align: center;">
+    <h3 style="margin-bottom: 15px;">Integração Rural-Urbana</h3>
+    <p>
+      Facilita o fluxo de produtos, serviços e conhecimento entre campo e cidade, promovendo o desenvolvimento sustentável.
+    </p>
+  </div>
+
+  <div style="flex: 1; background-color: #198754; color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3); font-family: Arial, sans-serif; text-align: center;">
+    <h3 style="margin-bottom: 15px;">Valorização da Cultura Rural</h3>
+    <p>
+      Preserva tradições, fortalece a identidade das comunidades rurais e estreita os laços com os centros urbanos.
+    </p>
+  </div>
+
+  <div style="flex: 1; background-color: #198754; color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3); font-family: Arial, sans-serif; text-align: center;">
+    <h3 style="margin-bottom: 15px;">Abastecimento e Segurança Alimentar</h3>
+    <p>
+      Garante que os alimentos produzidos no campo cheguem às cidades de forma eficiente e segura para toda a população.
+    </p>
+  </div>
+
+</div>
+
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+  <h2>Integração Sustentável</h2>
+  <p style="text-align: justify;">
+    A integração sustentável entre áreas rurais e urbanas é um pilar essencial para o desenvolvimento equilibrado. Essa relação promove a circulação eficiente de produtos agrícolas frescos e incentivados, fortalecendo as economias locais e reduzindo o desperdício alimentar.
+  </p>
+  <p style="text-align: justify;">
+    Além disso, a transferência de tecnologias e serviços entre o campo e a cidade impulsiona a modernização das práticas agrícolas, aumentando a produtividade e preservando os recursos naturais. Essa cooperação fortalece a segurança alimentar e a qualidade de vida de ambas as regiões.
+  </p>
+  <p style="text-align: justify;">
+    Investir em infraestrutura de transporte, comunicação e políticas públicas integradas é fundamental para ampliar essa conexão, gerando benefícios econômicos, sociais e ambientais para todo o país.
+  </p>
+  <p style="text-align: justify;">
+    A conscientização e o engajamento da sociedade urbana também são cruciais para valorizar o trabalho rural e incentivar práticas sustentáveis, promovendo um ciclo virtuoso que beneficia tanto o campo quanto a cidade.
+  </p>
+</div>
+
+
+
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+  <div style="max-width: 800px; height: 280px; margin: 0 auto; padding: 10px; background: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+    <h3 style="text-align: center; font-family: Arial, sans-serif; color: #2e7d32; margin-bottom: 15px; font-size: 1.4rem;">
+      Evolução da Conexão Campo-Cidade (1970–2025)
+    </h3>
+    <canvas id="conexaoChart" width="800" height="230" style="display: block; margin: 0 auto;"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('conexaoChart').getContext('2d');
+  const conexaoChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [1970, 1980, 1990, 2000, 2010, 2015, 2020, 2025],
+      datasets: [{
+        label: 'Índice de Integração',
+        data: [12, 18, 25, 40, 60, 70, 85, 95],
+        borderColor: '#2e7d32',
+        backgroundColor: 'rgba(46,125,50,0.3)',
+        fill: true,
+        tension: 0.5,
+        pointRadius: 5,
+        pointBackgroundColor: '#2e7d32',
+        borderWidth: 3,
+      }]
+    },
+    options: {
+      responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          ticks: {
+            stepSize: 20,
+            color: '#2e7d32',
+            font: { size: 14, weight: 'bold' }
+          },
+          grid: { color: '#c8e6c9' }
+        },
+        x: {
+          ticks: {
+            color: '#2e7d32',
+            font: { size: 14, weight: 'bold' }
+          },
+          grid: { color: '#c8e6c9' }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: '#2e7d32',
+            font: { size: 16, weight: 'bold' }
+          }
+        },
+        tooltip: {
+          enabled: true,
+          backgroundColor: '#2e7d32',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          cornerRadius: 4,
+          padding: 8,
+        }
+      }
+    }
+  });
+</script>
+
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+  <h2>Pontes que Alimentam: A Importância da Conexão Campo-Cidade</h2>
+
+  <p style="text-align: justify;">
+    A relação entre o campo e a cidade vai muito além do transporte de alimentos. Ela representa um ciclo contínuo de trocas econômicas, culturais e tecnológicas que influencia diretamente a qualidade de vida de milhões de pessoas. Entender e fortalecer essa conexão é essencial para garantir um futuro sustentável e equilibrado para ambas as regiões.
+  </p>
+
+  <h3>Principais Formas de Conexão</h3>
+  <ul style="text-align: justify;">
+    <li><strong>Abastecimento Alimentar:</strong> O campo é responsável por produzir a maior parte dos alimentos consumidos nas cidades, desde frutas e verduras até carnes e grãos.</li>
+    <li><strong>Fornecimento de Matérias-Primas:</strong> Diversas indústrias urbanas dependem de recursos naturais e matérias-primas provenientes da zona rural, como madeira, algodão, leite e minérios.</li>
+    <li><strong>Fluxo de Tecnologia e Informação:</strong> As cidades fornecem tecnologia, inovação e conhecimento que modernizam as atividades rurais, promovendo agricultura de precisão e sustentabilidade.</li>
+  </ul>
+
+  <h3>Benefícios da Integração Campo-Cidade</h3>
+  <ol style="text-align: justify;">
+    <li><strong>Segurança Alimentar:</strong> O acesso contínuo a alimentos de qualidade é uma garantia para as populações urbanas.</li>
+    <li><strong>Desenvolvimento Econômico:</strong> O comércio entre campo e cidade movimenta a economia, gerando empregos e renda para produtores e distribuidores.</li>
+    <li><strong>Inovação Rural:</strong> O campo se moderniza com acesso a novas tecnologias, equipamentos e capacitações vindas da cidade.</li>
+    <li><strong>Qualidade de Vida:</strong> O intercâmbio entre as regiões promove melhorias em saúde, educação e infraestrutura para as comunidades rurais.</li>
+  </ol>
+
+  <h3>Desafios a Superar</h3>
+  <ul style="text-align: justify;">
+    <li><strong>Logística e Transporte:</strong> Muitas regiões rurais ainda enfrentam dificuldades de acesso, o que dificulta o escoamento da produção.</li>
+    <li><strong>Desigualdade de Recursos:</strong> A falta de investimentos em infraestrutura básica no campo, como estradas e internet, limita o potencial de crescimento.</li>
+    <li><strong>Conscientização Urbana:</strong> Parte da população urbana desconhece os desafios enfrentados pelos produtores rurais, dificultando a valorização do campo.</li>
+  </ul>
+
+  <p style="text-align: justify; margin-top: 15px;">
+    Fortalecer essa ponte entre campo e cidade é investir em um futuro mais justo, produtivo e sustentável. Com políticas públicas adequadas, investimentos em infraestrutura e maior conscientização social, essa conexão pode se tornar ainda mais sólida e benéfica para todos.
+  </p>
+</div>
+
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+  <h2>O Papel Vital da Zona Rural na Conexão Campo-Cidade</h2>
+
+  <p style="text-align: justify;">
+    A zona rural é o coração da produção de alimentos, matérias-primas e recursos naturais que abastecem as áreas urbanas. Sem o trabalho constante de agricultores, pecuaristas e demais trabalhadores rurais, a vida nas cidades seria inviável. Essa interdependência cria uma relação de troca contínua entre os dois ambientes.
+  </p>
+
+  <p style="text-align: justify;">
+    Além de fornecer alimentos frescos, a zona rural também contribui com energia renovável, água e produtos florestais. A agricultura familiar, que predomina em muitas regiões do Brasil, desempenha um papel social e econômico de grande relevância, promovendo o desenvolvimento local e garantindo a segurança alimentar.
+  </p>
+
+  <p style="text-align: justify;">
+    Outro fator importante é a preservação ambiental. A zona rural abriga ecossistemas fundamentais para o equilíbrio climático e para a qualidade da água consumida nas cidades. Investir na infraestrutura e no bem-estar das comunidades rurais é fortalecer toda a cadeia que conecta o campo à cidade.
+  </p>
+</div>
+
+
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+  <h2 style="text-align: center; margin-bottom: 20px;">Fluxo Essencial: Como o Campo Sustenta a Cidade</h2>
+
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: Arial, sans-serif; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background-color: #d0f0c0;">
+        <th style="padding: 12px; border: 1px solid #ccc;">Aspecto</th>
+        <th style="padding: 12px; border: 1px solid #ccc;">Contribuição da Zona Rural</th>
+        <th style="padding: 12px; border: 1px solid #ccc;">Impacto nas Cidades</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Alimentação</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Produção de grãos, frutas, hortaliças, carnes, leite e derivados.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Abastecimento dos mercados, feiras e restaurantes urbanos.</td>
+      </tr>
+      <tr style="background-color: #f9f9f9;">
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Matérias-Primas</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Madeira, algodão, couro, biomassa e produtos florestais.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Indústrias têxteis, moveleiras e de construção dependem desses insumos.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Energia Sustentável</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Produção de energia solar, eólica e de biomassa em propriedades rurais.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Suprimento energético complementar e sustentável para centros urbanos.</td>
+      </tr>
+      <tr style="background-color: #f9f9f9;">
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Recursos Hídricos</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Proteção de nascentes e manejo sustentável de bacias hidrográficas.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Fornecimento de água potável para consumo humano e industrial.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Emprego e Economia</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Geração de empregos nas atividades agrícolas e agroindustriais.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Movimentação econômica através da compra de insumos e serviços urbanos.</td>
+      </tr>
+      <tr style="background-color: #f9f9f9;">
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Turismo Rural</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Fazendas turísticas, roteiros ecológicos e atividades de lazer no campo.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Oportunidades de lazer, educação ambiental e desenvolvimento econômico para a cidade.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc;"><strong>Cultura e Tradições</strong></td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Festas típicas, culinária regional, saberes populares e costumes rurais.</td>
+        <td style="padding: 10px; border: 1px solid #ccc;">Enriquecimento cultural das cidades através de festivais e eventos gastronômicos.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+  <h2 style="text-align: center; margin-bottom: 15px;">Conclusão: Unindo Destinos, Construindo Futuros</h2>
+
+  <p style="text-align: justify;">
+    A conexão entre o campo e a cidade é muito mais do que um simples elo de fornecimento de produtos e serviços. Ela representa uma rede complexa de interações sociais, econômicas, culturais e ambientais que afetam a vida de todos nós. Garantir o equilíbrio e o fortalecimento dessa relação é essencial para promover o desenvolvimento sustentável, reduzir desigualdades e melhorar a qualidade de vida tanto para quem vive nas zonas rurais quanto para quem habita os centros urbanos.
+  </p>
+
+  <p style="text-align: justify;">
+    Investir no campo significa investir no futuro das cidades. Por meio da valorização da agricultura, do acesso à tecnologia, da preservação ambiental e do incentivo a políticas públicas integradas, podemos construir um país mais justo, produtivo e equilibrado. Que a compreensão dessa interdependência nos motive a adotar atitudes mais conscientes e solidárias, reconhecendo a importância de cada região no desenvolvimento do nosso território.
+  </p>
+
+  <p style="text-align: justify;">
+    Além disso, é fundamental fortalecer os canais de diálogo e cooperação entre produtores rurais, governos e consumidores urbanos. A transparência nas cadeias produtivas, o apoio ao comércio local e a educação sobre a origem dos alimentos são passos importantes para aproximar ainda mais o campo da cidade e criar relações mais justas e sustentáveis.
+  </p>
+
+  <p style="text-align: justify;">
+    Por fim, cabe a cada um de nós reconhecer o valor do trabalho rural e adotar hábitos de consumo mais responsáveis. Escolher produtos de origem sustentável, apoiar iniciativas de agricultura familiar e participar de ações de preservação ambiental são formas concretas de contribuir para uma conexão campo-cidade mais forte, equilibrada e duradoura.
+  </p>
+</div>
+
+<section style="margin-top: 40px; padding: 20px; background-color: #ffffff; border-radius: 8px; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; color: #000000;">
+  <h2 style="color: #000000; margin-bottom: 15px;">Referência</h2>
+  <p>
+    Conexão Campo-Cidade: Notícias, Tendências e Análises – Notícias Agrícolas<br>
+    <a href="https://www.noticiasagricolas.com.br/conexaocampocidade/" 
+       target="_blank" rel="noopener noreferrer" 
+       style="color: #800080 !important; text-decoration: underline;">
+       https://www.noticiasagricolas.com.br/conexaocampocidade/
+    </a>
+  </p>
+</section>
+
+
+<div class="footer">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

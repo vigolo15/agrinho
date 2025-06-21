@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="energia.css">
+</head>
+
+<!-- Cabeçalho -->
+<section class="cabecalho text-center py-4" style="background-color: #004B49;">
+  <h1>AGRINHO 2025</h1>
+  <h3 style="color: #98FF98;">Festejando Conexão Campo Cidade</h3>
+</section>
+
+<!-- Navbar -->
+<style>
+  /* Botão hamburger dentro da navbar */
+  #sidebarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #sidebarToggle div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Sidebar lateral */
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1049;
+    top: 0;
+    left: 0;
+    background-color: #198754; /* verde bootstrap */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  #sidebar button {
+    display: block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #sidebar button:hover {
+    background-color: #14532d;
+  }
+
+  /* Quando a sidebar estiver aberta */
+  #sidebar.open {
+    width: 250px;
+  }
+
+  /* Para evitar scroll quando sidebar aberta */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-success">
+  <div class="container-fluid d-flex align-items-center">
+    <button id="sidebarToggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="sidebar">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='../index.html'">Página Inicial</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia e Sustentabilidade</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='producao.html'">Campo Produtor</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='tecnologia.html'">Tecnologia no Campo</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='comercio.html'">Comércio e Distribuição</button>
+
+    <button class="btn btn-success text-white" onclick="location.href='impactos.html'">Impactos Ambientais</button>
+  </div>
+</nav>
+
+
+<!-- Sidebar -->
+<div id="sidebar" role="navigation" aria-hidden="true">
+  <button onclick="location.href='index.html'">Início</button>
+  <button onclick="location.href='galeria.html'">Galeria</button>
+  <button onclick="location.href='info.html'">Informações</button>
+  <button onclick="location.href='contato.html'">Fale Conosco</button>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const body = document.body;
+
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-hidden', !isOpen);
+    body.classList.toggle('sidebar-open', isOpen);
+  });
+
+  // Fecha sidebar clicando fora dela
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', false);
+      sidebar.setAttribute('aria-hidden', true);
+      body.classList.remove('sidebar-open');
+    }
+  });
+</script>
+
+
+
+
+    <audio id="musica" autoplay loop playsinline>
+  <source src="../Sons/1.mpeg (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 5; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 1;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+<audio id="somClick" src="../Sons/estralo.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+  <button id="muteBtn" aria-label="Mutar som" 
+  style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    background-color: green;
+    transition: background-color 0.3s ease;
+  ">
+  🔊
+</button>
+
+<script>
+  const btn = document.getElementById('muteBtn');
+
+  btn.addEventListener('click', () => {
+    const medias = document.querySelectorAll('audio, video');
+    const isMuted = medias.length > 0 ? medias[0].muted : false;
+
+    medias.forEach(media => {
+      media.muted = !isMuted;
+    });
+
+    btn.textContent = !isMuted ? '🔇' : '🔊';
+    btn.style.backgroundColor = !isMuted ? 'red' : 'green';
+  });
+</script>
+
+
+<body>
+    
+
+    <!-- Conteúdo principal -->
+    <div class="container py-5">
+        <div class="text-center">
+            <h2>O que é energia rural?</h2>
+            <p>
+    A energia rural desempenha um papel vital no desenvolvimento sustentável das comunidades do campo. Ela não apenas possibilita o uso de tecnologias modernas que aumentam a eficiência da agricultura e da pecuária, mas também melhora significativamente a qualidade de vida das famílias rurais. Com o acesso a fontes renováveis como a energia solar, eólica, biomassa e pequenas centrais hidrelétricas, essas regiões conquistam maior autonomia energética, reduzindo custos e fortalecendo a economia local. Além disso, o uso dessas fontes limpas contribui para a preservação do meio ambiente, minimizando os impactos causados pelas fontes tradicionais de energia.
+</p>
+
+<p>
+    Ao promover a independência energética, a energia rural abre caminho para um futuro mais sustentável e equilibrado. Essas soluções renováveis respeitam os ciclos naturais e ajudam a conservar os recursos naturais essenciais para o campo. O fortalecimento da infraestrutura energética nas áreas rurais também favorece a inclusão digital e o acesso a serviços essenciais, conectando o campo às oportunidades do mundo moderno. Assim, a energia rural não é apenas uma necessidade, mas uma poderosa ferramenta para garantir o progresso socioeconômico aliado à preservação ambiental.
+</p>
+
+        </div>
+
+        <!-- Imagens ilustrativas -->
+        <div class="row text-center pt-4">
+            <div class="col-md-4 mb-3">
+                <img src="../assets/image/poste.png.jpeg" class="img-fluid rounded" alt="Energia solar">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="../assets/image/cerca.png.jpeg" class="img-fluid rounded" alt="Biomassa">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="../assets/image/energia5.jpeg" class="img-fluid rounded" alt="Energia eólica">
+            </div>
+        </div>
+
+        <div class="container" style="padding: 20px; background-color: #f9f9f9; border-radius: 8px; margin-top: 20px;">
+  <h2>Inovações na Energia Rural</h2>
+  <p>
+    A energia rural tem passado por transformações significativas graças ao avanço tecnológico, trazendo soluções inovadoras que tornam o uso da energia mais eficiente, sustentável e acessível nas áreas do campo. Entre as principais tendências destacam-se:
+  </p>
+
+  <h4>Armazenamento por Baterias</h4>
+  <p>
+    O uso de baterias de alta capacidade, especialmente as de íon-lítio, tem permitido armazenar energia gerada por fontes renováveis como solar e eólica, garantindo fornecimento contínuo mesmo em períodos sem sol ou vento. Isso reduz a dependência de geradores a diesel e promove maior autonomia energética.
+  </p>
+
+  <h4>Sistemas Híbridos (Solar + Eólica)</h4>
+  <p>
+    A combinação de painéis solares com turbinas eólicas em sistemas híbridos otimiza a geração energética, pois aproveita diferentes fontes renováveis conforme as condições climáticas. Essa integração aumenta a estabilidade do fornecimento e reduz custos operacionais.
+  </p>
+
+  <h4>Internet das Coisas (IoT) para Monitoramento</h4>
+  <p>
+    Sensores conectados via IoT têm sido empregados para monitorar o consumo de energia, estado dos equipamentos e condições ambientais em tempo real. Essa tecnologia possibilita a gestão inteligente do uso energético, permitindo ajustes automáticos que aumentam a eficiência e previnem falhas.
+  </p>
+
+  <p>
+    Além disso, soluções digitais e aplicativos móveis permitem aos produtores rurais controlar remotamente sistemas de irrigação, iluminação e refrigeração, promovendo a sustentabilidade e economia de recursos naturais.
+  </p>
+
+  <h4>Outras Inovações</h4>
+  <ul>
+    <li>Microgeração distribuída, que permite que propriedades rurais gerem e consumam sua própria energia, podendo até comercializar o excedente.</li>
+    <li>Uso de biomassa e biogás como fontes complementares, aproveitando resíduos agrícolas para geração energética.</li>
+    <li>Sistemas inteligentes de gerenciamento de energia que combinam inteligência artificial para otimizar o uso conforme demanda e disponibilidade.</li>
+  </ul>
+
+  <p>
+    Essas tecnologias não só fortalecem a sustentabilidade no campo, como também aumentam a produtividade e qualidade de vida das comunidades rurais, incentivando um desenvolvimento mais equilibrado e resiliente.
+  </p>
+</div>
+
+
+        <!-- Tabela em grade -->
+        <h3 class="text-center mt-5">Fontes Energéticas e suas Aplicações</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered text-center mt-3">
+                <thead class="table-success">
+                    <tr>
+                        <th>Fonte de Energia</th>
+                        <th>Aplicação</th>
+                        <th>Vantagens</th>
+                        <th>Desafios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Solar</td>
+                        <td>Bombeamento de água, iluminação, eletricidade geral</td>
+                        <td>Renovável, fácil de instalar, baixo custo a longo prazo</td>
+                        <td>Alto custo inicial, dependente do clima</td>
+                    </tr>
+                    <tr>
+                        <td>Biomassa</td>
+                        <td>Aquecimento, geração de eletricidade</td>
+                        <td>Redução de resíduos, energia local</td>
+                        <td>Necessita manejo e transporte de matéria orgânica</td>
+                    </tr>
+                    <tr>
+                        <td>Eólica</td>
+                        <td>Geração de eletricidade em áreas com vento constante</td>
+                        <td>Energia limpa, durável</td>
+                        <td>Instalação cara, requer localização ideal</td>
+                    </tr>
+                    <tr>
+                        <td>Hidrelétrica de pequeno porte</td>
+                        <td>Geração de energia contínua em regiões com rios</td>
+                        <td>Fonte estável e limpa</td>
+                        <td>Impacto ambiental local, custo de construção</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container my-4 p-4" style="background-color: #f8f9fa; border-radius: 8px;">
+  <h2 class="mb-3">Políticas Públicas e Incentivos Governamentais</h2>
+  <p>
+    O desenvolvimento da energia sustentável no meio rural conta com importantes políticas públicas e incentivos governamentais, tanto em âmbito federal quanto estadual, que têm como objetivo facilitar o acesso das comunidades rurais a fontes renováveis e tecnologias limpas. Essas ações promovem a inclusão energética, o fortalecimento da economia local e a redução dos impactos ambientais.
+  </p>
+  <h4 class="mt-4">Programas Federais</h4>
+  <ul>
+    <li><strong>Programa Luz para Todos:</strong> iniciativa do Governo Federal que busca levar eletricidade para áreas rurais sem acesso, incentivando o uso de energia solar, biomassa e outras fontes sustentáveis.</li>
+    <li><strong>Programa de Desenvolvimento Energético de Estados e Municípios (Prodeem):</strong> promove projetos de energia renovável em comunidades rurais, com foco em autonomia energética e sustentabilidade.</li>
+    <li><strong>Incentivo à geração distribuída:</strong> permite que pequenos produtores rurais instalem sistemas de geração própria, como painéis solares, com possibilidade de compensação na conta de energia elétrica.</li>
+  </ul>
+  <h4 class="mt-4">Programas Estaduais</h4>
+  <p>
+    Cada estado brasileiro pode oferecer linhas específicas de crédito e subsídios para estimular a implantação de tecnologias sustentáveis no campo, a exemplo do <strong>Programa Paraná Energia Rural Sustentável - RenovaPR</strong>, programa que inclui:
+  </p>
+  <ul>
+    <li>Financiamentos com juros reduzidos para aquisição de sistemas fotovoltaicos e mini usinas hidrelétricas.</li>
+    <li>Subsídios para aquisição de equipamentos de energia eólica e de biomassa, adaptados às necessidades regionais.</li>
+    <li>Assistência técnica e capacitação para agricultores familiares na instalação e manutenção de tecnologias energéticas.</li>
+  </ul>
+  <h4 class="mt-4">Linhas de Crédito e Subsídios</h4>
+  <p>
+    Instituições financeiras públicas, como o Banco Nacional de Desenvolvimento Econômico e Social (BNDES) e o Banco do Brasil, oferecem linhas de crédito específicas para projetos de energia sustentável no meio rural, com condições facilitadas, prazos longos e carência. Além disso, o Programa Nacional de Apoio à Agricultura Familiar (Pronaf) tem modalidades direcionadas para investimentos em tecnologias limpas.
+  </p>
+  <p>
+    Estes incentivos financeiros são fundamentais para que produtores rurais possam investir em soluções que, além de reduzirem os custos com energia, também contribuem para a preservação ambiental e o desenvolvimento socioeconômico local.
+  </p>
+</div>
+
+
+        <!-- Seções explicativas em quadros -->
+        <div class="row text-center mt-5">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Energia no dia a dia</h5>
+                        <p class="card-text" style="font-style: italic;"> A energia elétrica é essencial para a conservação de alimentos, iluminação e comunicação nas áreas rurais, garantindo conforto e segurança às famílias. Isso permite o uso de tecnologias básicas que facilitam as tarefas diárias no campo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tecnologia agrícola</h5>
+                        <p class="card-text" style="font-style: italic;">O uso de equipamentos elétricos como tratores, sistemas de irrigação automatizados e colheitadeiras modernas aumenta significativamente a produtividade, além de promover maior economia de tempo e recursos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Educação e saúde</h5>
+                        <p class="card-text" style="font-style: italic;">Escolas e postos de saúde localizados em zonas rurais dependem da energia para oferecer serviços de qualidade, desde a iluminação até o funcionamento de equipamentos essenciais para o ensino e o atendimento médico.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Renda e Sustentabilidade</h5>
+                        <p class="card-text" style="font-style: italic;">Com acesso à energia, as famílias rurais podem diversificar suas atividades econômicas, desenvolvendo fontes de renda alternativas que respeitam o meio ambiente e promovem o desenvolvimento sustentável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<p></p>
+<p></p>
+
+<div class="container my-5">
+
+  <h1 class="mb-4">Sustentabilidade Energética</h1>
+
+  <div class="row align-items-start">
+
+    <!-- Coluna do texto (parte inicial) -->
+    <div class="col-md-7">
+      <p>
+        A energia rural desempenha um papel fundamental no progresso das comunidades do campo, sendo um pilar essencial para a melhoria da qualidade de vida e para o aumento da produtividade agrícola. O acesso a fontes de energia renováveis e sustentáveis, como a energia solar, eólica, biomassa e pequenas centrais hidrelétricas, tem transformado significativamente a realidade das propriedades rurais. Ao adotarem essas tecnologias, os agricultores conquistam maior autonomia energética, reduzindo custos operacionais e diminuindo os impactos ambientais associados ao uso de combustíveis fósseis.
+      </p>
+
+      <p>
+        Além da redução dos custos, a eletrificação das áreas rurais facilita o acesso a uma série de tecnologias essenciais que impactam diretamente na eficiência das atividades agrícolas. Sistemas avançados de irrigação automatizada, refrigeração para armazenamento seguro de alimentos, iluminação adequada e equipamentos para comunicação digital são exemplos que melhoram a produtividade e ajudam a preservar os recursos naturais. Isso contribui para o desenvolvimento de um modelo agrícola mais sustentável, equilibrando crescimento econômico com a preservação ambiental.
+      </p>
+
+      <p>
+Além disso, a expansão das fontes renováveis nas áreas rurais impulsiona a geração de empregos locais, fomenta o fortalecimento das cadeias produtivas regionais e promove o desenvolvimento de uma economia mais sustentável e diversificada. Essa transformação incentiva a adoção de tecnologias inovadoras que aumentam a eficiência produtiva, reduzem os impactos ambientais e promovem o uso consciente dos recursos naturais. Ao mesmo tempo, contribui para a melhoria da qualidade de vida das comunidades rurais, tornando-as mais resilientes e preparadas para enfrentar os desafios econômicos, sociais e ambientais atuais e futuros.
+</p>
+
+    </div>
+
+    <!-- Coluna da imagem -->
+    <div class="col-md-5 text-center">
+<img src="../Assets/image/energia.jpeg" alt="Painel solar em área rural" class="img-fluid rounded shadow mb-4" style="max-width: 100%; height: auto;">
+    </div>
+
+  </div>
+
+  <!-- Restante do texto (abaixo da imagem) -->
+  <div>
+    <p>
+      Outro aspecto crucial é o impacto social gerado pela expansão da energia sustentável no meio rural. A eletrificação e o acesso à internet promovem a inclusão digital e social, conectando agricultores e comunidades a novas oportunidades educacionais, comerciais e de saúde. Isso reduz a desigualdade entre áreas urbanas e rurais, incentivando o desenvolvimento local e a permanência dos jovens no campo, que passam a visualizar um futuro promissor em suas regiões.
+    </p>
+
+    <p>
+      Investir em energia rural também representa um impulso significativo para a economia local. A instalação, manutenção e operação das tecnologias renováveis geram empregos diretos e indiretos, além de fomentar o surgimento de novos negócios ligados à cadeia produtiva da energia limpa. Essa dinamização econômica fortalece as comunidades, estimula a inovação e promove práticas agrícolas mais eficientes, que demandam menos recursos não renováveis.
+    </p>
+
+    <p>
+      A disseminação das fontes de energia limpa no campo é, portanto, um dos caminhos mais eficazes para garantir um desenvolvimento rural sustentável. Ela assegura que as próximas gerações possam desfrutar de um ambiente equilibrado, com prosperidade econômica, inclusão social e respeito ao meio ambiente. A integração entre tecnologia, sustentabilidade e qualidade de vida é a base para transformar o setor agrícola em um exemplo global de inovação responsável.
+    </p>
+  </div>
+
+</div>
+
+
+<div style="height: 50px;"></div>
+
+        <div style="
+  max-width: 600px; 
+  margin: 20px auto; 
+  padding: 25px 30px; 
+  background: #fff; 
+  border: 2px solid #0073e6; 
+  border-radius: 10px; 
+  box-shadow: 0 5px 15px rgba(0,115,230,0.15); 
+  font-family: Arial, sans-serif; 
+  color: #004080;
+  ">
+  <h2 style="
+    margin-top: 0; 
+    font-size: 22px; 
+    margin-bottom: 15px; 
+    font-weight: 700;
+  ">
+    Paraná é o 2º maior produtor brasileiro de energia renovável em área rural
+  </h2>
+  <p style="line-height: 1.5; font-size: 15px; margin-bottom: 15px; color: #333;">
+    <strong>O Paraná</strong> é o segundo estado que mais gera energia renovável na área rural em todo país, segundo dados do Instituto de Desenvolvimento Rural (IDR-PR). Esse tipo de energia representa <strong>18%</strong> da geração no campo paranaense — proporção que fica atrás apenas da registrada em Minas Gerais (21,1%). 
+  </p>
+  <p style="line-height: 1.5; font-size: 15px; margin-bottom: 15px; color: #333;">
+    <strong>Incentivo às fontes renováveis</strong> 🍀 Há dois anos, o IDR criou um projeto para estimular mais agricultores a buscar fontes renováveis de energia. A energia solar é a principal, mas produtores também podem aderir ao biogás e biometano, produzidos a partir das sobras do processamento de produtos agrícolas ou de dejetos de animais. A iniciativa oferece orientação técnica aos agricultores e tem linhas de financiamento com juros subsidiados. Em 31 meses de programa, foram implantados mais de <strong>26 mil projetos</strong> de energia renovável no estado, dos quais quase <strong>8 mil</strong> receberam subsídio.
+  </p>
+  <p style="font-style: italic; line-height: 1.5; font-size: 15px; margin-bottom: 0; color: #333;">
+    Antonio Ricardo Milgioransa, extensionista do IDR-PR, explica que um projeto do tipo, financiado pelo banco, e com os incentivos do governo estadual, "se paga em três ou quatro anos”.
+  </p>
+  <p style="margin-top: 20px; font-size: 14px;">
+    Fonte: <a href="https://g1.globo.com/pr/parana/caminhos-do-campo/noticia/2024/04/21/parana-e-o-2o-maior-produtor-brasileiro-de-energia-renovavel-em-area-rural.ghtml" target="_blank" rel="noopener noreferrer" style="color: #0073e6; text-decoration: none;">G1 - Paraná</a>
+  </p>
+</div>
+
+<div class="container" style="padding: 20px; background-color: #f9f9f9; border-radius: 8px; color: #333;">
+  <h3 class="mb-3">Desafios para Consolidar a Energia Renovável no Campo</h3>
+  <p>
+    A implementação e ampliação das fontes de energia renovável nas áreas rurais enfrentam diversos obstáculos que precisam ser superados para garantir um desenvolvimento sustentável e eficaz. 
+  </p>
+  <p>
+    Um dos principais desafios é o <strong>investimento inicial elevado</strong>. Equipamentos como painéis solares, turbinas eólicas e sistemas de biomassa exigem custos consideráveis, o que pode dificultar o acesso para pequenos e médios produtores rurais.
+  </p>
+  <p>
+    O <strong>acesso ao crédito</strong> ainda é limitado em muitas regiões rurais, principalmente devido à burocracia, falta de garantias e ausência de linhas de financiamento específicas para energias renováveis. Isso acaba restringindo o potencial de adoção dessas tecnologias.
+  </p>
+  <p>
+    Outro ponto crucial é a <strong>infraestrutura limitada</strong>, incluindo a baixa disponibilidade de redes elétricas adequadas e a dificuldade de transportar equipamentos para localidades afastadas, o que impacta diretamente a viabilidade técnica e econômica dos projetos.
+  </p>
+  <p>
+    Além disso, a <strong>capacitação técnica</strong> é essencial para a instalação, manutenção e operação dos sistemas de energia renovável. Muitas comunidades rurais carecem de profissionais qualificados, o que pode comprometer a eficiência e a durabilidade dos investimentos realizados.
+  </p>
+  <p>
+    Superar esses desafios exige uma atuação conjunta entre governos, instituições financeiras, empresas e comunidades locais, com foco em políticas públicas que facilitem o financiamento, incentivo à formação técnica e investimentos em infraestrutura.
+  </p>
+</div>
+
+
+        <!-- Perguntas Frequentes -->
+        <div class="mt-5">
+            <h3 class="text-center mb-4">Perguntas Frequentes</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                            Por que a energia renovável é importante para o campo?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"> 
+                            Porque ela é sustentável, reduz gastos e não agride o meio ambiente.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Energia solar funciona em dias nublados?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sim! Mesmo em dias nublados, os painéis solares geram energia, embora em menor quantidade.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Qual a melhor fonte de energia para uma pequena propriedade?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Depende da localização: solar e biomassa são versáteis e populares em pequenas áreas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            É possível vender o excedente de energia solar?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sim! Com o sistema de compensação, é possível injetar energia na rede e ganhar créditos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   <section style="margin-top: 40px; padding: 20px; background-color: #ffffff; border-radius: 8px; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; color: #000000;">
+  <h2 style="color: #000000; margin-bottom: 15px;">Referência</h2>
+  <p>
+    Energia Renovável no Campo – Instituto de Desenvolvimento Rural do Paraná (IDR-PR)<br>
+    <a href="https://www.idrparana.pr.gov.br/Noticia/Parana-e-o-segundo-estado-com-maior-geracao-de-energia-renovavel-na-area-rural"
+       target="_blank" rel="noopener noreferrer"
+       style="color: #800080 !important; text-decoration: underline;">
+       https://www.idrparana.pr.gov.br/Noticia/Parana-e-o-segundo-estado-com-maior-geracao-de-energia-renovavel-na-area-rural
+    </a>
+  </p>
+</section>
+
+
+
+    <div class="footer bg-success text-white text-center py-3">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="tecnologia.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1; /* Permite que o contêiner ocupe o espaço disponível */
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #198754; /* Cor do rodapé igual à da barra de navegação */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto */
+            padding: 15px; /* Padding vertical do rodapé */
+        }
+
+        .img-card {
+    height: 300px;
+    object-fit: cover;
+    
+    
+}
+
+.card-reveal {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .card-reveal .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .card-reveal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .card-reveal.revealed img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .card-reveal .overlay-text.hidden {
+            display: none;
+        }
+
+        .caption {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card-reveal.revealed + .caption {
+            opacity: 1;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+<section class="cabecalho text-center py-4" style="background-color: #004B49;">
+  <h1>AGRINHO 2025</h1>
+  <h3 style="color: #98FF98;">Festejando Conexão Campo Cidade</h3>
+</section>
+
+<!-- Navbar -->
+<style>
+  /* Botão hamburger dentro da navbar */
+  #sidebarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #sidebarToggle div {
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Sidebar lateral */
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1049;
+    top: 0;
+    left: 0;
+    background-color: #198754; /* verde bootstrap */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  #sidebar button {
+    display: block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #sidebar button:hover {
+    background-color: #14532d;
+  }
+
+  /* Quando a sidebar estiver aberta */
+  #sidebar.open {
+    width: 250px;
+  }
+
+  /* Para evitar scroll quando sidebar aberta */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-success">
+  <div class="container-fluid d-flex align-items-center">
+    <button id="sidebarToggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="sidebar">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='../index.html'">Página Inicial</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='energia.html'">Energia e Sustentabilidade</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='agua.html'">Acessibilidade à Água</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='producao.html'">Campo Produtor</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='tecnologia.html'">Tecnologia no Campo</button>
+
+    <button class="btn btn-success text-white me-2" onclick="location.href='comercio.html'">Comércio e Distribuição</button>
+
+    <button class="btn btn-success text-white" onclick="location.href='impactos.html'">Impactos Ambientais</button>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" role="navigation" aria-hidden="true">
+  <button onclick="location.href='index.html'">Início</button>
+  <button onclick="location.href='galeria.html'">Galeria</button>
+  <button onclick="location.href='info.html'">Informações</button>
+  <button onclick="location.href='contato.html'">Fale Conosco</button>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const body = document.body;
+
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-hidden', !isOpen);
+    body.classList.toggle('sidebar-open', isOpen);
+  });
+
+  // Fecha sidebar clicando fora dela
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', false);
+      sidebar.setAttribute('aria-hidden', true);
+      body.classList.remove('sidebar-open');
+    }
+  });
+</script>
+
+
+<audio id="musica" autoplay loop playsinline>
+  <source src="../Sons/1.mpeg (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 5; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 1;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+<audio id="somClick" src="../Sons/estralo.mp3" preload="auto"></audio>
+
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+  <button id="muteBtn" aria-label="Mutar som" 
+  style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    background-color: green;
+    transition: background-color 0.3s ease;
+  ">
+  🔊
+</button>
+
+<script>
+  const btn = document.getElementById('muteBtn');
+
+  btn.addEventListener('click', () => {
+    const medias = document.querySelectorAll('audio, video');
+    const isMuted = medias.length > 0 ? medias[0].muted : false;
+
+    medias.forEach(media => {
+      media.muted = !isMuted;
+    });
+
+    btn.textContent = !isMuted ? '🔇' : '🔊';
+    btn.style.backgroundColor = !isMuted ? 'red' : 'green';
+  });
+</script>
+
+</head>
+
+<body>
+
+    <div style="margin-top: 30px;"></div>
+
+
+    <div class="container">
+
+  <!-- Título centralizado -->
+  <h2 class="text-center">Tecnologia no Campo</h2>
+
+  <!-- Seção de duas colunas -->
+  <div class="section row align-items-center">
+
+    <!-- Coluna do texto -->
+    <div class="col-md-6">
+      <h3>Aplicações da Tecnologia no Campo</h3>
+      <p>
+        Tecnologia no campo é o conjunto de ferramentas, máquinas, softwares e práticas inovadoras aplicadas na agricultura e pecuária com o objetivo de aumentar a produtividade, reduzir custos e preservar os recursos naturais.
+      </p>
+      <p>
+        Desde tratores com GPS até drones que monitoram as plantações, a tecnologia vem revolucionando a forma como os produtores rurais trabalham. Ela permite um uso mais eficiente da água, do solo e dos fertilizantes, além de garantir uma produção mais sustentável e de melhor qualidade.
+      </p>
+      <p>
+        Essa transformação tecnológica facilita a vida dos agricultores, otimiza processos e coloca o Brasil na liderança mundial em produção agrícola de alta performance.
+      </p>
+      <p>
+        Outro avanço importante é o uso de sensores inteligentes no solo e nas plantas, que fornecem dados em tempo real sobre umidade, nutrientes e possíveis pragas. Com essas informações, o produtor consegue agir rapidamente e com mais precisão.
+      </p>
+      <p>
+        Além disso, softwares de gestão agrícola permitem o acompanhamento de toda a produção, desde o plantio até a colheita. Isso garante maior controle financeiro, logístico e ambiental nas propriedades rurais.
+      </p>
+    </div>
+
+    <!-- Coluna da imagem -->
+    <div class="col-md-6">
+      <img src="../assets/image/tec1.jpeg" alt="Tecnologia aplicada no campo com drone e plantação" class="img-fluid rounded shadow" style="max-width: 85%; height: auto;">
+    </div>
+
+  </div>
+
+</div>
+
+
+       <div class="container mt-5">
+
+    <h2 class="text-center">Ferramentas Aplicadas</h2>
+
+    <p>
+        A agricultura moderna passou por uma verdadeira transformação graças ao avanço da tecnologia. Hoje, diversas ferramentas e equipamentos estão disponíveis para melhorar a produtividade, otimizar recursos e tornar o trabalho no campo mais eficiente e sustentável.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Tecnologias de Monitoramento</strong>
+            <p>
+                O monitoramento das lavouras se tornou muito mais preciso com o uso de <strong>drones equipados com câmeras de alta resolução</strong>. Esses equipamentos permitem sobrevoar as plantações e capturar imagens detalhadas, identificando rapidamente áreas com problemas de irrigação, pragas ou doenças. 
+            </p>
+            <p>
+                Além disso, <strong>sensores de solo</strong> são capazes de medir a umidade, a temperatura e os nutrientes disponíveis, oferecendo ao agricultor informações em tempo real para decisões mais acertadas sobre irrigação e adubação.
+            </p>
+        </li>
+
+        <li>
+            <strong>Máquinas e Equipamentos Modernos</strong>
+            <p>
+                O campo também ganhou reforço com a chegada de <strong>tratores, plantadeiras e colheitadeiras inteligentes</strong>. Esses equipamentos utilizam <strong>tecnologia GPS</strong> para realizar o plantio e a colheita com precisão centimétrica, reduzindo o desperdício de sementes, fertilizantes e defensivos.
+            </p>
+            <p>
+                Além disso, muitos desses maquinários contam com <strong>sistemas de piloto automático</strong> e <strong>monitoramento de desempenho</strong>, que analisam o rendimento e as condições da operação em tempo real.
+            </p>
+        </li>
+
+        <li>
+            <strong>Agricultura Digital</strong>
+            <p>
+                A era digital chegou ao campo com força total. Hoje, os produtores têm à disposição <strong>aplicativos e softwares de gestão agrícola</strong> que permitem o acompanhamento detalhado de todas as etapas da produção.
+            </p>
+            <p>
+                Com esses recursos, é possível <strong>controlar o estoque de insumos</strong>, <strong>monitorar as condições climáticas</strong>, <strong>planejar a logística de transporte</strong> e até mesmo <strong>acompanhar os preços de mercado</strong> em tempo real. Isso tudo garante maior controle e previsibilidade para o produtor rural.
+            </p>
+        </li>
+
+        <li>
+            <strong>Irrigação Inteligente</strong>
+            <p>
+                A gestão eficiente da água é um dos grandes desafios da agricultura, e a <strong>irrigação inteligente</strong> tem sido uma solução essencial. Sistemas automatizados utilizam <strong>sensores de umidade do solo</strong> e <strong>estações meteorológicas</strong> para determinar a quantidade exata de água necessária em cada área da plantação.
+            </p>
+            <p>
+                Além disso, muitas dessas tecnologias podem ser <strong>controladas remotamente por aplicativos de celular</strong>, permitindo que o agricultor ajuste a irrigação de qualquer lugar, economizando água e energia.
+            </p>
+        </li>
+
+        <li>
+            <strong>Biotecnologia e Melhoramento Genético</strong>
+            <p>
+                A <strong>biotecnologia agrícola</strong> trouxe avanços significativos para o desenvolvimento de <strong>sementes geneticamente modificadas</strong>, que são mais resistentes a pragas, doenças e condições climáticas extremas, como seca ou excesso de chuvas.
+            </p>
+            <p>
+                O <strong>melhoramento genético</strong> também permite o desenvolvimento de plantas com maior produtividade e melhor qualidade nutricional, reduzindo a necessidade de defensivos químicos e contribuindo para uma produção mais sustentável.
+            </p>
+        </li>
+    </ul>
+
+    <p>
+        Todos esses avanços mostram que a tecnologia no campo não é apenas uma tendência, mas uma necessidade para garantir o futuro da produção de alimentos de forma eficiente, econômica e ambientalmente responsável.
+    </p>
+
+</div>
+
+<div class="container mt-5">
+        <h2 class="text-center mb-4">Descubra as Tecnologias!</h2>
+
+        <div class="row">
+
+            <!-- Quadro 1 -->
+            <div class="col-md-3">
+                <div class="card-reveal" onclick="reveal(this)">
+                    <div class="overlay-text">CLIQUE PARA DESCOBRIR</div>
+                    <img src="../assets/image/drone.jpeg" alt="Drone na agricultura">
+                </div>
+                <div class="caption">Drones monitorando plantações</div>
+            </div>
+
+            <!-- Quadro 2 -->
+            <div class="col-md-3">
+                <div class="card-reveal" onclick="reveal(this)">
+                    <div class="overlay-text">CLIQUE PARA DESCOBRIR</div>
+                    <img src="../assets/image/tecnologia2.jpeg" alt="Trator com GPS">
+                </div>
+                <div class="caption">Tratores com GPS integrado</div>
+            </div>
+
+            <!-- Quadro 3 -->
+            <div class="col-md-3">
+                <div class="card-reveal" onclick="reveal(this)">
+                    <div class="overlay-text">CLIQUE PARA DESCOBRIR</div>
+                    <img src="../assets/image/irrigação.jpeg" alt="Irrigação inteligente">
+                </div>
+                <div class="caption">Irrigação automatizada por sensores</div>
+            </div>
+
+            <!-- Quadro 4 -->
+            <div class="col-md-3">
+                <div class="card-reveal" onclick="reveal(this)">
+                    <div class="overlay-text">CLIQUE PARA DESCOBRIR</div>
+                    <img src="../assets/image/app.jpeg" alt="Aplicativo de gestão agrícola">
+                </div>
+                <div class="caption">Aplicativos de gestão agrícola</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function reveal(element) {
+            element.classList.add('revealed');
+            element.querySelector('.overlay-text').classList.add('hidden');
+        }
+    </script>
+
+
+        <div class="container mt-5">
+
+    <h2 class="text-center">Benefícios da Tecnologia no Campo</h2>
+
+    <ul>
+        <li>
+            <strong>Aumento da produtividade</strong>
+            <p>
+                As novas tecnologias permitem que os agricultores produzam mais em menos espaço e em menos tempo. O uso de equipamentos modernos, sementes melhoradas e sistemas de monitoramento aumentam a eficiência das lavouras.
+            </p>
+        </li>
+
+        <li>
+            <strong>Redução dos custos de produção</strong>
+            <p>
+                Com o uso de tratores com GPS, irrigação inteligente e sensores de solo, os produtores conseguem economizar insumos como água, fertilizantes e sementes, reduzindo os gastos com mão de obra e recursos naturais.
+            </p>
+        </li>
+
+        <li>
+            <strong>Melhor aproveitamento dos recursos naturais</strong>
+            <p>
+                A tecnologia permite um uso mais eficiente da água, do solo e dos nutrientes. Sistemas de irrigação inteligente, por exemplo, garantem que apenas a quantidade necessária de água seja aplicada, evitando desperdícios.
+            </p>
+        </li>
+
+        <li>
+            <strong>Minimização dos impactos ambientais</strong>
+            <p>
+                Com o monitoramento preciso e o uso racional de defensivos agrícolas e fertilizantes, é possível reduzir a poluição do solo e da água, contribuindo para uma agricultura mais sustentável e de menor impacto ambiental.
+            </p>
+        </li>
+
+        <li>
+            <strong>Maior segurança alimentar</strong>
+            <p>
+                Ao aumentar a produtividade e a qualidade dos alimentos, a tecnologia no campo ajuda a garantir o abastecimento das cidades e contribui para a segurança alimentar, reduzindo o risco de escassez de alimentos.
+            </p>
+        </li>
+
+        <li>
+            <strong>Facilidade no manejo e na tomada de decisões</strong>
+            <p>
+                Softwares de gestão agrícola, drones e sensores oferecem dados em tempo real para os produtores, facilitando o planejamento, a correção de falhas e a tomada de decisões mais rápidas e eficientes.
+            </p>
+        </li>
+    </ul>
+
+</div>
+
+
+        <div class="container mt-5">
+    <h2 class="text-center">Desafios e Limitações</h2>
+
+    <p>
+        Apesar de todos os benefícios que a tecnologia traz para o campo, a sua adoção ainda enfrenta diversos desafios e limitações. Um dos principais obstáculos é o <strong>alto custo inicial dos equipamentos e sistemas tecnológicos</strong>. Muitas pequenas propriedades rurais não têm recursos suficientes para investir em maquinários modernos ou em serviços de consultoria especializada.
+    </p>
+
+    <p>
+        Outro grande problema é a <strong>falta de acesso à internet de qualidade em áreas rurais</strong>. Como muitas das tecnologias mais avançadas dependem de conexão constante para o envio e análise de dados, a ausência de infraestrutura adequada dificulta o uso dessas ferramentas.
+    </p>
+
+    <p>
+        Também há uma <strong>carência de mão de obra qualificada</strong> para operar as novas tecnologias. Muitos agricultores ainda não têm o conhecimento necessário para utilizar softwares de gestão, drones ou sensores de solo, o que acaba limitando o aproveitamento máximo dessas inovações.
+    </p>
+
+    <p>
+        Por fim, questões culturais também influenciam. Existe uma certa <strong>resistência à mudança</strong> por parte de alguns produtores mais tradicionais, que preferem manter os métodos antigos por receio de que a tecnologia seja complicada ou ineficaz.
+    </p>
+
+    <p>
+        Superar esses desafios requer <strong>investimentos em capacitação, políticas públicas de incentivo e melhoria da infraestrutura digital no campo</strong>. Somente assim será possível democratizar o acesso às tecnologias agrícolas e garantir que os benefícios cheguem a todos os produtores.
+    </p>
+</div>
+</div>
+
+
+      <style>
+  .tabela-responsiva {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 2px solid #000; /* Borda só ao redor da tabela */
+  }
+
+  .tabela-responsiva th,
+  .tabela-responsiva td {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding: 6px 8px; /* Padding menor para compactar */
+    border: none; /* Sem linhas internas */
+    text-align: left;
+  }
+
+  .tabela-responsiva thead {
+    background-color: #383d38;
+    color: white;
+  }
+</style>
+
+<div class="container" style="font-family: Arial, sans-serif; margin-top: 20px; margin-bottom: 20px;">
+  <h2 style="text-align:center; margin-bottom: 20px;">Tecnologias e suas Aplicações</h2>
+
+  <table class="tabela-responsiva">
+    <thead>
+      <tr>
+        <th>Tipo de Tecnologia</th>
+        <th>Aplicações</th>
+        <th>Benefícios</th>
+        <th>Desafios</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Drones Agrícolas</strong></td>
+        <td>Monitoramento aéreo das plantações, detecção precoce de pragas, avaliação do estresse hídrico e aplicação localizada de defensivos.</td>
+        <td>Aumento da precisão no manejo, redução do uso de defensivos, economia de tempo e custos.</td>
+        <td>Alto custo inicial, necessidade de operadores treinados, limitações climáticas.</td>
+      </tr>
+      <tr>
+        <td><strong>Sensores de Solo</strong></td>
+        <td>Medição da umidade, temperatura, pH, nutrientes e salinidade do solo em tempo real.</td>
+        <td>Irrigação eficiente, melhor adubação, aumento da produtividade, redução do desperdício de insumos.</td>
+        <td>Custo de instalação e manutenção, necessidade de integração com sistemas de irrigação.</td>
+      </tr>
+      <tr>
+        <td><strong>Tratores e Máquinas GPS</strong></td>
+        <td>Plantio, colheita e pulverização com precisão centimétrica, mapeamento de áreas e roteirização.</td>
+        <td>Redução do desperdício, aumento da eficiência operacional e menor impacto ambiental.</td>
+        <td>Investimento alto, necessidade de capacitação técnica, manutenção especializada.</td>
+      </tr>
+      <tr>
+        <td><strong>Software de Gestão Agrícola</strong></td>
+        <td>Controle de estoque, análise financeira, monitoramento climático, planejamento de colheita e comercialização.</td>
+        <td>Organização, tomadas de decisão baseadas em dados, melhor planejamento e redução de riscos.</td>
+        <td>Dependência de acesso à internet, adaptação do produtor à tecnologia.</td>
+      </tr>
+      <tr>
+        <td><strong>Sistemas de Irrigação Automatizada</strong></td>
+        <td>Irrigação controlada por sensores que medem a umidade do solo e clima, ativada somente quando necessário.</td>
+        <td>Economia de água e energia, redução de custos e melhor saúde das plantas.</td>
+        <td>Custo inicial elevado, necessidade de manutenção periódica e suporte técnico.</td>
+      </tr>
+      <tr>
+        <td><strong>Biotecnologia e Melhoramento Genético</strong></td>
+        <td>Desenvolvimento de sementes resistentes a pragas, doenças e condições climáticas adversas.</td>
+        <td>Aumento da produtividade, menor uso de defensivos e adaptação a mudanças climáticas.</td>
+        <td>Questões regulatórias, aceitação do consumidor e custo de desenvolvimento.</td>
+      </tr>
+      <tr>
+        <td><strong>Internet das Coisas (IoT) Rural</strong></td>
+        <td>Rede de sensores conectados para monitoramento integrado de solo, clima, máquinas e rebanho.</td>
+        <td>Monitoramento em tempo real, automação, maior eficiência e menor intervenção humana.</td>
+        <td>Investimento em infraestrutura, segurança de dados e conectividade em áreas remotas.</td>
+      </tr>
+      <tr>
+        <td><strong>Big Data e Análise de Dados</strong></td>
+        <td>Coleta e análise de grandes volumes de dados para previsão de safra, gestão de riscos e otimização da produção.</td>
+        <td>Decisões estratégicas mais assertivas, antecipação de problemas e maximização do lucro.</td>
+        <td>Necessidade de conhecimento especializado, custos com softwares e infraestrutura tecnológica.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="container" style="display: flex; align-items: center; gap: 30px; margin-top: 40px; margin-bottom: 40px; font-family: Arial, sans-serif;">
+  <div style="flex: 1; max-width: 400px;">
+    <img src="../assets/image/tec2.jpeg" alt="Tecnologia no campo" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+  </div>
+  <div style="flex: 2;">
+    <div style="height: 50px;"></div>
+    <h2>Conservação do Solo pelo Terraceamento Agrícola</h2>
+<p>
+  O futuro do terraceamento agrícola aponta para soluções cada vez mais inovadoras e sustentáveis, com o objetivo de melhorar a conservação do solo, a eficiência no uso da água e a produtividade das lavouras. Essa técnica, que consiste na construção de degraus ou patamares nas encostas, será cada vez mais aperfeiçoada com o apoio de novas tecnologias.
+</p>
+<p>
+  A integração de ferramentas como drones, sensores de umidade e softwares de mapeamento topográfico permitirá um planejamento mais preciso das curvas de nível e da estrutura dos terraços. Com o uso de dados geoespaciais e modelagens 3D do relevo, os agricultores poderão definir com exatidão os melhores locais para a construção dos terraços, minimizando riscos de erosão e perdas de nutrientes.
+</p>
+<p>
+  Outra tendência importante será a combinação do terraceamento com práticas conservacionistas, como o plantio direto e o uso de coberturas vegetais, ampliando os benefícios para o solo e o meio ambiente. Com esses avanços, o terraceamento continuará sendo uma peça-chave para a agricultura sustentável, ajudando a preservar recursos naturais, aumentar a produtividade e garantir a segurança alimentar em um cenário de mudanças climáticas.
+</p>
+
+  </div>
+</div>
+
+     <div class="container" style="font-family: Arial, sans-serif; margin-top: 40px; margin-bottom: 40px; color: #333;">
+  <h2 style="text-align: center;  margin-bottom: 20px;">Considerações Finais</h2>
+  <p>
+    A tecnologia no campo tem se mostrado uma aliada indispensável para o desenvolvimento sustentável da agricultura e das comunidades rurais. A adoção de inovações permite aos produtores enfrentar os desafios ambientais, econômicos e sociais, tornando a produção agrícola mais eficiente, segura e rentável.
+  </p>
+  <p>
+    Embora existam obstáculos a serem superados, como o custo inicial dos equipamentos, a necessidade de capacitação técnica e a infraestrutura limitada em algumas regiões, os benefícios a longo prazo são incontestáveis. A integração entre conhecimento tradicional e avanços tecnológicos cria um cenário promissor para o futuro do campo.
+  </p>
+  <p>
+    Investir em pesquisa, políticas públicas de incentivo e na democratização do acesso às tecnologias é fundamental para garantir que todos os agricultores, independentemente do porte, possam usufruir dessas ferramentas e contribuir para a segurança alimentar global, a preservação ambiental e o desenvolvimento econômico rural.
+  </p>
+  <p>
+    Em resumo, a tecnologia no campo é uma ponte essencial entre o passado e o futuro, conectando a sabedoria do homem do campo às soluções inovadoras da era digital, impulsionando uma agricultura mais sustentável, produtiva e inclusiva.
+  </p>
+</div>
+  
+<section style="margin-top: 40px; padding: 20px; background-color: #ffffff; border-radius: 8px; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; color: #000000;">
+  <h2 style="color: #000000; margin-bottom: 15px;">Referência</h2>
+  <p>
+    Tecnologia no Campo: Inovações que Transformam a Agricultura – Blog da Aegro<br>
+    <a href="https://blog.aegro.com.br/tecnologia-no-campo/" 
+       target="_blank" rel="noopener noreferrer" 
+       style="color: #800080 !important; text-decoration: underline;">
+       https://blog.aegro.com.br/tecnologia-no-campo/
+    </a>
+  </p>
+</section>
+
+
+
+<div class="footer">
+        <p>Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
